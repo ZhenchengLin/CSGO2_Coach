@@ -1,0 +1,61 @@
+{
+  "version": "V3_B2_MARKOV_EXECUTION_CONTRACT_V1",
+  "status": "FROZEN_BEFORE_SCORING",
+  "model": "First-order conditional macro-zone transition distribution P(target_zone | current_zone, horizon).",
+  "fit_scope": "Training matches only within each frozen CV fold; fit separately for +5s and +10s.",
+  "transition_matrix": {
+    "shape": [
+      15,
+      15
+    ],
+    "rows": "current macro-zone",
+    "columns": "future target macro-zone"
+  },
+  "smoothing": {
+    "method": "add-one / Laplace",
+    "formula": "(count_ij + 1) / (sum_j count_ij + 15)"
+  },
+  "prediction": {
+    "probabilities": "Smoothed transition row for current macro-zone",
+    "hard_prediction": "argmax probability",
+    "argmax_tie_break": "lowest frozen class index",
+    "top2_tie_break": "descending probability then lowest frozen class index"
+  },
+  "evaluation": {
+    "primary": "multiclass log loss",
+    "secondary": [
+      "accuracy",
+      "macro F1",
+      "top-2 accuracy",
+      "multiclass Brier sum_j",
+      "equal-match log loss",
+      "per-zone recall/support",
+      "top-1 confidence ECE"
+    ],
+    "calibration": {
+      "type": "top-1 confidence ECE",
+      "bins": 10,
+      "edges": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ]
+    },
+    "paired_comparators": [
+      "B0 persistence OOF",
+      "B1 constant-motion OOF"
+    ],
+    "bootstrap_unit": "match",
+    "bootstrap_repetitions": 20000,
+    "bootstrap_seed": 20260917
+  },
+  "v2_d_confirm_used": false
+}
