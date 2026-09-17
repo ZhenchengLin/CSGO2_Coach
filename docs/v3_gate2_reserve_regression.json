@@ -1,0 +1,48 @@
+{
+  "version": "V3_GATE2_RESERVE_REGRESSION_V1",
+  "status": "PASS",
+  "purpose": "Verify that the combined 53-match target builder reproduces the previously frozen 13-reserve Gate-2 target semantics exactly.",
+  "reserve_matches": 13,
+  "expected": {
+    "candidate_horizon_rows": 7432,
+    "valid_rows": 6964,
+    "excluded_rows": 468,
+    "valid_plus5": 3564,
+    "valid_plus10": 3400,
+    "after_round_end_plus5": 152,
+    "after_round_end_plus10": 316,
+    "round_exclusions_missing_freeze_end": 4,
+    "drop_events_total": 657,
+    "drop_events_resolved": 657
+  },
+  "actual": {
+    "candidate_horizon_rows": 7432,
+    "valid_rows": 6964,
+    "excluded_rows": 468,
+    "valid_plus5": 3564,
+    "valid_plus10": 3400,
+    "after_round_end_plus5": 152,
+    "after_round_end_plus10": 316,
+    "round_exclusions_missing_freeze_end": 4,
+    "drop_events_total": 657,
+    "drop_events_resolved": 657
+  },
+  "target_source_counts": {
+    "5": {
+      "DROPPED": 1008,
+      "PLANTED": 128,
+      "CARRIED_INVENTORY": 2428
+    },
+    "10": {
+      "DROPPED": 896,
+      "PLANTED": 244,
+      "CARRIED_INVENTORY": 2260
+    }
+  },
+  "semantic_conclusion": "The original 13-reserve Gate-2 target behavior is reproduced exactly; no target-contract change is required.",
+  "target_dataset_sha256": "e10929107ff2d3357b96798f0a5a9e13f16ab602aaf972c919daef7b1dae288e",
+  "manifest_sha256": "1aa9dbc30edca67b0e3dc32955c31fe51bc0f12f33361a4a0b2a355c7d510bad",
+  "target_contract_sha256": "ae51a6149086b95c71ce8a7a58c88d3993bce845fdad00f438ff1791c0e6943e",
+  "baseline_protocol_sha256": "cadb5d4c4dc54b0608d8173c22d8a04b7d5423e30d7261d84c205a88b6952914",
+  "v2_d_confirm_used": false
+}

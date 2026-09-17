@@ -1,0 +1,56 @@
+{
+  "version": "V3_DEV_DATA_ROLE_AMENDMENT_V2",
+  "status": "FROZEN",
+  "scope": "Acquisition/data-role clauses only",
+  "supersedes_for_scope": "docs/v3_dev_acquisition_protocol_v2.json",
+  "superseded_document_sha256": "4d8f55e279fa2fe902dc35a7731b3fa751fadaf779269dd7347ff8542504ffa2",
+  "unchanged": [
+    "Gate 0 semantic seed",
+    "Gate 1 frozen 15-zone macro mapping",
+    "Gate 2 future target contract",
+    "Gate 2 baseline protocol",
+    "Frozen V3 target semantics",
+    "Frozen V3 grouped-match CV policy"
+  ],
+  "decision_timing": {
+    "storage_aware_revision_declared_before_v3_fresh_acquisition": true,
+    "declared_before_v3_model_fitting": true,
+    "note": "This document records and formalizes the earlier storage-aware development-role decision; it does not claim the document itself was authored before acquisition."
+  },
+  "roles": {
+    "V0_DEVELOPMENT": {
+      "n": 20,
+      "v3_model_development_eligible": "conditional_on_compatibility_audit",
+      "unbiased_representation_or_target_validation": false,
+      "reason": "Historical development data may be reused for model development but already influenced earlier project development."
+    },
+    "V2_RESERVE": {
+      "n": 13,
+      "prior_role": "Gate 0-2 design/audit evidence",
+      "v3_model_development_eligible": "conditional_on_compatibility_audit",
+      "unbiased_representation_or_target_validation": false,
+      "reason": "These matches were used for V3 semantic/target design audits and therefore are not independent validation evidence."
+    },
+    "V3_FRESH": {
+      "n": 20,
+      "selection": "chronological pre-fit fresh acquisition",
+      "v3_model_development_eligible": "conditional_on_compatibility_audit"
+    },
+    "V2_D_CONFIRM": {
+      "n": 30,
+      "v3_use": "FORBIDDEN",
+      "reason": "Permanent sealed V2 confirmation set."
+    }
+  },
+  "development_pool": {
+    "maximum_matches": 53,
+    "split_unit": "match",
+    "random_row_split_forbidden": true
+  },
+  "future_confirmation": {
+    "name": "D_V3_CONFIRM",
+    "must_be_later_than_all_development_matches": true,
+    "untouched_until_v3_choices_frozen": true,
+    "development_feedback_forbidden": true
+  }
+}
