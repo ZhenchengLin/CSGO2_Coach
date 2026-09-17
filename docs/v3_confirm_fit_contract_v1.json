@@ -1,0 +1,149 @@
+{
+  "version": "V3_CONFIRM_FIT_CONTRACT_V1",
+  "status": "FROZEN_BEFORE_CONFIRMATION_ACCESS",
+  "frozen_date": "2026-09-17",
+  "parent_development_closure_commit": "8c4c2facad452e781e2b697fec6282202d6eb443",
+  "development_boundary": {
+    "matches": 53,
+    "horizon_rows": {
+      "5": 14869,
+      "10": 14196
+    },
+    "development_closed": true,
+    "selected_candidate": "B3_TABULAR_MAP_AWARE_V1",
+    "V2_D_CONFIRM": "SEALED_AND_FORBIDDEN",
+    "D_V3_CONFIRM_accessed": false
+  },
+  "class_space": {
+    "n_classes": 15,
+    "class_order_source": "docs/v3_b3_feature_protocol_v1.json",
+    "macro_mapping_source": "docs/v3_macro_zone_mapping_v1_frozen.json"
+  },
+  "B0_persistence_final_fit": {
+    "fit_population": "All frozen D_V3_DEV target rows for the corresponding horizon.",
+    "hard_prediction": "predicted_macro_zone = current_macro_zone",
+    "n_correct_definition": "stay_same_zone == True",
+    "probability_adapter": "q=(n_correct_train+1)/(n_train+2)",
+    "predicted_class_probability": "q",
+    "each_other_class_probability": "(1-q)/14",
+    "fit_separately_by_horizon": true,
+    "confirmation_rows_used_for_q": false
+  },
+  "B1_constant_motion_final_fit": {
+    "motion_source": "data/interim/v3_b1_motion_inputs_v1.parquet",
+    "spatial_training_source": "data/interim/v3_b1_player_semantic_samples_gate1_exact_v1.parquet",
+    "spatial_training_rows": 774111,
+    "spatial_training_matches": 53,
+    "resolver": "scipy.spatial.cKDTree",
+    "resolver_build": "cKDTree(train_xyz), where train_xyz is all frozen Gate-1 exact spatial samples from the 53 development matches.",
+    "projection": "projected_xyz = current_xyz + float(horizon_sec) * velocity_xyz",
+    "query": {
+      "k": 1,
+      "workers": -1
+    },
+    "fine_place": "train_places[nn_index]",
+    "macro_zone": "frozen place_to_zone lookup from v3_macro_zone_mapping_v1_frozen.json",
+    "class_index": "frozen zone_to_index lookup from the B3/V3 class order",
+    "custom_tie_breaking": false,
+    "distance_metric": "cKDTree default Euclidean distance in raw XYZ coordinates",
+    "n_correct_definition": "full-development hard predicted class index == target_class_index",
+    "probability_adapter": "q=(n_correct_train+1)/(n_train+2)",
+    "predicted_class_probability": "q",
+    "each_other_class_probability": "(1-q)/14",
+    "q_fit_separately_by_horizon": true,
+    "ground_truth_uses_xyz_resolver": false,
+    "confirmation_semantic_samples_used": false,
+    "confirmation_rows_used_for_q": false
+  },
+  "B2_zone_markov_final_fit": {
+    "fit_population": "All frozen D_V3_DEV target rows for the corresponding horizon.",
+    "matrix": "15x15 P(target_zone | current_zone)",
+    "counts": "Count current_class_index -> target_class_index transitions.",
+    "smoothing": "(count_ij + 1) / (row_count_i + 15)",
+    "fit_separately_by_horizon": true,
+    "confirmation_rows_used_for_fit": false
+  },
+  "B3_tabular_map_aware_final_fit": {
+    "candidate": "B3_TABULAR_MAP_AWARE_V1",
+    "feature_protocol": "docs/v3_b3_feature_protocol_v1.json",
+    "model_protocol": "docs/v3_b3_model_protocol_v1.json",
+    "feature_dimensions": 24,
+    "fit_population": "All frozen D_V3_DEV rows for the corresponding horizon.",
+    "models": {
+      "5": "One 15-class XGBoost model fit on all 14,869 +5s development rows.",
+      "10": "One 15-class XGBoost model fit on all 14,196 +10s development rows."
+    },
+    "xgboost_config": {
+      "n_estimators": 300,
+      "max_depth": 3,
+      "learning_rate": 0.03,
+      "min_child_weight": 5,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_alpha": 0.5,
+      "reg_lambda": 5.0,
+      "objective": "multi:softprob",
+      "num_class": 15,
+      "eval_metric": "mlogloss",
+      "tree_method": "hist",
+      "random_state": 42,
+      "n_jobs": -1
+    },
+    "hyperparameter_search": false,
+    "early_stopping": false,
+    "sample_weighting": null,
+    "class_weighting": null,
+    "feature_scaling": false,
+    "confirmation_rows_used_for_fit": false
+  },
+  "artifact_plan": {
+    "directory": "artifacts/v3_confirm_frozen",
+    "B0": "b0_adapter.json",
+    "B1": "b1_constant_motion.json",
+    "B2": "b2_zone_markov.json",
+    "B3_plus5": "b3_plus5.json",
+    "B3_plus10": "b3_plus10.json",
+    "freeze_record": "docs/v3_confirm_model_freeze.json",
+    "requirements": [
+      "SHA256 for every artifact",
+      "training dataset SHA256",
+      "spatial cache SHA256",
+      "motion cache SHA256",
+      "feature/model protocol SHA256",
+      "package versions",
+      "training row counts",
+      "training match count",
+      "git commit identity",
+      "confirmation_data_accessed=false"
+    ]
+  },
+  "confirmation_prediction_rule": {
+    "model_regeneration_after_confirmation_score": false,
+    "feature_changes_after_confirmation_score": false,
+    "adapter_recalibration_on_confirmation": false,
+    "B2_refit_on_confirmation": false,
+    "confirmation_outcome_based_row_drops": false
+  },
+  "source_sha256": {
+    "development_closure": "9689433bddc8d1245549c0e2ac6131209254ebfd13a9f674cea05e1f7cb1479f",
+    "baseline_protocol": "cadb5d4c4dc54b0608d8173c22d8a04b7d5423e30d7261d84c205a88b6952914",
+    "targets": "e10929107ff2d3357b96798f0a5a9e13f16ab602aaf972c919daef7b1dae288e",
+    "target_identity": "abf5da19ea26709d6a67d93997b6ecd92e22f4a84335e7e853a7669e400896c6",
+    "motion": "412cee7968abbf340e5c49dffebe848b0e6101202b9f7dbbfb5585f115c42289",
+    "spatial": "3bd19efe37aa36d2c4fa6935946716ba5c3b8aa0806a8b8448b4a8b51b8acf4d",
+    "spatial_identity": "5bf4ac774d7754ce64de548914c260f0cc2baf1ee3d3d36e348349c13592df6f",
+    "macro_mapping": "557bd091789e43e463bdd85251cd7d581a912723f38b5989ce6045e76692d9b3",
+    "b3_feature_protocol": "79b0ce3a8a9b12b31febdc969ab3030bd41c244fc8d07a924931888e07edb167",
+    "b3_model_protocol": "9ff443ee1a7c903d271e0e46ca30d9fae016dacdb750aacddb1691fe01e3ce8c",
+    "development_manifest": "1aa9dbc30edca67b0e3dc32955c31fe51bc0f12f33361a4a0b2a355c7d510bad",
+    "development_manifest_identity": "397fc578179d7109f63ea5b3110cb95c019859f9f71807317d97b068aaf61435"
+  },
+  "package_versions": {
+    "numpy": "2.5.3",
+    "polars": "1.44.2",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.0",
+    "xgboost": "3.4.1"
+  },
+  "scientific_note": "This contract is frozen after V3 development closure and before access to D_V3_CONFIRM. It defines final full-development fitting only and does not calculate confirmation performance."
+}
