@@ -1,0 +1,123 @@
+{
+  "version": "V3",
+  "gate": "2",
+  "artifact": "Near-future bomb-zone target definition",
+  "status": "FROZEN",
+  "frozen_date": "2026-09-15",
+  "research_target": "Predict the bomb tactical macro-zone at +5s and +10s from legitimate state available at time t.",
+  "label_space": {
+    "map": "de_mirage",
+    "macro_mapping_version": "v1",
+    "n_classes": 15,
+    "all_classes_observed_at_5s": true,
+    "all_classes_observed_at_10s": true,
+    "rare_class_policy": "Rare target classes remain part of the frozen 15-zone representation. Gate 1 mapping must not be modified merely to increase class support."
+  },
+  "observation_design": {
+    "start": "freeze_end + 5 seconds",
+    "stride_sec": 5,
+    "horizons_sec": [
+      5,
+      10
+    ],
+    "horizons_scored_separately": true,
+    "post_plant_current_states": false,
+    "future_target_may_cross_plant": true
+  },
+  "integrity": {
+    "candidate_horizon_rows": 7432,
+    "valid_horizon_rows": 6964,
+    "excluded_horizon_rows": 468,
+    "overall_coverage": 0.9370290635091496,
+    "coverage_by_horizon": {
+      "5": {
+        "candidate_rows": 3716,
+        "valid_rows": 3564,
+        "coverage": 0.9590958019375673
+      },
+      "10": {
+        "candidate_rows": 3716,
+        "valid_rows": 3400,
+        "coverage": 0.9149623250807319
+      }
+    },
+    "observed_exclusion_reasons": [
+      "TARGET_AFTER_ROUND_END"
+    ],
+    "semantic_or_snapshot_integrity_failures": 0,
+    "round_exclusions": [
+      {
+        "reason": "MISSING_FREEZE_END",
+        "len": 4
+      }
+    ]
+  },
+  "target_semantics": {
+    "carried": "Valve place of current C4 carrier",
+    "pickup_fallback": "Latest pickup identifies carrier; Valve place comes from the current snapshot.",
+    "dropped": "Frozen exact-tick Valve place of the player who dropped the C4.",
+    "planted": "Canonical valid plant event maps BombsiteA/B to the corresponding site macro-zone.",
+    "xyz_classifier_used_for_ground_truth": false
+  },
+  "descriptive_task_difficulty": {
+    "hard_persistence_accuracy": {
+      "5": 0.7629068462401796,
+      "10": 0.6102941176470589
+    },
+    "move_rate": {
+      "5": 0.23709315375982043,
+      "10": 0.3897058823529412
+    },
+    "zone_support": {
+      "5": {
+        "zones_observed": 15,
+        "rare_under_20": [
+          {
+            "target_macro_zone": "MID_WINDOW",
+            "len": 5
+          },
+          {
+            "target_macro_zone": "CT_SPAWN",
+            "len": 5
+          },
+          {
+            "target_macro_zone": "MARKET",
+            "len": 1
+          }
+        ]
+      },
+      "10": {
+        "zones_observed": 15,
+        "rare_under_20": [
+          {
+            "target_macro_zone": "MID_WINDOW",
+            "len": 5
+          },
+          {
+            "target_macro_zone": "CT_SPAWN",
+            "len": 5
+          },
+          {
+            "target_macro_zone": "MARKET",
+            "len": 1
+          }
+        ]
+      }
+    },
+    "interpretation": "Persistence is strong, especially at +5s. The +10s target contains substantially more cross-zone movement. These are descriptive properties, not reasons to modify the frozen target definition."
+  },
+  "scientific_boundary": {
+    "v2_d_confirm_used": false,
+    "v2_reserve_13_role": "Gate 0-2 semantic and target-design audit corpus only. These demos must never become V3 confirmation data.",
+    "mapping_changes_after_freeze": "Require a new explicit mapping version.",
+    "target_contract_changes_after_freeze": "Require a new explicit target-contract version. Silent mutation is forbidden."
+  },
+  "evidence_sha256": {
+    "docs/v3_future_target_contract.json": "ae51a6149086b95c71ce8a7a58c88d3993bce845fdad00f438ff1791c0e6943e",
+    "docs/v3_macro_zone_mapping_v1_frozen.json": "557bd091789e43e463bdd85251cd7d581a912723f38b5989ce6045e76692d9b3",
+    "docs/v3_target_integrity_summary.json": "5971523adf3083037f1d51657b7b3cb6824713a1d8051bedc5a0a1337d9f9690",
+    "docs/v3_target_distribution_audit.json": "5c52e18518315b2a40c3e9e33356375367a7632edd5563b4277db05f5a3356d1",
+    "data/interim/v3_target_integrity_observations.csv": "4c051aa5a749237194fe335e79b2efe0c93779ac566592d9ee954f16cbe96a4c",
+    "data/interim/v3_target_integrity_round_exclusions.csv": "2b464b7b43293c30b70f16bf1e8ae0855d059f8afebe95bed0aef4072ee17359"
+  }
+}

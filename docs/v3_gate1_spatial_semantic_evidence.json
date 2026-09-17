@@ -1,0 +1,29 @@
+{
+  "version": "V3",
+  "stage": "Gate 1 spatial-semantic diagnosis",
+  "scientific_role": "Cross-check independent classifier, spatial-boundary, and player-trajectory evidence.",
+  "no_model_training": true,
+  "v2_d_confirm_used": false,
+  "n_confusion_pairs": 45,
+  "total_resolver_errors": 15481,
+  "top25": {
+    "error_mass": 0.9571733092177508,
+    "robust_trajectory_edges": 25,
+    "strong_trajectory_edges": 25,
+    "n_pairs": 25
+  },
+  "error_mass_by_trajectory_evidence": {
+    "ROBUST": 0.9944448033072799,
+    "SUPPORTED": 0.005555196692720109,
+    "SPARSE": 0.0,
+    "UNOBSERVED": 0.0,
+    "ROBUST_OR_SUPPORTED": 1.0
+  },
+  "dual_evidence_error_mass": 0.9512951359731283,
+  "interpretation_guardrails": [
+    "Trajectory adjacency does not imply macro-zone equivalence.",
+    "Classifier confusion does not define the semantic graph.",
+    "Boundary proximity does not by itself justify merging tactical regions.",
+    "Macro-zone design must preserve tactically meaningful route distinctions."
+  ]
+}

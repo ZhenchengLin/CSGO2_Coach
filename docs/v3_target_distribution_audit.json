@@ -1,0 +1,40 @@
+{
+  "version": "V3",
+  "gate": "2E",
+  "status": "TARGET_DISTRIBUTION_AUDIT_COMPLETE",
+  "training_performed": false,
+  "v2_d_confirm_used": false,
+  "current_decision_points": 3716,
+  "both_horizons_valid": 3400,
+  "only_5s_valid": 164,
+  "neither_horizon_valid": 152,
+  "exclusion_reasons": [
+    "TARGET_AFTER_ROUND_END"
+  ],
+  "semantic_or_snapshot_integrity_failures": 0,
+  "zone_representation": {
+    "5": {
+      "n_observed": 15,
+      "missing_zones": []
+    },
+    "10": {
+      "n_observed": 15,
+      "missing_zones": []
+    }
+  },
+  "entropy": {
+    "5": {
+      "entropy_bits": 3.19941482904264,
+      "normalized_entropy": 0.8189159001889875
+    },
+    "10": {
+      "entropy_bits": 3.2549784901786327,
+      "normalized_entropy": 0.8331378651445582
+    }
+  },
+  "notes": [
+    "Class-support thresholds shown in the terminal are descriptive diagnostics only.",
+    "No macro-zone mapping or target contract was changed using these distributions.",
+    "Hard persistence accuracy is descriptive. A probabilistic persistence baseline must be defined separately for log-loss scoring."
+  ]
+}

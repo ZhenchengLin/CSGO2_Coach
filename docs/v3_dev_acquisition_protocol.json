@@ -1,0 +1,28 @@
+{
+  "version": "V3",
+  "artifact": "D_V3_DEV acquisition protocol",
+  "status": "FROZEN",
+  "map": "de_mirage",
+  "target_match_count": 60,
+  "selection_order": [
+    "match_date ascending",
+    "filename ascending"
+  ],
+  "selection_rule": "Select the first 60 eligible chronological Mirage demos after 2026-09-12.",
+  "minimum_date_exclusive": "2026-09-12",
+  "historical_overlap_allowed": false,
+  "within_candidate_duplicate_sha_allowed": false,
+  "historical_data_boundary": {
+    "v0_v1_v2_demos": "FORBIDDEN",
+    "v2_d_confirm": "SEALED_AND_FORBIDDEN",
+    "v2_13_reserves": "Gate 0-2 design evidence only; FORBIDDEN for V3 model fitting."
+  },
+  "development_role": "D_V3_DEV may be used for baseline fitting, feature development, model selection, hyperparameter selection, calibration, and grouped development evaluation.",
+  "confirmation_boundary": "D_V3_CONFIRM must be collected later from a strictly newer chronological period and must remain untouched until V3 is frozen.",
+  "split_policy": {
+    "unit": "match",
+    "planned_group_cv_folds": 5,
+    "random_row_split_allowed": false
+  },
+  "rationale": "V3 is a 15-class forecasting task. A 60-match development corpus provides substantially more match-level diversity than the earlier 20-match V0 development corpus and supports approximately 12 held-out matches per fold in 5-fold grouped CV. This is a development-scale design choice, not a statistical power guarantee."
+}

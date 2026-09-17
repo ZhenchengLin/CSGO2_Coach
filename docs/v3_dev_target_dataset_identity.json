@@ -1,0 +1,56 @@
+{
+  "version": "V3",
+  "dataset": "D_V3_DEV_TARGETS_V1",
+  "status": "FROZEN",
+  "development_manifest": "docs/v3_dev_manifest.csv",
+  "development_manifest_sha256": "1aa9dbc30edca67b0e3dc32955c31fe51bc0f12f33361a4a0b2a355c7d510bad",
+  "target_contract": "docs/v3_future_target_contract.json",
+  "target_contract_sha256": "ae51a6149086b95c71ce8a7a58c88d3993bce845fdad00f438ff1791c0e6943e",
+  "macro_mapping": "docs/v3_macro_zone_mapping_v1_frozen.json",
+  "macro_mapping_sha256": "557bd091789e43e463bdd85251cd7d581a912723f38b5989ce6045e76692d9b3",
+  "output": "data/processed/v3_dev_targets_v1.parquet",
+  "output_sha256": "e10929107ff2d3357b96798f0a5a9e13f16ab602aaf972c919daef7b1dae288e",
+  "n_matches": 53,
+  "n_rows": 29065,
+  "horizons_sec": [
+    5,
+    10
+  ],
+  "class_order": [
+    "T_SPAWN",
+    "MID_ENTRY",
+    "A_RAMP",
+    "PALACE",
+    "A_SITE_COMPLEX",
+    "CONNECTOR",
+    "MID",
+    "MID_WINDOW",
+    "UNDERPASS",
+    "B_SHORT",
+    "B_LOBBY",
+    "B_APPS",
+    "B_SITE_COMPLEX",
+    "MARKET",
+    "CT_SPAWN"
+  ],
+  "n_classes": 15,
+  "class_representation": {
+    "5": {
+      "count": 15,
+      "missing": []
+    },
+    "10": {
+      "count": 15,
+      "missing": []
+    }
+  },
+  "drop_semantic_audit": {
+    "events": 2669,
+    "resolved_exact_tick": 2669,
+    "unresolved": 0,
+    "recovery": 1.0
+  },
+  "v2_d_confirm_used": false,
+  "future_information_used_as_feature": false,
+  "model_training_performed": false
+}

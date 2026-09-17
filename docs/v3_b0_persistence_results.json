@@ -1,0 +1,136 @@
+{
+  "version": "V3",
+  "baseline": "B0_PERSISTENCE",
+  "status": "DEVELOPMENT_OOF_COMPLETE",
+  "evaluation_type": "5-fold match-grouped out-of-fold development evaluation",
+  "development_dataset_sha256": "e10929107ff2d3357b96798f0a5a9e13f16ab602aaf972c919daef7b1dae288e",
+  "cv_split_sha256": "bc8d4d44c123125ceeb370342b49caa368590138ffc7497e981dfb94a8746efd",
+  "hard_prediction": "predicted future macro-zone = current macro-zone",
+  "probability_adapter": {
+    "formula": "q=(n_correct_train+1)/(n_train+2)",
+    "predicted_class_probability": "q",
+    "other_class_probability": "(1-q)/14",
+    "fit_with_validation_data": false,
+    "fit_separately_by_horizon_and_fold": true
+  },
+  "primary_metric": "multiclass_log_loss",
+  "multiclass_brier_definition": "mean over rows of sum_j (p_j - y_j)^2",
+  "results_by_horizon": {
+    "5": {
+      "n_rows": 14869,
+      "n_matches": 53,
+      "row_weighted_log_loss": 1.1806906113973807,
+      "equal_match_log_loss": 1.1904148646793489,
+      "multiclass_brier": 0.41681111921337977,
+      "accuracy": 0.7610464725267335,
+      "macro_f1": 0.6480698133433123,
+      "move_rate": 0.23895352747326648
+    },
+    "10": {
+      "n_rows": 14196,
+      "n_matches": 53,
+      "row_weighted_log_loss": 1.6920425971102788,
+      "equal_match_log_loss": 1.7003442947099077,
+      "multiclass_brier": 0.6148279987333096,
+      "accuracy": 0.6120033812341504,
+      "macro_f1": 0.45881500226979804,
+      "move_rate": 0.38799661876584957
+    }
+  },
+  "fold_records": [
+    {
+      "horizon_sec": 5,
+      "fold": 0,
+      "n_train": 12102,
+      "n_validation": 2767,
+      "n_train_persistence": 9208,
+      "train_persistence_q": 0.760822868473232,
+      "validation_log_loss": 1.1774859156854443
+    },
+    {
+      "horizon_sec": 5,
+      "fold": 1,
+      "n_train": 11553,
+      "n_validation": 3316,
+      "n_train_persistence": 8821,
+      "train_persistence_q": 0.7634790134141064,
+      "validation_log_loss": 1.213402164960681
+    },
+    {
+      "horizon_sec": 5,
+      "fold": 2,
+      "n_train": 12397,
+      "n_validation": 2472,
+      "n_train_persistence": 9437,
+      "train_persistence_q": 0.7611904185821438,
+      "validation_log_loss": 1.1840273553528138
+    },
+    {
+      "horizon_sec": 5,
+      "fold": 3,
+      "n_train": 11605,
+      "n_validation": 3264,
+      "n_train_persistence": 8770,
+      "train_persistence_q": 0.7556646851038167,
+      "validation_log_loss": 1.1090501637942933
+    },
+    {
+      "horizon_sec": 5,
+      "fold": 4,
+      "n_train": 11819,
+      "n_validation": 3050,
+      "n_train_persistence": 9028,
+      "train_persistence_q": 0.7638101683444717,
+      "validation_log_loss": 1.2219961429835013
+    },
+    {
+      "horizon_sec": 10,
+      "fold": 0,
+      "n_train": 11558,
+      "n_validation": 2638,
+      "n_train_persistence": 7059,
+      "train_persistence_q": 0.610726643598616,
+      "validation_log_loss": 1.6747698789124061
+    },
+    {
+      "horizon_sec": 10,
+      "fold": 1,
+      "n_train": 11035,
+      "n_validation": 3161,
+      "n_train_persistence": 6806,
+      "train_persistence_q": 0.6167436803479206,
+      "validation_log_loss": 1.7436111461168564
+    },
+    {
+      "horizon_sec": 10,
+      "fold": 2,
+      "n_train": 11854,
+      "n_validation": 2342,
+      "n_train_persistence": 7228,
+      "train_persistence_q": 0.6097334682860999,
+      "validation_log_loss": 1.656641942208904
+    },
+    {
+      "horizon_sec": 10,
+      "fold": 3,
+      "n_train": 11062,
+      "n_validation": 3134,
+      "n_train_persistence": 6716,
+      "train_persistence_q": 0.6071041214750542,
+      "validation_log_loss": 1.6388876134268202
+    },
+    {
+      "horizon_sec": 10,
+      "fold": 4,
+      "n_train": 11275,
+      "n_validation": 2921,
+      "n_train_persistence": 6943,
+      "train_persistence_q": 0.6157666045934203,
+      "validation_log_loss": 1.7372508476543305
+    }
+  ],
+  "oof_predictions": "data/interim/v3_b0_persistence_oof_predictions.parquet",
+  "oof_predictions_sha256": "b8736c084ba4cbdecfe4ee9c8ed36a0d47ec26c56a9e1ac6a63744ffc654dd48",
+  "v2_d_confirm_used": false,
+  "v3_confirmation_data_used": false
+}

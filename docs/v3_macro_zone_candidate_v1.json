@@ -1,0 +1,78 @@
+{
+  "version": "V3",
+  "candidate": "macro-zone-v1",
+  "status": "CANDIDATE_NOT_FROZEN",
+  "map": "de_mirage",
+  "n_macro_zones": 15,
+  "design_principle": "Preserve tactically meaningful route choices while collapsing fine-grained semantic boundaries that are unnecessary for near-future bomb-region forecasting.",
+  "zones": {
+    "T_SPAWN": [
+      "TSpawn"
+    ],
+    "MID_ENTRY": [
+      "SideAlley",
+      "TopofMid"
+    ],
+    "A_RAMP": [
+      "TRamp"
+    ],
+    "PALACE": [
+      "PalaceAlley",
+      "PalaceInterior",
+      "Scaffolding"
+    ],
+    "A_SITE_COMPLEX": [
+      "BombsiteA",
+      "Stairs",
+      "Jungle"
+    ],
+    "CONNECTOR": [
+      "Connector"
+    ],
+    "MID": [
+      "Middle"
+    ],
+    "MID_WINDOW": [
+      "SnipersNest",
+      "Ladder"
+    ],
+    "UNDERPASS": [
+      "Underpass"
+    ],
+    "B_SHORT": [
+      "Catwalk"
+    ],
+    "B_LOBBY": [
+      "House",
+      "BackAlley"
+    ],
+    "B_APPS": [
+      "Apartments"
+    ],
+    "B_SITE_COMPLEX": [
+      "BombsiteB",
+      "Truck"
+    ],
+    "MARKET": [
+      "Shop"
+    ],
+    "CT_SPAWN": [
+      "CTSpawn"
+    ]
+  },
+  "preserved_route_distinctions": [
+    "A_RAMP vs PALACE",
+    "MID vs CONNECTOR",
+    "MID vs B_SHORT",
+    "MID vs UNDERPASS",
+    "B_LOBBY vs B_APPS",
+    "CT_SPAWN vs MARKET"
+  ],
+  "guardrails": [
+    "This mapping was defined before evaluating macro-zone resolver accuracy.",
+    "V2 D_CONFIRM is not used.",
+    "Adjacency alone is not sufficient reason to merge places.",
+    "Classifier confusion alone is not sufficient reason to merge places.",
+    "This candidate is not frozen until spatial-resolution and tactical-coverage audits pass."
+  ]
+}

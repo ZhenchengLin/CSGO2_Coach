@@ -1,0 +1,95 @@
+{
+  "version": "V3",
+  "artifact": "Near-future bomb macro-zone target contract",
+  "status": "FROZEN",
+  "map": "de_mirage",
+  "tick_clock": {
+    "raw_ticks_per_second": 64,
+    "max_snapshot_lateness_ticks": 1,
+    "snapshot_resolution": "First available player snapshot at or after the nominal tick, with at most +1 raw tick lateness."
+  },
+  "observation_grid": {
+    "anchor": "round.freeze_end",
+    "first_current_observation_sec": 5,
+    "stride_sec": 5,
+    "current_observation_policy": "Generate nominal current observations at freeze_end + 5s, +10s, +15s, ... .",
+    "current_must_be_preplant": true,
+    "current_must_be_before_round_end": true,
+    "reason_for_not_using_freeze_end_itself": "Avoid overrepresenting trivial spawn-state persistence immediately at live-round start."
+  },
+  "prediction_horizons_sec": [
+    5,
+    10
+  ],
+  "target_tick_policy": {
+    "definition": "For a resolved current snapshot at tick t, the nominal target is t + horizon_seconds * 64.",
+    "resolution": "Resolve the target onto the first available player snapshot at or after that nominal target, with at most +1 raw tick lateness.",
+    "target_must_be_before_round_end": true,
+    "horizons_evaluated_separately": true
+  },
+  "target_semantic_priority": [
+    {
+      "state": "PLANTED",
+      "rule": "If a canonical valid plant event occurred at or before the resolved target tick, use its bombsite.",
+      "mapping": {
+        "BombsiteA": "A_SITE_COMPLEX",
+        "BombsiteB": "B_SITE_COMPLEX"
+      }
+    },
+    {
+      "state": "CARRIED_INVENTORY",
+      "rule": "If exactly one alive T player carries C4 in the target snapshot, use that player's Awpy-normalized Valve place and map it through the frozen 15-zone mapping."
+    },
+    {
+      "state": "CARRIED_PICKUP_FALLBACK",
+      "rule": "If inventory exposes no carrier and the latest bomb event at or before the target tick is pickup, use that event only to identify the carrier steamid. Resolve the carrier's current target-snapshot place."
+    },
+    {
+      "state": "DROPPED",
+      "rule": "If the latest bomb event is drop, use the Valve semantic place recovered for that drop event from the exact-tick dropper snapshot and map it through the frozen 15-zone mapping.",
+      "xyz_classifier_used": false
+    }
+  ],
+  "label_space": {
+    "source": "docs/v3_macro_zone_mapping_v1_frozen.json",
+    "n_macro_zones": 15,
+    "mapping_version": "v1"
+  },
+  "round_exclusion_policy": [
+    "MISSING_FREEZE_END",
+    "MISSING_ROUND_END",
+    "INVALID_TIMING_ORDER",
+    "PLANT_LABEL_UNRESOLVED"
+  ],
+  "observation_or_horizon_exclusion_policy": [
+    "CURRENT_SNAPSHOT_UNAVAILABLE",
+    "CURRENT_STATE_AT_OR_AFTER_PLANT",
+    "CURRENT_BOMB_STATE_UNRESOLVED",
+    "CURRENT_BOMB_PLACE_UNRESOLVED",
+    "TARGET_AFTER_ROUND_END",
+    "TARGET_SNAPSHOT_UNAVAILABLE",
+    "TARGET_BOMB_STATE_UNRESOLVED",
+    "TARGET_BOMB_PLACE_UNRESOLVED"
+  ],
+  "anti_leakage_contract": {
+    "features_at_time_t_may_use_future_information": false,
+    "future_bomb_events_may_be_used_as_features": false,
+    "future_target_state_is_used_only_as_y": true,
+    "current_observations_after_plant_are_allowed": false,
+    "future_targets_may_cross_a_plant_event": true,
+    "demo_round_bomb_site_metadata_used_as_target": false
+  },
+  "scientific_data_boundary": {
+    "v2_d_confirm_used": false,
+    "13_v2_reserve_demos_role": "V3 design / target-integrity development evidence only. They are not eligible to become V3 confirmation data.",
+    "v3_confirmation_data": "Must be acquired and frozen separately after V3 development decisions are complete."
+  },
+  "evidence": {
+    "macro_mapping_sha256": "557bd091789e43e463bdd85251cd7d581a912723f38b5989ce6045e76692d9b3",
+    "drop_audit_sha256": "21a346fdde3b9277bc698f06ed0a246f7f426b84a1fdcd6e3e80dc90fcdd80ae",
+    "drop_events_audited": 657,
+    "drop_semantic_recovery": 1.0,
+    "drop_tick_lateness": "657/657 exact",
+    "gate2a_schema_reconfirmed_on": "2026-09-10_liquid_vs_antivalue_mirage.dem"
+  }
+}

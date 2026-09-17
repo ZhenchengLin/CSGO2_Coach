@@ -1,0 +1,59 @@
+{
+  "version": "V3",
+  "role": "Mirage semantic seed freeze",
+  "status": "FROZEN",
+  "semantic_source": "Valve player last_place_name / m_szLastPlaceName",
+  "scope": {
+    "map": "de_mirage",
+    "state": "active-round alive competitive players",
+    "design_corpus": "13 V2 reserve demos",
+    "v2_d_confirm_used": false
+  },
+  "evidence": {
+    "n_reserve_demos": 13,
+    "n_places": 23,
+    "total_active_rows": 11967968,
+    "weighted_active_coverage": 0.999963235195816,
+    "minimum_demo_active_coverage": 0.999600211524448,
+    "place_audit_sha256": "f79df09260beb5ffde60f08f7859c34beb082334bd0bb26ec3e71fe8ebc9d70c",
+    "active_audit_sha256": "3dff37cb98b670c85770176af02a9035fdc37990514387878b1eb5ca98699ffc"
+  },
+  "known_exception": {
+    "demo": "2026-09-12_iowa-stormboar_vs_sportsbetexpert_mirage.dem",
+    "missing_active_rows": 440,
+    "missing_players": 1,
+    "scientific_treatment": "Recorded as a small source-level missingness exception. No synthetic place labels are created."
+  },
+  "places": [
+    "Apartments",
+    "BackAlley",
+    "BombsiteA",
+    "BombsiteB",
+    "CTSpawn",
+    "Catwalk",
+    "Connector",
+    "House",
+    "Jungle",
+    "Ladder",
+    "Middle",
+    "PalaceAlley",
+    "PalaceInterior",
+    "Scaffolding",
+    "Shop",
+    "SideAlley",
+    "SnipersNest",
+    "Stairs",
+    "TRamp",
+    "TSpawn",
+    "TopofMid",
+    "Truck",
+    "Underpass"
+  ],
+  "contract": [
+    "Valve last_place_name is accepted as a fine-grained semantic seed.",
+    "It is not yet the final V3 prediction class.",
+    "V3 D_CONFIRM from V2 remains excluded from representation design.",
+    "Macro-zone merging requires a separate Gate 1 freeze.",
+    "Missing place labels are never fabricated."
+  ]
+}

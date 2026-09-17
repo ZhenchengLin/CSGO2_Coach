@@ -1,0 +1,42 @@
+{
+  "version": "V3",
+  "artifact": "D_V3_DEV acquisition protocol",
+  "protocol_version": "v2",
+  "status": "FROZEN",
+  "frozen_date": "2026-09-15",
+
+  "supersedes": "docs/v3_dev_acquisition_protocol.json",
+
+  "revision_reason": "Storage-aware revision made before any fresh V3 candidate demo was acquired. Reuse development-eligible historical data while preserving a separate untouched future confirmation set.",
+
+  "development_design": {
+    "historical_v0_development_matches": 20,
+    "historical_v2_reserve_matches": 13,
+    "historical_seed_total": 33,
+    "fresh_mirage_target": 20,
+    "planned_D_V3_DEV_total": 53
+  },
+
+  "fresh_data_boundary": {
+    "match_date_must_be_after": "2026-09-12",
+    "map": "de_mirage",
+    "fresh_queue_frozen_before_model_fitting": true,
+    "selection_must_not_depend_on_model_results": true,
+    "historical_sha_overlap_allowed": false
+  },
+
+  "sealed_data": {
+    "V2_D_CONFIRM_30_matches": "FORBIDDEN"
+  },
+
+  "future_confirmation": {
+    "D_V3_CONFIRM": "Must be collected from a later untouched period after V3 model development is frozen."
+  },
+
+  "storage_policy": {
+    "keep_download_archive_after_success": false,
+    "keep_non_mirage_maps_after_success": false,
+    "keep_final_mirage_dem": true,
+    "processed_artifacts_may_later_allow_raw_demos_to_move_to_cold_storage": true
+  }
+}

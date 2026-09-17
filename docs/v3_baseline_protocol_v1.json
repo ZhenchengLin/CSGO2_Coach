@@ -1,0 +1,125 @@
+{
+  "version": "V3",
+  "artifact": "Near-future tactical forecasting baseline protocol",
+  "protocol_version": "v1",
+  "status": "FROZEN",
+  "frozen_date": "2026-09-15",
+  "prediction_tasks": {
+    "5s": "15-class bomb macro-zone forecast at t + 5s",
+    "10s": "15-class bomb macro-zone forecast at t + 10s",
+    "rule": "The two horizons are evaluated separately. Do not combine them into one primary score."
+  },
+  "primary_metric": {
+    "name": "multiclass_log_loss",
+    "evaluation": "separately for +5s and +10s",
+    "reason": "The model must provide useful probability distributions rather than only hard labels."
+  },
+  "secondary_metrics": [
+    "accuracy",
+    "macro_f1",
+    "per_zone_recall_with_support",
+    "top2_accuracy",
+    "multiclass_brier_score",
+    "calibration_diagnostics",
+    "equal_match_log_loss"
+  ],
+  "evaluation_invariants": {
+    "split_unit": "match",
+    "random_row_split_allowed": false,
+    "same_match_in_train_and_test_allowed": false,
+    "preprocessing_fit_on_test_data_allowed": false,
+    "target_horizons_evaluated_separately": true,
+    "report_row_weighted_metrics": true,
+    "report_equal_match_metrics": true,
+    "uncertainty_unit": "match",
+    "bootstrap_unit": "match"
+  },
+  "probability_adapter_for_deterministic_baselines": {
+    "purpose": "Convert a deterministic baseline into a finite 15-class probability distribution without validation-set tuning.",
+    "training_only": true,
+    "confidence_formula": "q = (n_correct_train + 1) / (n_train + 2)",
+    "predicted_class_probability": "q",
+    "each_other_class_probability": "(1 - q) / 14",
+    "note": "This is Laplace-smoothed calibration based only on the training partition for the corresponding horizon."
+  },
+  "baselines": {
+    "B0_persistence": {
+      "hard_prediction": "future_macro_zone = current_macro_zone",
+      "probability_output": "Use the frozen deterministic-baseline probability adapter estimated from the training partition separately for each horizon.",
+      "current_design_corpus_hard_accuracy": {
+        "5s": 0.7629068462401796,
+        "10s": 0.6102941176470589
+      },
+      "role": "Minimum temporal baseline. Any learned forecasting method must be interpreted relative to this strong persistence behavior."
+    },
+    "B1_constant_motion": {
+      "state": "Use bomb XYZ at t and approximately one second earlier.",
+      "velocity": "Estimate recent 3D bomb displacement per second.",
+      "projection": "Project the bomb position forward by the requested horizon.",
+      "projected_xyz_to_zone": "Use an inference-only XYZ nearest-neighbor semantic resolver fitted on training-match player samples only, then apply the frozen 15-zone mapping.",
+      "ground_truth_uses_xyz_resolver": false,
+      "probability_output": "Apply the deterministic-baseline probability adapter using B1 training accuracy for the corresponding horizon.",
+      "leakage_rule": "No target-match semantic samples may be used to fit the XYZ resolver."
+    },
+    "B2_zone_markov": {
+      "definition": "Estimate P(target_macro_zone | current_macro_zone, horizon) from the training partition.",
+      "smoothing": "Add-one Dirichlet/Laplace smoothing over all 15 target classes.",
+      "fit_separately_by_horizon": true,
+      "test_rows_used_for_transition_estimation": false,
+      "probability_output": "native 15-class transition distribution"
+    },
+    "B3_tabular_map_aware": {
+      "status": "FUTURE_STAGE",
+      "rule": "Feature set must use only information available at or before current time t.",
+      "feature_selection_using_confirmation_data": false
+    }
+  },
+  "rare_class_reporting": {
+    "merge_classes_due_only_to_low_support": false,
+    "always_report_per_class_support": true,
+    "macro_f1_interpretation": "Treat macro F1 cautiously when one or more zones have very small held-out support.",
+    "current_design_corpus_rare_classes": {
+      "5": {
+        "zones_observed": 15,
+        "rare_under_20": [
+          {
+            "target_macro_zone": "MID_WINDOW",
+            "len": 5
+          },
+          {
+            "target_macro_zone": "CT_SPAWN",
+            "len": 5
+          },
+          {
+            "target_macro_zone": "MARKET",
+            "len": 1
+          }
+        ]
+      },
+      "10": {
+        "zones_observed": 15,
+        "rare_under_20": [
+          {
+            "target_macro_zone": "MID_WINDOW",
+            "len": 5
+          },
+          {
+            "target_macro_zone": "CT_SPAWN",
+            "len": 5
+          },
+          {
+            "target_macro_zone": "MARKET",
+            "len": 1
+          }
+        ]
+      }
+    }
+  },
+  "data_boundary": {
+    "v2_d_confirm": "SEALED_AND_FORBIDDEN",
+    "13_v2_reserves": "Design/integrity evidence only. Do not use as V3 confirmation.",
+    "D_V3_DEV": "Acquire and freeze a new chronological development corpus before baseline fitting and model selection.",
+    "D_V3_CONFIRM": "Acquire and freeze separately only after V3 development decisions are complete."
+  },
+  "next_action": "FREEZE_D_V3_DEV_MANIFEST"
+}

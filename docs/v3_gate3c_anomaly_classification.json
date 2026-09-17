@@ -1,0 +1,44 @@
+{
+  "version": "V3",
+  "gate": "3C",
+  "status": "CLOSED",
+  "classification": {
+    "CURRENT_SNAPSHOT_UNAVAILABLE": {
+      "horizon_rows": 10,
+      "class": "SOURCE_SNAPSHOT_STREAM_TERMINATION",
+      "interpretation": "The round metadata continues but no player snapshot exists at or after the nominal current tick within the frozen +1 raw-tick tolerance.",
+      "policy": "EXCLUDE",
+      "interpolation_allowed": false,
+      "carry_forward_allowed": false
+    },
+    "TARGET_SNAPSHOT_UNAVAILABLE": {
+      "horizon_rows": 5,
+      "class": "SOURCE_SNAPSHOT_STREAM_TERMINATION",
+      "interpretation": "The current observation is valid but the source player-snapshot stream ends before the future target tick.",
+      "policy": "EXCLUDE",
+      "interpolation_allowed": false,
+      "carry_forward_allowed": false
+    },
+    "CURRENT_BOMB_STATE_UNRESOLVED": {
+      "horizon_rows": 1,
+      "class": "CAUSAL_BOMB_EVIDENCE_UNAVAILABLE",
+      "interpretation": "At the exact current snapshot there is no inventory C4 carrier and no bomb event at or before t that can causally resolve the bomb state.",
+      "policy": "EXCLUDE",
+      "future_evidence_allowed": false
+    },
+    "MISSING_FREEZE_END": {
+      "rounds": 10,
+      "class": "ROUND_TIMING_METADATA_UNAVAILABLE",
+      "policy": "EXCLUDE_ROUND"
+    }
+  },
+  "candidate_horizon_rows": 31034,
+  "valid_horizon_rows": 29065,
+  "all_excluded_horizon_rows": 1969,
+  "nonboundary_horizon_rows": 16,
+  "nonboundary_fraction_of_candidates": 0.0005155635754333956,
+  "target_contract_change_required": false,
+  "macro_zone_change_required": false,
+  "match_removal_required": false,
+  "conclusion": "All observed non-boundary exclusions have deterministic source-availability or causal-evidence explanations already covered by the frozen V3 contract. Gate 3C is closed without changing the target definition."
+}

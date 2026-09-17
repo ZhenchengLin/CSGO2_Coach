@@ -1,0 +1,20 @@
+{
+  "version": "V3",
+  "artifact": "D_V3_DEV grouped cross-validation split",
+  "protocol_version": "v1",
+  "status": "FROZEN",
+  "n_matches": 53,
+  "n_folds": 5,
+  "group_unit": "match",
+  "target_labels_used_to_assign_folds": false,
+  "assignment_method": "Within each dev_source_role, sort matches by SHA256(demo_filename), then round-robin across five folds using a frozen role-specific offset.",
+  "role_offsets": {
+    "V0_DEVELOPMENT": 0,
+    "V2_RESERVE": 1,
+    "V3_FRESH": 2
+  },
+  "random_row_split_allowed": false,
+  "same_match_train_validation_overlap_allowed": false,
+  "split_file": "docs/v3_dev_cv_splits_v1.csv",
+  "split_sha256": "bc8d4d44c123125ceeb370342b49caa368590138ffc7497e981dfb94a8746efd"
+}

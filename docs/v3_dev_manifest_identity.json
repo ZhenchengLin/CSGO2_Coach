@@ -1,0 +1,25 @@
+{
+  "version": "V3",
+  "dataset": "D_V3_DEV",
+  "status": "FROZEN",
+  "manifest": "docs/v3_dev_manifest.csv",
+  "manifest_sha256": "1aa9dbc30edca67b0e3dc32955c31fe51bc0f12f33361a4a0b2a355c7d510bad",
+  "n_matches": 53,
+  "role_counts": {
+    "V0_DEVELOPMENT": 20,
+    "V2_RESERVE": 13,
+    "V3_FRESH": 20
+  },
+  "map": "de_mirage",
+  "raw_ticks_per_sec": 64,
+  "v2_d_confirm_included": false,
+  "sha_unique_within_dev": true,
+  "historical_development_reuse": {
+    "V0_development": 20,
+    "V2_reserves": 13,
+    "reason": "Storage-aware protocol v2 permits development-eligible historical data to participate in V3 model development."
+  },
+  "fresh_matches": 20,
+  "scientific_boundary": "D_V3_DEV is development-only. It may be used for grouped CV, baseline fitting, feature design, model selection, calibration, and hyperparameter selection. It must not be presented as untouched V3 confirmation.",
+  "future_confirmation": "D_V3_CONFIRM must be separately acquired from a later untouched chronological period after V3 development decisions are frozen."
+}

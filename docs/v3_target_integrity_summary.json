@@ -1,0 +1,21 @@
+{
+  "version": "V3",
+  "gate": "2D",
+  "status": "AUDIT_COMPLETE",
+  "training_performed": false,
+  "v2_d_confirm_used": false,
+  "candidate_horizon_rows": 7432,
+  "valid_rows": 6964,
+  "excluded_rows": 468,
+  "integrity_coverage": 0.9370290635091496,
+  "n_round_exclusions": 4,
+  "observation_output": "data/interim/v3_target_integrity_observations.csv",
+  "round_exclusion_output": "data/interim/v3_target_integrity_round_exclusions.csv",
+  "contract": "docs/v3_future_target_contract.json",
+  "notes": [
+    "Coverage is an audit result, not a post-hoc optimization target.",
+    "No target labels use the XYZ classifier.",
+    "No model training or hyperparameter selection occurred.",
+    "The 13 reserve demos are V3 development evidence only."
+  ]
+}

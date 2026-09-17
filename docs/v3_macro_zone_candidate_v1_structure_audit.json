@@ -1,0 +1,217 @@
+{
+  "version": "V3",
+  "candidate": "macro-zone-v1",
+  "status": "STRUCTURALLY_VIABLE",
+  "mapping_frozen": false,
+  "n_macro_zones": 15,
+  "all_multi_place_zones_connected": true,
+  "macro_graph_connected": true,
+  "all_zones_represented": true,
+  "isolated_zones": [],
+  "all_preserved_distinctions_supported": true,
+  "total_fine_semantic_transitions": 20838,
+  "transitions_internalized_by_abstraction": 5479,
+  "internalized_transition_fraction": 0.2629331029849314,
+  "zones": [
+    {
+      "zone": "T_SPAWN",
+      "n_places": 1,
+      "places": [
+        "TSpawn"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 0
+    },
+    {
+      "zone": "MID_ENTRY",
+      "n_places": 2,
+      "places": [
+        "SideAlley",
+        "TopofMid"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 1
+    },
+    {
+      "zone": "A_RAMP",
+      "n_places": 1,
+      "places": [
+        "TRamp"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 0
+    },
+    {
+      "zone": "PALACE",
+      "n_places": 3,
+      "places": [
+        "PalaceAlley",
+        "PalaceInterior",
+        "Scaffolding"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 2
+    },
+    {
+      "zone": "A_SITE_COMPLEX",
+      "n_places": 3,
+      "places": [
+        "BombsiteA",
+        "Stairs",
+        "Jungle"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 2
+    },
+    {
+      "zone": "CONNECTOR",
+      "n_places": 1,
+      "places": [
+        "Connector"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 0
+    },
+    {
+      "zone": "MID",
+      "n_places": 1,
+      "places": [
+        "Middle"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 0
+    },
+    {
+      "zone": "MID_WINDOW",
+      "n_places": 2,
+      "places": [
+        "SnipersNest",
+        "Ladder"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 1
+    },
+    {
+      "zone": "UNDERPASS",
+      "n_places": 1,
+      "places": [
+        "Underpass"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 0
+    },
+    {
+      "zone": "B_SHORT",
+      "n_places": 1,
+      "places": [
+        "Catwalk"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 0
+    },
+    {
+      "zone": "B_LOBBY",
+      "n_places": 2,
+      "places": [
+        "House",
+        "BackAlley"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 1
+    },
+    {
+      "zone": "B_APPS",
+      "n_places": 1,
+      "places": [
+        "Apartments"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 0
+    },
+    {
+      "zone": "B_SITE_COMPLEX",
+      "n_places": 2,
+      "places": [
+        "BombsiteB",
+        "Truck"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 1
+    },
+    {
+      "zone": "MARKET",
+      "n_places": 1,
+      "places": [
+        "Shop"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 0
+    },
+    {
+      "zone": "CT_SPAWN",
+      "n_places": 1,
+      "places": [
+        "CTSpawn"
+      ],
+      "internally_connected": true,
+      "n_strong_internal_edges": 0
+    }
+  ],
+  "preserved_route_distinctions": [
+    {
+      "distinction": "A_RAMP vs PALACE",
+      "supported_by_transition": true,
+      "n_supporting_fine_edges": 2,
+      "supporting_edges": [
+        "PalaceAlley<->TRamp:ROBUST",
+        "PalaceInterior<->TRamp:ROBUST"
+      ]
+    },
+    {
+      "distinction": "MID vs CONNECTOR",
+      "supported_by_transition": true,
+      "n_supporting_fine_edges": 1,
+      "supporting_edges": [
+        "Connector<->Middle:ROBUST"
+      ]
+    },
+    {
+      "distinction": "MID vs B_SHORT",
+      "supported_by_transition": true,
+      "n_supporting_fine_edges": 1,
+      "supporting_edges": [
+        "Catwalk<->Middle:ROBUST"
+      ]
+    },
+    {
+      "distinction": "MID vs UNDERPASS",
+      "supported_by_transition": true,
+      "n_supporting_fine_edges": 1,
+      "supporting_edges": [
+        "Middle<->Underpass:ROBUST"
+      ]
+    },
+    {
+      "distinction": "B_LOBBY vs B_APPS",
+      "supported_by_transition": true,
+      "n_supporting_fine_edges": 1,
+      "supporting_edges": [
+        "Apartments<->BackAlley:ROBUST"
+      ]
+    },
+    {
+      "distinction": "CT_SPAWN vs MARKET",
+      "supported_by_transition": true,
+      "n_supporting_fine_edges": 1,
+      "supporting_edges": [
+        "CTSpawn<->Shop:ROBUST"
+      ]
+    }
+  ],
+  "guardrails": [
+    "Structural viability does not freeze the candidate mapping.",
+    "High transition count does not imply two macro-zones should be merged.",
+    "The final freeze still requires visual/spatial audit.",
+    "V2 D_CONFIRM remains excluded."
+  ]
+}
