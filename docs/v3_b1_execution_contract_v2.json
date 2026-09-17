@@ -1,0 +1,50 @@
+{
+  "version": "V3_B1_EXECUTION_CONTRACT_V2",
+  "status": "FROZEN_BEFORE_SCORING",
+  "supersedes_prescore_attempt": "docs/v3_b1_execution_contract_v1.json",
+  "supersession_reason": "The first pre-score attempt omitted parts of the frozen Gate-1 active-player sampling filter. Its regression guard aborted before any B1 OOF predictions or B1 metrics were produced.",
+  "motion": {
+    "history": "approximately one second earlier causal bomb state",
+    "velocity": "v=(x_t-x_prev)/actual_elapsed_seconds",
+    "projection": "x_hat(t+h)=x_t+h*v",
+    "horizons_seconds": [
+      5,
+      10
+    ],
+    "motion_cache_expected_rows": 14869,
+    "motion_cache_expected_unresolved": 0,
+    "fallback_to_persistence": false
+  },
+  "spatial_resolver": {
+    "algorithm": "scipy.spatial.cKDTree 1-nearest-neighbor",
+    "distance": "raw XYZ Euclidean distance",
+    "fit_data": "training-match player semantic samples only",
+    "heldout_match_samples_forbidden": true,
+    "ground_truth_uses_xyz_resolver": false,
+    "gate1_regression": "13 reserves = 186953 exact samples; 23 places"
+  },
+  "probability_adapter": {
+    "formula": "q=(n_correct_train+1)/(n_train+2)",
+    "predicted_class_probability": "q",
+    "each_other_class_probability": "(1-q)/14",
+    "fit_separately_per_fold_and_horizon": true
+  },
+  "evaluation": {
+    "primary": "multiclass log loss",
+    "secondary": [
+      "accuracy",
+      "macro F1",
+      "multiclass Brier sum_j",
+      "equal-match log loss",
+      "per-zone recall/support",
+      "confidence calibration"
+    ],
+    "top2_accuracy": null,
+    "top2_note": "Undefined for this deterministic probability adapter because all 14 non-predicted classes have exactly tied probability.",
+    "paired_comparator": "frozen B0 OOF predictions",
+    "bootstrap_unit": "match",
+    "bootstrap_repetitions": 20000,
+    "bootstrap_seed": 20260917
+  },
+  "v2_d_confirm_used": false
+}
