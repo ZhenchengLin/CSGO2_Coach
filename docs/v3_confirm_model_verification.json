@@ -1,0 +1,78 @@
+{
+  "verification_name": "V3 confirmation model freeze verification",
+  "verified_utc": "2026-09-17T21:57:00.997794+00:00",
+  "verifier_git_commit": "87808eb4bdbd785ee063df403856d2e62e8ee713",
+  "verifier_script": "scripts/verify_v3_confirm_model_freeze.py",
+  "verifier_script_sha256": "98306f47a945a0a1332f9823d5a46dedbcb01b01960105ac064bbd0c2596edfb",
+  "freeze_record": "docs/v3_confirm_model_freeze.json",
+  "freeze_record_sha256": "65bf09ec3e3cbeaacfb5ff4bb28a504d927fbcc55898b40e1413153ef11dba85",
+  "fit_time_git_commit": "0f7b31e7c0faa5bd7a49dd6a7776bfa0753604dc",
+  "fit_time_fitter_present_in_commit": false,
+  "fit_time_fitter_sha256": "241760fb41ca786117586f1ae8774737d9fea5859110c06f3cc44703fe85c8f4",
+  "currently_committed_fitter_sha256": "241760fb41ca786117586f1ae8774737d9fea5859110c06f3cc44703fe85c8f4",
+  "exact_fit_source_recovered_and_committed": true,
+  "artifact_sha256_verification": "PASS",
+  "B0_recomputation": {
+    "5": {
+      "n": 14869,
+      "correct": 11316,
+      "q": 0.7610113644005111
+    },
+    "10": {
+      "n": 14196,
+      "correct": 8688,
+      "q": 0.6119876038878715
+    }
+  },
+  "B1_recomputation": {
+    "5": {
+      "n": 14869,
+      "correct": 10390,
+      "q": 0.698742518996705,
+      "nn_p95": 502.08344013209563
+    },
+    "10": {
+      "n": 14196,
+      "correct": 7292,
+      "q": 0.5136638963234258,
+      "nn_p95": 1348.5340017068147
+    }
+  },
+  "B2_recomputation": {
+    "5": {
+      "training_rows": 14869,
+      "matrix_shape": [
+        15,
+        15
+      ]
+    },
+    "10": {
+      "training_rows": 14196,
+      "matrix_shape": [
+        15,
+        15
+      ]
+    }
+  },
+  "B3_load_and_inference": {
+    "5": {
+      "rows_checked": 512,
+      "probability_shape": [
+        512,
+        15
+      ],
+      "load_and_predict": "PASS"
+    },
+    "10": {
+      "rows_checked": 512,
+      "probability_shape": [
+        512,
+        15
+      ],
+      "load_and_predict": "PASS"
+    }
+  },
+  "confirmation_data_accessed": false,
+  "confirmation_performance_calculated": false,
+  "overall_status": "PASS"
+}
