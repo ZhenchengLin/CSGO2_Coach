@@ -1,0 +1,143 @@
+{
+  "version": "V3_CONFIRM_ACQUISITION_PROTOCOL_V1",
+  "status": "FROZEN_BEFORE_CONFIRMATION_ACQUISITION",
+  "frozen_utc": "2026-09-17T22:07:35.017874+00:00",
+  "parent_preconfirmation_model_freeze_commit": "7e5bf6d5249ce721d843f6364f3d52d5a2200159",
+  "research_role": {
+    "dataset_name": "D_V3_CONFIRM",
+    "purpose": "Independent later-period confirmation of the frozen V3 forecasting candidate.",
+    "development_use": false,
+    "hyperparameter_tuning_use": false,
+    "feature_selection_use": false,
+    "representation_design_use": false
+  },
+  "temporal_boundary": {
+    "latest_D_V3_DEV_match_date": "2026-09-15",
+    "confirmation_match_date_rule": "match_date > 2026-09-15",
+    "earliest_allowed_match_date": "2026-09-16",
+    "same_day_as_latest_development_allowed": false
+  },
+  "domain": {
+    "game": "Counter-Strike 2",
+    "map": "de_mirage",
+    "prediction_unit": "one eligible de_mirage demo",
+    "tick_rate_required": 64
+  },
+  "sample_size": {
+    "required_final_eligible_matches": 20,
+    "initial_candidate_queue_capacity": 25,
+    "technical_failure_buffer": 5,
+    "formal_power_calculation_used": false,
+    "interpretation": "Storage-aware predeclared independent replication sample. Statistical reporting must include match-level uncertainty rather than claiming guaranteed power."
+  },
+  "candidate_enumeration": {
+    "selection_must_be_frozen_before_model_scoring": true,
+    "source_selection_must_not_depend_on_model_results": true,
+    "team_event_region_filtering": "FORBIDDEN",
+    "performance_based_candidate_selection": "FORBIDDEN",
+    "class_balance_based_candidate_selection": "FORBIDDEN",
+    "preferred_public_source": "HLTV match/demo metadata pipeline",
+    "required_preacquisition_fields": [
+      "candidate_rank",
+      "match_date",
+      "event",
+      "team1",
+      "team2",
+      "source",
+      "source_match_id",
+      "source_url"
+    ],
+    "ordering": [
+      "match_date ascending",
+      "source_match_id ascending"
+    ],
+    "ordering_note": "Ordering is deterministic and must not be changed after raw-demo behavior or model performance is observed."
+  },
+  "eligibility": {
+    "required": [
+      "match_date > 2026-09-15",
+      "map == de_mirage",
+      "raw demo acquired successfully",
+      "raw demo is readable and non-corrupt",
+      "parser completes under the frozen V3 environment",
+      "tick rate is 64",
+      "required V3 telemetry fields are available",
+      "demo SHA256 is unique within D_V3_CONFIRM candidates",
+      "demo SHA256 does not overlap D_V3_DEV",
+      "demo SHA256 does not overlap V2 D_CONFIRM",
+      "frozen target/feature pipeline produces at least one eligible +5s row",
+      "frozen target/feature pipeline produces at least one eligible +10s row"
+    ],
+    "allowed_exclusion_reasons": [
+      "DOWNLOAD_FAILURE",
+      "ARCHIVE_CORRUPT",
+      "DEMO_CORRUPT",
+      "WRONG_MAP",
+      "DUPLICATE_SHA",
+      "DEVELOPMENT_SHA_OVERLAP",
+      "V2_CONFIRM_SHA_OVERLAP",
+      "PARSER_FAILURE",
+      "WRONG_TICK_RATE",
+      "REQUIRED_TELEMETRY_UNAVAILABLE",
+      "ZERO_ELIGIBLE_PLUS5_ROWS",
+      "ZERO_ELIGIBLE_PLUS10_ROWS"
+    ],
+    "forbidden_exclusion_reasons": [
+      "B3 performs poorly",
+      "B2 performs better",
+      "unexpected model predictions",
+      "undesirable class distribution",
+      "rare zones",
+      "unexpected tactical style",
+      "team identity",
+      "tournament identity",
+      "region identity"
+    ],
+    "partial_round_or_horizon_exclusions": "Use only the already frozen V3 target contract. A match is not manually excluded merely because some rounds/horizons are excluded by that contract."
+  },
+  "selection_rule": {
+    "final_manifest_rule": "Take the first 20 technically eligible candidates in frozen candidate_rank order.",
+    "eligible_earlier_candidate_may_be_skipped": false,
+    "manual_substitution": false,
+    "replacement_after_manifest_freeze": false,
+    "replacement_after_model_prediction": false,
+    "replacement_after_metric_calculation": false
+  },
+  "initial_queue_shortfall_rule": {
+    "condition": "Fewer than 20 eligible demos remain after the initial 25-candidate queue is exhausted.",
+    "action": "Stop. Do not silently append candidates. Create and commit an explicit acquisition protocol amendment before acquiring any additional candidates.",
+    "model_scoring_before_amendment": false
+  },
+  "acquisition_execution": {
+    "sequential_download_allowed": true,
+    "stop_once_20_eligible_identified": true,
+    "all_25_raw_demos_need_not_be_downloaded": true,
+    "archive_cleanup_after_success": true,
+    "non_mirage_cleanup_after_success": true,
+    "keep_selected_mirage_demos": true
+  },
+  "manifest_freeze": {
+    "output": "docs/v3_confirm_manifest.csv",
+    "required_matches": 20,
+    "include_sha256": true,
+    "must_be_committed_before_prediction": true,
+    "overwrite_existing_manifest": false,
+    "after_commit": "The manifest permanently defines D_V3_CONFIRM for the V3 confirmation claim."
+  },
+  "anti_leakage": {
+    "V2_D_CONFIRM": "FORBIDDEN",
+    "D_V3_DEV": "FORBIDDEN_AS_CONFIRMATION",
+    "confirmation_labels_before_manifest_freeze": "NOT_FOR_MODEL_SELECTION",
+    "confirmation_model_predictions_before_manifest_freeze": "FORBIDDEN",
+    "confirmation_metrics_before_manifest_freeze": "FORBIDDEN"
+  },
+  "frozen_evidence_sha256": {
+    "v3_confirm_model_freeze": "65bf09ec3e3cbeaacfb5ff4bb28a504d927fbcc55898b40e1413153ef11dba85",
+    "v3_confirm_model_verification": "126c354e72c2a575607891e773d0f77eef93425776e0bf65cf753b559af3b045",
+    "v3_confirm_fit_provenance": "5de163e798a14b5d641da821eae3cb15643a3408a2fe78a49d54dabf759c53ee",
+    "v3_dev_manifest": "1aa9dbc30edca67b0e3dc32955c31fe51bc0f12f33361a4a0b2a355c7d510bad",
+    "v2_confirm_manifest": "95b1a29b455c37c417c0220e4998debcd1a25727f8d32bbc60baafe1e9106a9b",
+    "v3_dev_acquisition_protocol_v2": "4d8f55e279fa2fe902dc35a7731b3fa751fadaf779269dd7347ff8542504ffa2"
+  },
+  "next_action": "Construct and freeze the chronological D_V3_CONFIRM candidate queue before model prediction or confirmation scoring."
+}
