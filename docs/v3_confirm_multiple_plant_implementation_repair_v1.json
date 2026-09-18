@@ -1,0 +1,59 @@
+{
+  "version": "v1",
+  "status": "FROZEN",
+  "artifact": "V3 confirmation multiple-valid-plant implementation repair",
+  "trigger": {
+    "candidate_rank": 14,
+    "demo_filename": "2026-09-17_ninjas-in-pyjamas_vs_m80_mirage.dem",
+    "demo_sha256": "711047f6bf2660943d4e3d46070cccfa1c01ed5c52c0d2aa35d67e75bfec8e9a",
+    "failure": "Multiple valid plants in round 14",
+    "round_num": 14,
+    "observed_valid_interval_plant_ticks": [
+      103527,
+      106893
+    ],
+    "observed_bombsite": "BombsiteB"
+  },
+  "frozen_contract_preserved": {
+    "canonical_interval_rule": "round.start <= plant_tick <= round.end",
+    "freeze_end_rule_added": false,
+    "plant_event_selected_post_hoc": false,
+    "demo_round_bomb_site_used_as_truth": false
+  },
+  "repair_behavior": {
+    "multiple_interval_valid_plants": "Remove provisional canonical lookup entry and mark the round PLANT_LABEL_UNRESOLVED.",
+    "sticky_ambiguity": "Once a round is ambiguous, later plant events cannot restore a canonical lookup entry.",
+    "scope": "Ambiguous round only; the match remains usable if other rounds provide eligible targets."
+  },
+  "scientific_boundary": {
+    "model_predictions_viewed_before_repair": false,
+    "confirmation_metrics_viewed_before_repair": false,
+    "class_distribution_used_for_repair": false,
+    "candidate_selection_changed": false
+  },
+  "development_regression": {
+    "script": "scripts/freeze_v3_dev_data_role_and_regression.py",
+    "return_code": 0,
+    "candidate_horizon_rows": 7432,
+    "valid_rows": 6964,
+    "excluded_rows": 468,
+    "valid_plus5": 3564,
+    "valid_plus10": 3400,
+    "after_round_end_plus5": 152,
+    "after_round_end_plus10": 316,
+    "round_exclusions_missing_freeze_end": 4,
+    "drop_events_total": 657,
+    "drop_events_resolved": 657,
+    "result": "PASS"
+  },
+  "rank14_reaudit": {
+    "return_code": 0,
+    "technical_status": "ELIGIBLE",
+    "valid_plus5": 387,
+    "valid_plus10": 378,
+    "drop_unresolved": 0,
+    "model_prediction": false,
+    "confirmation_metric": false,
+    "class_distribution_reported": false
+  }
+}

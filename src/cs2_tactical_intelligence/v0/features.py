@@ -147,6 +147,7 @@ def build_plant_lookup(demo):
 
     lookup = {}
     issues = []
+    ambiguous_plant_rounds = set()
 
     rounds = {
         int(row["round_num"]): row
@@ -211,11 +212,34 @@ def build_plant_lookup(demo):
             })
             continue
 
+        if round_num in ambiguous_plant_rounds:
+            continue
+
         if round_num in lookup:
-            raise ValueError(
-                "Multiple valid plants in "
-                f"round {round_num}"
+            # Multiple plant events satisfy the already-frozen
+            # canonical interval rule for the same round.
+            #
+            # Do not choose one post hoc. The canonical plant
+            # label is ambiguous, so remove any provisional
+            # lookup entry and mark the round unresolved.
+            lookup.pop(
+                round_num,
+                None,
             )
+
+            ambiguous_plant_rounds.add(
+                round_num
+            )
+
+            issues.append({
+                "round_num":
+                    round_num,
+
+                "reason":
+                    "PLANT_LABEL_UNRESOLVED",
+            })
+
+            continue
 
         if row["bombsite"] == "BombsiteA":
             label = "A_PLANT"
