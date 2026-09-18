@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 7,
+  "match_date": "2026-09-16",
+  "match_id": "2398020",
+  "team1": "drama",
+  "team2": "mellren",
+  "demo_filename": "2026-09-16_drama_vs_mellren_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-16_drama_vs_mellren_mirage.dem",
+  "audited_utc": "2026-09-18T03:56:51.856818+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "dae4b2dbb459b5e294c3047c12f0d4074395da6e48c7498376f3437bf91fb154",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 155226,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 256,
+    "10": 245
+  },
+  "drop_semantics": {
+    "events": 47,
+    "resolved_exact_tick": 47,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
