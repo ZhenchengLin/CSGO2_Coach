@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 10,
+  "match_date": "2026-09-16",
+  "match_id": "2398332",
+  "team1": "xdm",
+  "team2": "patsanvision",
+  "demo_filename": "2026-09-16_xdm_vs_patsanvision_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-16_xdm_vs_patsanvision_mirage.dem",
+  "audited_utc": "2026-09-18T04:03:57.975288+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "67304c2ff492aadc78f47a7670cc2b230e374e7666d88902f77c6c19fef3bd8b",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 191559,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 313,
+    "10": 297
+  },
+  "drop_semantics": {
+    "events": 73,
+    "resolved_exact_tick": 73,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
