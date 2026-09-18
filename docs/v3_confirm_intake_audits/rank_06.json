@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 6,
+  "match_date": "2026-09-16",
+  "match_id": "2397972",
+  "team1": "trafficpills",
+  "team2": "kamui",
+  "demo_filename": "2026-09-16_trafficpills_vs_kamui_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-16_trafficpills_vs_kamui_mirage.dem",
+  "audited_utc": "2026-09-18T03:54:28.464640+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "8cd706014dce968603bd13465266a92d10ebcdfc5ead897def39a8935dd3b466",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 275098,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 482,
+    "10": 461
+  },
+  "drop_semantics": {
+    "events": 82,
+    "resolved_exact_tick": 82,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
