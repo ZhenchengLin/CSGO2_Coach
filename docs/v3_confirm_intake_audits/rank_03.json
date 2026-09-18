@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 3,
+  "match_date": "2026-09-16",
+  "match_id": "2397815",
+  "team1": "ex-rustec",
+  "team2": "nexus",
+  "demo_filename": "2026-09-16_ex-rustec_vs_nexus_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-16_ex-rustec_vs_nexus_mirage.dem",
+  "audited_utc": "2026-09-18T03:48:55.907039+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "ad92426e32976257f8f3b8a7556806abb4ea0ce8ffdb85c388f9cc6dde2b73ac",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 173276,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 311,
+    "10": 297
+  },
+  "drop_semantics": {
+    "events": 57,
+    "resolved_exact_tick": 57,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
