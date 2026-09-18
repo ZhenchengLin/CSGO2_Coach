@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 17,
+  "match_date": "2026-09-17",
+  "match_id": "2397929",
+  "team1": "overtake-sector",
+  "team2": "nutorious",
+  "demo_filename": "2026-09-17_overtake-sector_vs_nutorious_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-17_overtake-sector_vs_nutorious_mirage.dem",
+  "audited_utc": "2026-09-18T05:23:33.437464+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "1391693df6977e99e39af1a243d9f5609a9e901308f32dc941d1ba8562e14de8",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 139050,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 170,
+    "10": 163
+  },
+  "drop_semantics": {
+    "events": 35,
+    "resolved_exact_tick": 35,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
