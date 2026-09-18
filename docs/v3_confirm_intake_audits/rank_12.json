@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 12,
+  "match_date": "2026-09-17",
+  "match_id": "2397675",
+  "team1": "brute",
+  "team2": "quazar",
+  "demo_filename": "2026-09-17_brute_vs_quazar_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-17_brute_vs_quazar_mirage.dem",
+  "audited_utc": "2026-09-18T04:07:55.424543+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "1bac25d1b6dbd3b82a7fcfc41e1347e75cd9865137ccdf7f359130256434e47a",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 174435,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 305,
+    "10": 295
+  },
+  "drop_semantics": {
+    "events": 57,
+    "resolved_exact_tick": 57,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
