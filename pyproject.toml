@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "awpy>=2.0.2",
+    "curl-cffi>=0.16.3",
     "scikit-learn>=1.9.0",
     "xgboost>=3.4.1",
 ]

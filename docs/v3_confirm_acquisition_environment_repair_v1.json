@@ -1,0 +1,29 @@
+{
+  "record": "V3 confirmation acquisition environment repair",
+  "status": "RESOLVED_BEFORE_CONFIRMATION_ACQUISITION",
+  "created_utc": "2026-09-18T01:22:10.024596+00:00",
+  "issue": {
+    "dependency": "curl-cffi",
+    "import_name": "curl_cffi",
+    "failure": "ModuleNotFoundError during downloader import",
+    "failed_attempts_reached_acquisition_logic": false,
+    "confirmation_demo_files_created": false
+  },
+  "repair": {
+    "dependency_declared_in_pyproject": true,
+    "dependency_locked_by_uv": true,
+    "resolved_version": "0.16.3",
+    "scientific_protocol_changed": false,
+    "candidate_queue_changed": false,
+    "model_or_metric_code_changed": false
+  },
+  "identity": {
+    "pyproject_sha256": "c2f4cc043afe53dbd1f14516523c41132ada8b21fde6b408f430156d1058a3ba",
+    "uv_lock_sha256": "d420bee55b325261f495bbffb7b377dea6258b1917cf2747132f3f2d87e673eb"
+  },
+  "scientific_boundary": {
+    "D_V3_CONFIRM_acquired": false,
+    "D_V3_CONFIRM_predictions": "NOT_RUN",
+    "D_V3_CONFIRM_metrics": "NOT_CALCULATED"
+  }
+}
