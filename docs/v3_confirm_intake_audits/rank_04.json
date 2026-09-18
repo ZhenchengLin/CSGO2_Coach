@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 4,
+  "match_date": "2026-09-16",
+  "match_id": "2397970",
+  "team1": "teletubisie",
+  "team2": "ex-zero-tenacity",
+  "demo_filename": "2026-09-16_teletubisie_vs_ex-zero-tenacity_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-16_teletubisie_vs_ex-zero-tenacity_mirage.dem",
+  "audited_utc": "2026-09-18T03:50:38.067664+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "dc211d2525f5f63ca5771fda5e2385d54b770d517ee3894f679197fa0797512c",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 133830,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 193,
+    "10": 185
+  },
+  "drop_semantics": {
+    "events": 35,
+    "resolved_exact_tick": 35,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
