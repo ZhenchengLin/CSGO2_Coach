@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 20,
+  "match_date": "2026-09-17",
+  "match_id": "2398143",
+  "team1": "nice-try",
+  "team2": "faze-up-next",
+  "demo_filename": "2026-09-17_nice-try_vs_faze-up-next_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-17_nice-try_vs_faze-up-next_mirage.dem",
+  "audited_utc": "2026-09-18T05:28:35.196156+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "89ac9ee52be5460422d28965ba1d23a90407d1d1edd5572525a2ee4801e8f528",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 124887,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 189,
+    "10": 177
+  },
+  "drop_semantics": {
+    "events": 36,
+    "resolved_exact_tick": 36,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
