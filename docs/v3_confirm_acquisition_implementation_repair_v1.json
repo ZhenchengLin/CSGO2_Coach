@@ -1,0 +1,39 @@
+{
+  "record": "V3 confirmation acquisition implementation repair",
+  "status": "REPAIRED_BEFORE_CONFIRMATION_ACQUISITION",
+  "created_utc": "2026-09-18T00:21:27.555926+00:00",
+  "parent_commit": "3c36136ceaff8ef4011dd56572c002478dc70264",
+  "issue": {
+    "description": "The first committed confirmation downloader was forked from the 20-match V3 development downloader. It retained a len(queue)==20 guard even though the frozen confirmation queue contains 25 candidates.",
+    "effect_if_run": "The script would fail before downloading because the frozen queue contains 25 rows.",
+    "confirmation_data_acquired_before_detection": false
+  },
+  "repair": {
+    "protocol_changed": false,
+    "queue_changed": false,
+    "required_candidate_rank_argument": true,
+    "one_candidate_per_invocation": true,
+    "allowed_candidate_rank_range": [
+      1,
+      25
+    ],
+    "full_queue_sweep_without_explicit_rank": false,
+    "confirmation_model_prediction_added": false,
+    "confirmation_metric_calculation_added": false
+  },
+  "pre_repair_state": {
+    "confirmation_demo_files": 0,
+    "confirmation_staging_files": 0
+  },
+  "identity": {
+    "acquisition_protocol_sha256": "d139d533630d3d5f60c393bbf2b4eeea8a869dbe21586f6a62a0ad4d88eb633d",
+    "candidate_queue_sha256": "cc1fd6bcb2969aa5062b06fd5a3cb1c80e47513d53576a9bc663b06d14c3bfec",
+    "repaired_downloader_sha256": "f6170522add1d48fd13922764238f707923607d1704c36e09dc90a9ef348913d"
+  },
+  "scientific_boundary": {
+    "D_V3_CONFIRM_model_predictions": "NOT_RUN",
+    "D_V3_CONFIRM_metrics": "NOT_CALCULATED",
+    "development_models_changed": false,
+    "confirmation_selection_rule_changed": false
+  }
+}

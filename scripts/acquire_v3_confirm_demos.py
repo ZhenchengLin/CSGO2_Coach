@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import argparse
 import csv
 import hashlib
 import re
@@ -394,12 +395,68 @@ with QUEUE.open(
     )
 
 
-if len(queue) != 20:
+if len(queue) != 25:
 
     raise RuntimeError(
-        "Expected exactly 20 fresh matches "
-        f"in queue, found {len(queue)}."
+        "Expected exactly 25 frozen confirmation "
+        f"candidates, found {len(queue)}."
     )
+
+
+ranks = [
+    int(row["candidate_rank"])
+    for row in queue
+]
+
+if ranks != list(range(1, 26)):
+
+    raise RuntimeError(
+        "Confirmation candidate ranks must be "
+        "exactly 1..25 in frozen order."
+    )
+
+
+parser = argparse.ArgumentParser(
+    description=(
+        "Acquire exactly one frozen V3 confirmation "
+        "candidate by candidate_rank."
+    )
+)
+
+parser.add_argument(
+    "--candidate-rank",
+    type=int,
+    required=True,
+    help="Frozen confirmation candidate rank 1..25.",
+)
+
+args = parser.parse_args()
+
+
+if not 1 <= args.candidate_rank <= 25:
+
+    raise RuntimeError(
+        "--candidate-rank must be between 1 and 25."
+    )
+
+
+selected = [
+    row
+    for row in queue
+    if int(row["candidate_rank"])
+    == args.candidate_rank
+]
+
+
+if len(selected) != 1:
+
+    raise RuntimeError(
+        "Candidate rank did not resolve to exactly "
+        "one frozen queue row."
+    )
+
+
+queue = selected
 
 
 # ============================================================
@@ -421,7 +478,7 @@ already_present = []
 
 
 print("=" * 100)
-print("V3 FRESH DEMO ACQUISITION")
+print("V3 CONFIRM DEMO ACQUISITION")
 print("=" * 100)
 
 print(
@@ -482,7 +539,7 @@ for index, row in enumerate(
 
     print()
     print(
-        f"[{index:02d}/{len(queue):02d}]",
+        f"[rank {int(row['candidate_rank']):02d}/25]",
         dest_name,
     )
 
@@ -794,7 +851,7 @@ final_demos = sorted(
 
 print()
 print("=" * 100)
-print("V3 FRESH ACQUISITION SUMMARY")
+print("V3 CONFIRM ACQUISITION SUMMARY")
 print("=" * 100)
 
 print(
@@ -819,7 +876,7 @@ print(
 )
 
 print(
-    "Total .dem now in v3_incoming:",
+    "Total .dem now in v3_confirm_incoming:",
     len(
         final_demos
     ),
