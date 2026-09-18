@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 9,
+  "match_date": "2026-09-16",
+  "match_id": "2398280",
+  "team1": "olympus",
+  "team2": "bucketjonsboys",
+  "demo_filename": "2026-09-16_olympus_vs_bucketjonsboys_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-16_olympus_vs_bucketjonsboys_mirage.dem",
+  "audited_utc": "2026-09-18T04:01:43.189648+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "700ebf535b019e58dfe6328229099c9cd2d5d61972ce7157b0265c9540a1745b",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 160360,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 241,
+    "10": 233
+  },
+  "drop_semantics": {
+    "events": 29,
+    "resolved_exact_tick": 29,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
