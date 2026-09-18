@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 1,
+  "match_date": "2026-09-16",
+  "match_id": "2397673",
+  "team1": "quazar",
+  "team2": "ex-rustec",
+  "demo_filename": "2026-09-16_quazar_vs_ex-rustec_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-16_quazar_vs_ex-rustec_mirage.dem",
+  "audited_utc": "2026-09-18T01:48:18.180444+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "78a2cd0796f3c3f4d97c7f87165962c2e6bdeca4690d8e1fe894fc54c730a0b5",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 198252,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 332,
+    "10": 320
+  },
+  "drop_semantics": {
+    "events": 62,
+    "resolved_exact_tick": 62,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
