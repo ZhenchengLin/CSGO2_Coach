@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 14,
+  "match_date": "2026-09-17",
+  "match_id": "2397886",
+  "team1": "ninjas-in-pyjamas",
+  "team2": "m80",
+  "demo_filename": "2026-09-17_ninjas-in-pyjamas_vs_m80_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-17_ninjas-in-pyjamas_vs_m80_mirage.dem",
+  "audited_utc": "2026-09-18T05:08:23.075146+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "711047f6bf2660943d4e3d46070cccfa1c01ed5c52c0d2aa35d67e75bfec8e9a",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 249137,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 387,
+    "10": 378
+  },
+  "drop_semantics": {
+    "events": 62,
+    "resolved_exact_tick": 62,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
