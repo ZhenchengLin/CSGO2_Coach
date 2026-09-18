@@ -1,0 +1,39 @@
+{
+  "candidate_rank": 5,
+  "match_date": "2026-09-16",
+  "match_id": "2397971",
+  "team1": "vexar",
+  "team2": "illyrians",
+  "demo_filename": "2026-09-16_vexar_vs_illyrians_mirage.dem",
+  "demo_path": "data/raw/v3_confirm_incoming/2026-09-16_vexar_vs_illyrians_mirage.dem",
+  "audited_utc": "2026-09-18T03:52:29.050263+00:00",
+  "technical_status": "ELIGIBLE",
+  "technical_exclusion_reason": null,
+  "model_prediction_performed": false,
+  "confirmation_metric_calculated": false,
+  "class_distribution_reported": false,
+  "demo_sha256": "d67a455631a24daa8cbc7cd82ef71f71a4e76c263c2ebb940b45d594674fe0d6",
+  "sha_overlap_check": "PASS",
+  "map_name": "de_mirage",
+  "configured_tickrate": 64.0,
+  "measured_raw_ticks_per_sec": 64.0,
+  "raw_clock_intervals": 134283,
+  "raw_tick_clock_ok": true,
+  "missing_required_tick_columns": [],
+  "parser_and_required_telemetry": "PASS",
+  "valid_rows_by_horizon": {
+    "5": 221,
+    "10": 209
+  },
+  "drop_semantics": {
+    "events": 39,
+    "resolved_exact_tick": 39,
+    "unresolved": 0
+  },
+  "scientific_boundary": {
+    "model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "class_distribution_reported": false,
+    "target_distribution_used_for_selection": false
+  }
+}
