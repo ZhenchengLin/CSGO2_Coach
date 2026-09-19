@@ -1,0 +1,101 @@
+{
+  "version": "V4_A_MOVEMENT_DESTINATION_ANALYSIS_V1",
+  "status": "EXPLORATORY_DEVELOPMENT_ANALYSIS",
+  "research_question": "Does the Team Context-associated Log Loss change arise from movement-event probability estimation, conditional destination probabilities, or both?",
+  "definitions": {
+    "moving": "Future target macro-zone differs from the current macro-zone.",
+    "movement_probability": "1 - P(future zone = current zone | X_t)",
+    "conditional_destination_probability": "P(future target zone | X_t) / P(moving | X_t), evaluated on actual Moving rows.",
+    "moving_log_loss_identity": "Multiclass LL = movement-event binary LL + conditional-destination LL."
+  },
+  "source_experiment_sha256": "71a04089710ea5bbedfbc17bc264e0e20afbc5e49b581688a45ce7012463a1fc",
+  "source_gate5a_sha256": "49e7b635294aea9dfe34939ac7b5f1c284c07d1887bfbd1c05f90e6e648f16cd",
+  "source_oof_sha256": "e3b6d7d8f1c6e7a4187f56c4fd7fad43c526e5a2dfb02554a0fd1e34590bf7de",
+  "source_model_protocol_sha256": "6051294e673e970430a22ef077b2550a38406bb227a9dbc7279a05c1944863a3",
+  "analysis_scope": {
+    "development_matches": 53,
+    "target_rows": 29065,
+    "horizons_sec": [
+      5,
+      10
+    ],
+    "new_models_trained": false,
+    "confirmation_data_used": false
+  },
+  "by_horizon": {
+    "5": {
+      "movement_event_all_rows": {
+        "rows": 14869,
+        "moving_rows": 3553,
+        "staying_rows": 11316,
+        "moving_prevalence": 0.23895352747326654,
+        "control_binary_log_loss": 0.37053797929910376,
+        "candidate_binary_log_loss": 0.36173131012690346,
+        "candidate_minus_control_binary_log_loss": -0.00880666917220027,
+        "control_binary_brier": 0.11550962622939734,
+        "candidate_binary_brier": 0.11249718508559667,
+        "candidate_minus_control_binary_brier": -0.003012441143800662
+      },
+      "moving_rows_decomposition": {
+        "moving_rows": 3553,
+        "control_movement_event_ll": 0.8884419151304874,
+        "candidate_movement_event_ll": 0.8599737105368211,
+        "movement_event_delta": -0.028468204593666287,
+        "control_conditional_destination_ll": 0.5305208021576187,
+        "candidate_conditional_destination_ll": 0.5079904003419766,
+        "conditional_destination_delta": -0.022530401815642,
+        "original_moving_multiclass_delta": -0.0509986064093083,
+        "decomposition_reconstruction": "PASS"
+      },
+      "staying_rows": {
+        "rows": 11316,
+        "control_binary_log_loss": 0.20792639534639012,
+        "candidate_binary_log_loss": 0.20529305909681883,
+        "candidate_minus_control_binary_log_loss": -0.0026333362495713575
+      },
+      "original_overall_multiclass_delta": -0.014190388161438014,
+      "reconstructed_overall_multiclass_delta": -0.014190388161438014
+    },
+    "10": {
+      "movement_event_all_rows": {
+        "rows": 14196,
+        "moving_rows": 5508,
+        "staying_rows": 8688,
+        "moving_prevalence": 0.3879966187658495,
+        "control_binary_log_loss": 0.5046911289568061,
+        "candidate_binary_log_loss": 0.4900542061753601,
+        "candidate_minus_control_binary_log_loss": -0.014636922781446017,
+        "control_binary_brier": 0.16745611072256153,
+        "candidate_binary_brier": 0.16166327731431054,
+        "candidate_minus_control_binary_brier": -0.005792833408250963
+      },
+      "moving_rows_decomposition": {
+        "moving_rows": 5508,
+        "control_movement_event_ll": 0.6737627090958661,
+        "candidate_movement_event_ll": 0.6482066885881568,
+        "movement_event_delta": -0.025556020507709273,
+        "control_conditional_destination_ll": 0.9065635317410026,
+        "candidate_conditional_destination_ll": 0.8633462934575538,
+        "conditional_destination_delta": -0.0432172382834488,
+        "original_moving_multiclass_delta": -0.06877325879115806,
+        "decomposition_reconstruction": "PASS"
+      },
+      "staying_rows": {
+        "rows": 8688,
+        "control_binary_log_loss": 0.3975034835371535,
+        "candidate_binary_log_loss": 0.38978902740813126,
+        "candidate_minus_control_binary_log_loss": -0.0077144561290222145
+      },
+      "original_overall_multiclass_delta": -0.03140506510782218,
+      "reconstructed_overall_multiclass_delta": -0.03140506510782218
+    }
+  },
+  "limitations": [
+    "This is a post-experiment development analysis.",
+    "Moving and Staying are defined using future target labels only for evaluation.",
+    "Conditional-destination scores are calculated only on observations where the bomb actually changes macro-zone.",
+    "The movement-event probability measures a different future macro-zone, not arbitrary physical movement or a tactical decision.",
+    "Observed probability changes do not independently establish causal effects of any individual player or tactical behavior.",
+    "Development results do not replace fresh independent V4 confirmation."
+  ]
+}
