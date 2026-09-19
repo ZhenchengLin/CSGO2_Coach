@@ -1,0 +1,1289 @@
+{
+  "version": "V4_A_DEVELOPMENT_ERROR_ANALYSIS_V1",
+  "status": "EXPLORATORY_DEVELOPMENT_ANALYSIS",
+  "research_questions": [
+    "Is the log-loss change concentrated in Staying or Moving observations?",
+    "How does the paired log-loss difference vary across the 15 target macro-zones?",
+    "How are match-level paired differences distributed across the 53 development matches?"
+  ],
+  "source_experiment": "docs/v4_a_development_oof_results_v1.json",
+  "source_experiment_sha256": "71a04089710ea5bbedfbc17bc264e0e20afbc5e49b581688a45ce7012463a1fc",
+  "source_oof_sha256": "e3b6d7d8f1c6e7a4187f56c4fd7fad43c526e5a2dfb02554a0fd1e34590bf7de",
+  "model_experiment_protocol_sha256": "6051294e673e970430a22ef077b2550a38406bb227a9dbc7279a05c1944863a3",
+  "analysis_scope": {
+    "development_matches": 53,
+    "target_rows": 29065,
+    "horizons_sec": [
+      5,
+      10
+    ],
+    "new_models_trained": false,
+    "new_model_predictions_generated": false,
+    "confirmation_data_used": false
+  },
+  "by_horizon": {
+    "5": {
+      "overall": {
+        "rows": 14869,
+        "matches": 53,
+        "control_log_loss": 0.4973077963726136,
+        "candidate_log_loss": 0.48311740821117555,
+        "candidate_minus_control_log_loss": -0.014190388161438028,
+        "control_accuracy": 0.8190866904297531,
+        "candidate_accuracy": 0.8223821373327056,
+        "control_brier": 0.2595875069059562,
+        "candidate_brier": 0.25268249880586197
+      },
+      "staying": {
+        "rows": 11316,
+        "matches": 53,
+        "control_log_loss": 0.20792639534639012,
+        "candidate_log_loss": 0.20529305909681878,
+        "candidate_minus_control_log_loss": -0.0026333362495713497,
+        "control_accuracy": 0.9545775892541534,
+        "candidate_accuracy": 0.9528985507246377,
+        "control_brier": 0.08930277290075962,
+        "candidate_brier": 0.08764931957765923
+      },
+      "moving": {
+        "rows": 3553,
+        "matches": 53,
+        "control_log_loss": 1.4189627172881063,
+        "candidate_log_loss": 1.3679641108787977,
+        "candidate_minus_control_log_loss": -0.050998606409308644,
+        "control_accuracy": 0.3875598086124402,
+        "candidate_accuracy": 0.40669856459330145,
+        "control_brier": 0.8019297669686649,
+        "candidate_brier": 0.7782990077127976
+      },
+      "per_target_zone": [
+        {
+          "rows": 1467,
+          "matches": 53,
+          "control_log_loss": 0.6157285024114573,
+          "candidate_log_loss": 0.600667177477048,
+          "candidate_minus_control_log_loss": -0.01506132493440926,
+          "control_accuracy": 0.7920927062031357,
+          "candidate_accuracy": 0.792774369461486,
+          "control_brier": 0.3120673735351897,
+          "candidate_brier": 0.3100739213485473,
+          "zone": "T_SPAWN",
+          "target_class_index": 0,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 3775,
+          "matches": 53,
+          "control_log_loss": 0.26998491647703504,
+          "candidate_log_loss": 0.26030026089176533,
+          "candidate_minus_control_log_loss": -0.009684655585269708,
+          "control_accuracy": 0.9210596026490067,
+          "candidate_accuracy": 0.92158940397351,
+          "control_brier": 0.1307132043103354,
+          "candidate_brier": 0.12460442350130989,
+          "zone": "MID_ENTRY",
+          "target_class_index": 1,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 577,
+          "matches": 53,
+          "control_log_loss": 1.2451462998429752,
+          "candidate_log_loss": 1.1886683853852518,
+          "candidate_minus_control_log_loss": -0.05647791445772343,
+          "control_accuracy": 0.4038128249566724,
+          "candidate_accuracy": 0.4055459272097054,
+          "control_brier": 0.7763212337254792,
+          "candidate_brier": 0.7444775301088349,
+          "zone": "A_RAMP",
+          "target_class_index": 2,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 2367,
+          "matches": 53,
+          "control_log_loss": 0.4240031971238521,
+          "candidate_log_loss": 0.41884321434962735,
+          "candidate_minus_control_log_loss": -0.005159982774224747,
+          "control_accuracy": 0.8597380650612589,
+          "candidate_accuracy": 0.8559357836924377,
+          "control_brier": 0.22178340679673259,
+          "candidate_brier": 0.21983451092502573,
+          "zone": "PALACE",
+          "target_class_index": 3,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 1707,
+          "matches": 53,
+          "control_log_loss": 0.3352780089433118,
+          "candidate_log_loss": 0.3229426869090557,
+          "candidate_minus_control_log_loss": -0.01233532203425608,
+          "control_accuracy": 0.8582308142940832,
+          "candidate_accuracy": 0.8658465143526655,
+          "control_brier": 0.17874431564460722,
+          "candidate_brier": 0.1710444522307317,
+          "zone": "A_SITE_COMPLEX",
+          "target_class_index": 4,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 151,
+          "matches": 43,
+          "control_log_loss": 1.4330777319348558,
+          "candidate_log_loss": 1.403806507680138,
+          "candidate_minus_control_log_loss": -0.02927122425471773,
+          "control_accuracy": 0.32450331125827814,
+          "candidate_accuracy": 0.3443708609271523,
+          "control_brier": 0.783965444096867,
+          "candidate_brier": 0.7721083379838415,
+          "zone": "CONNECTOR",
+          "target_class_index": 5,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 647,
+          "matches": 52,
+          "control_log_loss": 0.8359391960731737,
+          "candidate_log_loss": 0.8156025854203455,
+          "candidate_minus_control_log_loss": -0.020336610652828213,
+          "control_accuracy": 0.6986089644513137,
+          "candidate_accuracy": 0.7063369397217929,
+          "control_brier": 0.4402514273572064,
+          "candidate_brier": 0.4340030924332222,
+          "zone": "MID",
+          "target_class_index": 6,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 9,
+          "matches": 4,
+          "control_log_loss": 6.900182564120147,
+          "candidate_log_loss": 6.807819607334296,
+          "candidate_minus_control_log_loss": -0.09236295678585105,
+          "control_accuracy": 0.0,
+          "candidate_accuracy": 0.0,
+          "control_brier": 1.309552519346398,
+          "candidate_brier": 1.2808811012674697,
+          "zone": "MID_WINDOW",
+          "target_class_index": 7,
+          "interpretation_warning": "Low support; descriptive only."
+        },
+        {
+          "rows": 266,
+          "matches": 40,
+          "control_log_loss": 0.9550060384478708,
+          "candidate_log_loss": 0.9585430222499985,
+          "candidate_minus_control_log_loss": 0.0035369838021277467,
+          "control_accuracy": 0.6954887218045113,
+          "candidate_accuracy": 0.6954887218045113,
+          "control_brier": 0.45804760967227803,
+          "candidate_brier": 0.4596110424682422,
+          "zone": "UNDERPASS",
+          "target_class_index": 8,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 501,
+          "matches": 50,
+          "control_log_loss": 0.7956111766005699,
+          "candidate_log_loss": 0.7775833354519786,
+          "candidate_minus_control_log_loss": -0.01802784114859135,
+          "control_accuracy": 0.6906187624750499,
+          "candidate_accuracy": 0.7265469061876247,
+          "control_brier": 0.39011359905555154,
+          "candidate_brier": 0.3766291395691455,
+          "zone": "B_SHORT",
+          "target_class_index": 9,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 1745,
+          "matches": 53,
+          "control_log_loss": 0.5595155751553369,
+          "candidate_log_loss": 0.5399348612555551,
+          "candidate_minus_control_log_loss": -0.019580713899781776,
+          "control_accuracy": 0.7936962750716332,
+          "candidate_accuracy": 0.8011461318051576,
+          "control_brier": 0.2929660473030098,
+          "candidate_brier": 0.28493968587010327,
+          "zone": "B_LOBBY",
+          "target_class_index": 10,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 866,
+          "matches": 53,
+          "control_log_loss": 0.4472178035727249,
+          "candidate_log_loss": 0.42627132473265616,
+          "candidate_minus_control_log_loss": -0.020946478840068727,
+          "control_accuracy": 0.8406466512702079,
+          "candidate_accuracy": 0.8452655889145496,
+          "control_brier": 0.23905052221441875,
+          "candidate_brier": 0.2294576833421052,
+          "zone": "B_APPS",
+          "target_class_index": 11,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 759,
+          "matches": 53,
+          "control_log_loss": 0.31897766200344546,
+          "candidate_log_loss": 0.3076158132631906,
+          "candidate_minus_control_log_loss": -0.011361848740254865,
+          "control_accuracy": 0.8590250329380764,
+          "candidate_accuracy": 0.8616600790513834,
+          "control_brier": 0.1916735003452701,
+          "candidate_brier": 0.18285480409772092,
+          "zone": "B_SITE_COMPLEX",
+          "target_class_index": 12,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 4,
+          "matches": 3,
+          "control_log_loss": 8.152629982980727,
+          "candidate_log_loss": 8.007841787475352,
+          "candidate_minus_control_log_loss": -0.14478819550537558,
+          "control_accuracy": 0.0,
+          "candidate_accuracy": 0.0,
+          "control_brier": 1.4223386673619212,
+          "candidate_brier": 1.3892880198716013,
+          "zone": "MARKET",
+          "target_class_index": 13,
+          "interpretation_warning": "Low support; descriptive only."
+        },
+        {
+          "rows": 28,
+          "matches": 11,
+          "control_log_loss": 2.4027356986786046,
+          "candidate_log_loss": 2.4572499564789125,
+          "candidate_minus_control_log_loss": 0.05451425780030794,
+          "control_accuracy": 0.35714285714285715,
+          "candidate_accuracy": 0.21428571428571427,
+          "control_brier": 1.029935094241083,
+          "candidate_brier": 1.0661839728285367,
+          "zone": "CT_SPAWN",
+          "target_class_index": 14,
+          "interpretation_warning": "Low support; descriptive only."
+        }
+      ],
+      "match_level": {
+        "matches": 53,
+        "candidate_lower_log_loss_matches": 49,
+        "candidate_higher_log_loss_matches": 4,
+        "equal_log_loss_matches": 0,
+        "equal_match_mean_delta": -0.014050577052868272,
+        "per_match": [
+          {
+            "demo_filename": "2026-05-12_legacy_vs_m80_mirage.dem",
+            "rows": 249,
+            "control_ll": 0.4201187643767859,
+            "candidate_ll": 0.4111669384781456,
+            "delta_ll": -0.008951825898640336
+          },
+          {
+            "demo_filename": "2026-06-03_illwill_vs_ex-zero-tenacity_mirage.dem",
+            "rows": 310,
+            "control_ll": 0.5762038657888807,
+            "candidate_ll": 0.5442417249418438,
+            "delta_ll": -0.03196214084703692
+          },
+          {
+            "demo_filename": "2026-06-06_pain_vs_tyloo_mirage.dem",
+            "rows": 283,
+            "control_ll": 0.5720076797092247,
+            "candidate_ll": 0.5413939775828844,
+            "delta_ll": -0.03061370212634038
+          },
+          {
+            "demo_filename": "2026-06-10_ground-zero_vs_masked-regime_mirage.dem",
+            "rows": 258,
+            "control_ll": 0.5041119533400659,
+            "candidate_ll": 0.49019857166486935,
+            "delta_ll": -0.013913381675196554
+          },
+          {
+            "demo_filename": "2026-06-14_detonate_vs_iowa-stormboar_mirage.dem",
+            "rows": 400,
+            "control_ll": 0.5653465650292544,
+            "candidate_ll": 0.5423527465524657,
+            "delta_ll": -0.02299381847678874
+          },
+          {
+            "demo_filename": "2026-06-16_ground-zero_vs_rooster_mirage.dem",
+            "rows": 281,
+            "control_ll": 0.5248505142072286,
+            "candidate_ll": 0.5167366144920785,
+            "delta_ll": -0.008113899715150063
+          },
+          {
+            "demo_filename": "2026-06-16_illwill_vs_ex-ruby_mirage.dem",
+            "rows": 470,
+            "control_ll": 0.4453920756425762,
+            "candidate_ll": 0.4349483789622314,
+            "delta_ll": -0.010443696680344755
+          },
+          {
+            "demo_filename": "2026-07-09_bounty-hunters_vs_imperial_mirage.dem",
+            "rows": 426,
+            "control_ll": 0.44403712115527894,
+            "candidate_ll": 0.4390368327689023,
+            "delta_ll": -0.005000288386376646
+          },
+          {
+            "demo_filename": "2026-07-17_ground-zero_vs_arcade_mirage.dem",
+            "rows": 268,
+            "control_ll": 0.5842358509056362,
+            "candidate_ll": 0.5618404877726468,
+            "delta_ll": -0.02239536313298931
+          },
+          {
+            "demo_filename": "2026-07-26_los-kogutos_vs_megoshort_mirage.dem",
+            "rows": 245,
+            "control_ll": 0.6439694767986834,
+            "candidate_ll": 0.625453417496024,
+            "delta_ll": -0.018516059302659427
+          },
+          {
+            "demo_filename": "2026-08-14_b8_vs_vitality_mirage.dem",
+            "rows": 422,
+            "control_ll": 0.3784891393203211,
+            "candidate_ll": 0.35479092065910844,
+            "delta_ll": -0.023698218661212613
+          },
+          {
+            "demo_filename": "2026-08-16_eac_vs_lavked_mirage.dem",
+            "rows": 222,
+            "control_ll": 0.4923261281569146,
+            "candidate_ll": 0.4816292231057025,
+            "delta_ll": -0.010696905051212157
+          },
+          {
+            "demo_filename": "2026-08-18_pcific_vs_just-players_mirage.dem",
+            "rows": 282,
+            "control_ll": 0.5300459017104951,
+            "candidate_ll": 0.5121641936640842,
+            "delta_ll": -0.01788170804641088
+          },
+          {
+            "demo_filename": "2026-08-23_just-players_vs_ex-zero-tenacity_mirage.dem",
+            "rows": 256,
+            "control_ll": 0.46201972808578795,
+            "candidate_ll": 0.44924297988411,
+            "delta_ll": -0.012776748201677988
+          },
+          {
+            "demo_filename": "2026-08-26_ex-zero-tenacity_vs_honved_mirage.dem",
+            "rows": 250,
+            "control_ll": 0.5612100891305136,
+            "candidate_ll": 0.5405837375193419,
+            "delta_ll": -0.020626351611171906
+          },
+          {
+            "demo_filename": "2026-08-26_navi_vs_m80_mirage.dem",
+            "rows": 294,
+            "control_ll": 0.6192891877400445,
+            "candidate_ll": 0.6155319562137402,
+            "delta_ll": -0.0037572315263042252
+          },
+          {
+            "demo_filename": "2026-08-29_sinners_vs_ex-zero-tenacity_mirage.dem",
+            "rows": 301,
+            "control_ll": 0.47753638166860973,
+            "candidate_ll": 0.46617863098201917,
+            "delta_ll": -0.011357750686590614
+          },
+          {
+            "demo_filename": "2026-09-07_lavked_vs_leo_mirage.dem",
+            "rows": 218,
+            "control_ll": 0.43812871743593,
+            "candidate_ll": 0.41088197965814477,
+            "delta_ll": -0.027246737777785246
+          },
+          {
+            "demo_filename": "2026-09-08_mouz-nxt_vs_unity_mirage.dem",
+            "rows": 184,
+            "control_ll": 0.4840922198766467,
+            "candidate_ll": 0.4671286680007579,
+            "delta_ll": -0.016963551875888806
+          },
+          {
+            "demo_filename": "2026-09-10_liquid_vs_antivalue_mirage.dem",
+            "rows": 210,
+            "control_ll": 0.5225120722529899,
+            "candidate_ll": 0.525517427448024,
+            "delta_ll": 0.0030053551950340314
+          },
+          {
+            "demo_filename": "2026-09-10_madlikewizards_vs_arcade_mirage.dem",
+            "rows": 239,
+            "control_ll": 0.4403361617990724,
+            "candidate_ll": 0.4299084928690689,
+            "delta_ll": -0.010427668930003475
+          },
+          {
+            "demo_filename": "2026-09-10_megoshort_vs_misa_mirage.dem",
+            "rows": 295,
+            "control_ll": 0.47584736021181623,
+            "candidate_ll": 0.45200530373402986,
+            "delta_ll": -0.023842056477786314
+          },
+          {
+            "demo_filename": "2026-09-10_mibr_vs_betboom_mirage.dem",
+            "rows": 340,
+            "control_ll": 0.5267018089690397,
+            "candidate_ll": 0.5148142376497645,
+            "delta_ll": -0.011887571319275158
+          },
+          {
+            "demo_filename": "2026-09-10_navi-junior_vs_oldboys-pl_mirage.dem",
+            "rows": 232,
+            "control_ll": 0.4427502714636773,
+            "candidate_ll": 0.4372859720702532,
+            "delta_ll": -0.005464299393424117
+          },
+          {
+            "demo_filename": "2026-09-10_nemiga_vs_k27_mirage.dem",
+            "rows": 243,
+            "control_ll": 0.5417027073430439,
+            "candidate_ll": 0.5002792333480848,
+            "delta_ll": -0.041423473994959256
+          },
+          {
+            "demo_filename": "2026-09-10_ninjas-in-pyjamas_vs_infinite_mirage.dem",
+            "rows": 289,
+            "control_ll": 0.5028099458367167,
+            "candidate_ll": 0.4889961670810948,
+            "delta_ll": -0.013813778755621987
+          },
+          {
+            "demo_filename": "2026-09-10_noir-verse_vs_ex-zero-tenacity_mirage.dem",
+            "rows": 287,
+            "control_ll": 0.4654323143994707,
+            "candidate_ll": 0.4650385355122122,
+            "delta_ll": -0.00039377888725844175
+          },
+          {
+            "demo_filename": "2026-09-10_pain_vs_back-to-back_mirage.dem",
+            "rows": 274,
+            "control_ll": 0.588354429689606,
+            "candidate_ll": 0.5721561744128812,
+            "delta_ll": -0.016198255276724707
+          },
+          {
+            "demo_filename": "2026-09-10_titanflow_vs_bojong_mirage.dem",
+            "rows": 220,
+            "control_ll": 0.5827273998632695,
+            "candidate_ll": 0.5771947537746867,
+            "delta_ll": -0.005532646088582908
+          },
+          {
+            "demo_filename": "2026-09-11_banger-gang_vs_wbt-academy_mirage.dem",
+            "rows": 285,
+            "control_ll": 0.4436089887537938,
+            "candidate_ll": 0.4296508398708689,
+            "delta_ll": -0.013958148882924891
+          },
+          {
+            "demo_filename": "2026-09-11_inner-circle_vs_b8_mirage.dem",
+            "rows": 328,
+            "control_ll": 0.41776208921277036,
+            "candidate_ll": 0.4108473215275008,
+            "delta_ll": -0.006914767685269545
+          },
+          {
+            "demo_filename": "2026-09-12_iowa-stormboar_vs_sportsbetexpert_mirage.dem",
+            "rows": 322,
+            "control_ll": 0.5532762020346449,
+            "candidate_ll": 0.5539262150359071,
+            "delta_ll": 0.0006500130012622551
+          },
+          {
+            "demo_filename": "2026-09-13_g2-ares_vs_honved_mirage.dem",
+            "rows": 283,
+            "control_ll": 0.5500137553039608,
+            "candidate_ll": 0.5288023324465152,
+            "delta_ll": -0.021211422857445424
+          },
+          {
+            "demo_filename": "2026-09-13_vexar_vs_benched-gods_mirage.dem",
+            "rows": 331,
+            "control_ll": 0.486811153956267,
+            "candidate_ll": 0.4725231034268047,
+            "delta_ll": -0.01428805052946229
+          },
+          {
+            "demo_filename": "2026-09-13_without-a-roof_vs_lag_mirage.dem",
+            "rows": 303,
+            "control_ll": 0.5387186789538582,
+            "candidate_ll": 0.5455669589184072,
+            "delta_ll": 0.0068482799645490575
+          },
+          {
+            "demo_filename": "2026-09-14_benched-gods_vs_spirit-academy_mirage.dem",
+            "rows": 251,
+            "control_ll": 0.6148858050775261,
+            "candidate_ll": 0.5976601645411872,
+            "delta_ll": -0.017225640536338786
+          },
+          {
+            "demo_filename": "2026-09-14_bet-m_vs_hyperspace_mirage.dem",
+            "rows": 131,
+            "control_ll": 0.6198635252922223,
+            "candidate_ll": 0.5947241017169863,
+            "delta_ll": -0.02513942357523602
+          },
+          {
+            "demo_filename": "2026-09-14_bushido-wildcats_vs_navi-junior_mirage.dem",
+            "rows": 357,
+            "control_ll": 0.4665557052253754,
+            "candidate_ll": 0.45050880416199895,
+            "delta_ll": -0.016046901063376435
+          },
+          {
+            "demo_filename": "2026-09-14_butterfly_vs_hyperspace_mirage.dem",
+            "rows": 145,
+            "control_ll": 0.41823836187820296,
+            "candidate_ll": 0.4122740900124418,
+            "delta_ll": -0.005964271865761153
+          },
+          {
+            "demo_filename": "2026-09-14_ence_vs_falcons-force_mirage.dem",
+            "rows": 281,
+            "control_ll": 0.5003820387752278,
+            "candidate_ll": 0.47689915549585343,
+            "delta_ll": -0.023482883279374343
+          },
+          {
+            "demo_filename": "2026-09-14_falcons-force_vs_navi-junior_mirage.dem",
+            "rows": 351,
+            "control_ll": 0.4224067986328679,
+            "candidate_ll": 0.3999505434575977,
+            "delta_ll": -0.022456255175270296
+          },
+          {
+            "demo_filename": "2026-09-14_illyrians_vs_permitta_mirage.dem",
+            "rows": 245,
+            "control_ll": 0.5427337589593888,
+            "candidate_ll": 0.5264033267623872,
+            "delta_ll": -0.01633043219700147
+          },
+          {
+            "demo_filename": "2026-09-14_metizport_vs_nemiga_mirage.dem",
+            "rows": 365,
+            "control_ll": 0.3938690583423991,
+            "candidate_ll": 0.37518704167731315,
+            "delta_ll": -0.01868201666508595
+          },
+          {
+            "demo_filename": "2026-09-14_sportsbetexpert_vs_without-a-roof_mirage.dem",
+            "rows": 147,
+            "control_ll": 0.462427276328224,
+            "candidate_ll": 0.45206852690485405,
+            "delta_ll": -0.010358749423370055
+          },
+          {
+            "demo_filename": "2026-09-15_9ine_vs_aimclub_mirage.dem",
+            "rows": 292,
+            "control_ll": 0.37548245227077115,
+            "candidate_ll": 0.3731148876980283,
+            "delta_ll": -0.0023675645727428423
+          },
+          {
+            "demo_filename": "2026-09-15_baks_vs_spirit-academy_mirage.dem",
+            "rows": 379,
+            "control_ll": 0.4407473407050349,
+            "candidate_ll": 0.4301838198837389,
+            "delta_ll": -0.010563520821296074
+          },
+          {
+            "demo_filename": "2026-09-15_brute_vs_g2-ares_mirage.dem",
+            "rows": 234,
+            "control_ll": 0.48450295312937397,
+            "candidate_ll": 0.47860885550373194,
+            "delta_ll": -0.0058940976256420235
+          },
+          {
+            "demo_filename": "2026-09-15_detonate_vs_overtake-sector_mirage.dem",
+            "rows": 176,
+            "control_ll": 0.7180329525104772,
+            "candidate_ll": 0.7002093658781194,
+            "delta_ll": -0.017823586632357804
+          },
+          {
+            "demo_filename": "2026-09-15_entropy_vs_vexar_mirage.dem",
+            "rows": 197,
+            "control_ll": 0.42737601114719187,
+            "candidate_ll": 0.4382061743803513,
+            "delta_ll": 0.01083016323315943
+          },
+          {
+            "demo_filename": "2026-09-15_g2-ares_vs_azuolas_mirage.dem",
+            "rows": 388,
+            "control_ll": 0.48280127188379396,
+            "candidate_ll": 0.46745188874714644,
+            "delta_ll": -0.015349383136647507
+          },
+          {
+            "demo_filename": "2026-09-15_quazar_vs_permitta_mirage.dem",
+            "rows": 337,
+            "control_ll": 0.4606708708800638,
+            "candidate_ll": 0.4389838359045405,
+            "delta_ll": -0.021687034975523312
+          },
+          {
+            "demo_filename": "2026-09-15_young27_vs_ww_mirage.dem",
+            "rows": 273,
+            "control_ll": 0.5149576459943559,
+            "candidate_ll": 0.5021509983977233,
+            "delta_ll": -0.012806647596632605
+          },
+          {
+            "demo_filename": "havu-vs-mellren-m1-mirage.dem",
+            "rows": 220,
+            "control_ll": 0.4843632096098741,
+            "candidate_ll": 0.4637925223140237,
+            "delta_ll": -0.020570687295850442
+          }
+        ]
+      }
+    },
+    "10": {
+      "overall": {
+        "rows": 14196,
+        "matches": 53,
+        "control_log_loss": 0.8564347139687422,
+        "candidate_log_loss": 0.8250296488609199,
+        "candidate_minus_control_log_loss": -0.03140506510782226,
+        "control_accuracy": 0.7018878557340096,
+        "candidate_accuracy": 0.70850943927867,
+        "control_brier": 0.4238896486323881,
+        "candidate_brier": 0.4095149848600904
+      },
+      "staying": {
+        "rows": 8688,
+        "matches": 53,
+        "control_log_loss": 0.3975034835371535,
+        "candidate_log_loss": 0.38978902740813137,
+        "candidate_minus_control_log_loss": -0.007714456129022107,
+        "control_accuracy": 0.914364640883978,
+        "candidate_accuracy": 0.9124079189686924,
+        "control_brier": 0.18311720596720418,
+        "candidate_brier": 0.1784929206535517
+      },
+      "moving": {
+        "rows": 5508,
+        "matches": 53,
+        "control_log_loss": 1.580326240836869,
+        "candidate_log_loss": 1.5115529820457105,
+        "candidate_minus_control_log_loss": -0.06877325879115848,
+        "control_accuracy": 0.36673928830791575,
+        "candidate_accuracy": 0.38689179375453886,
+        "control_brier": 0.8036701464310659,
+        "candidate_brier": 0.7739158007327137
+      },
+      "per_target_zone": [
+        {
+          "rows": 1281,
+          "matches": 53,
+          "control_log_loss": 1.2150593669925225,
+          "candidate_log_loss": 1.1852947269642535,
+          "candidate_minus_control_log_loss": -0.02976464002826895,
+          "control_accuracy": 0.5698672911787666,
+          "candidate_accuracy": 0.5659640905542545,
+          "control_brier": 0.6162398800904763,
+          "candidate_brier": 0.6104559560991831,
+          "zone": "T_SPAWN",
+          "target_class_index": 0,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 3256,
+          "matches": 53,
+          "control_log_loss": 0.4888851199388778,
+          "candidate_log_loss": 0.4779866616698754,
+          "candidate_minus_control_log_loss": -0.010898458269002376,
+          "control_accuracy": 0.8820638820638821,
+          "candidate_accuracy": 0.8817567567567568,
+          "control_brier": 0.2136058580611866,
+          "candidate_brier": 0.20697944765908033,
+          "zone": "MID_ENTRY",
+          "target_class_index": 1,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 569,
+          "matches": 53,
+          "control_log_loss": 1.7080057107969202,
+          "candidate_log_loss": 1.6572586753521745,
+          "candidate_minus_control_log_loss": -0.05074703544474568,
+          "control_accuracy": 0.0843585237258348,
+          "candidate_accuracy": 0.11599297012302284,
+          "control_brier": 0.9749342959793786,
+          "candidate_brier": 0.9535813610668307,
+          "zone": "A_RAMP",
+          "target_class_index": 2,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 2133,
+          "matches": 53,
+          "control_log_loss": 0.6618352449254059,
+          "candidate_log_loss": 0.6444824442529354,
+          "candidate_minus_control_log_loss": -0.01735280067247047,
+          "control_accuracy": 0.835911861228317,
+          "candidate_accuracy": 0.8260665729020159,
+          "control_brier": 0.32734131864652605,
+          "candidate_brier": 0.3184606342148039,
+          "zone": "PALACE",
+          "target_class_index": 3,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 2027,
+          "matches": 53,
+          "control_log_loss": 0.5393440767474773,
+          "candidate_log_loss": 0.49114044742287793,
+          "candidate_minus_control_log_loss": -0.04820362932459937,
+          "control_accuracy": 0.8026640355204736,
+          "candidate_accuracy": 0.8080907745436606,
+          "control_brier": 0.27464876541230077,
+          "candidate_brier": 0.2501212388437431,
+          "zone": "A_SITE_COMPLEX",
+          "target_class_index": 4,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 151,
+          "matches": 43,
+          "control_log_loss": 2.254194535163787,
+          "candidate_log_loss": 2.262152797691846,
+          "candidate_minus_control_log_loss": 0.007958262528058757,
+          "control_accuracy": 0.033112582781456956,
+          "candidate_accuracy": 0.033112582781456956,
+          "control_brier": 1.046140338862899,
+          "candidate_brier": 1.0513508195983876,
+          "zone": "CONNECTOR",
+          "target_class_index": 5,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 646,
+          "matches": 52,
+          "control_log_loss": 1.4316011149283634,
+          "candidate_log_loss": 1.3583823235157348,
+          "candidate_minus_control_log_loss": -0.07321879141262855,
+          "control_accuracy": 0.4674922600619195,
+          "candidate_accuracy": 0.5139318885448917,
+          "control_brier": 0.7232151643582626,
+          "candidate_brier": 0.6912948430414477,
+          "zone": "MID",
+          "target_class_index": 6,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 9,
+          "matches": 4,
+          "control_log_loss": 7.614272064779316,
+          "candidate_log_loss": 7.611467014641349,
+          "candidate_minus_control_log_loss": -0.002805050137967058,
+          "control_accuracy": 0.0,
+          "candidate_accuracy": 0.0,
+          "control_brier": 1.3081117042215926,
+          "candidate_brier": 1.3349153953875523,
+          "zone": "MID_WINDOW",
+          "target_class_index": 7,
+          "interpretation_warning": "Low support; descriptive only."
+        },
+        {
+          "rows": 266,
+          "matches": 40,
+          "control_log_loss": 1.7885461206248283,
+          "candidate_log_loss": 1.779439985525011,
+          "candidate_minus_control_log_loss": -0.009106135099817392,
+          "control_accuracy": 0.41729323308270677,
+          "candidate_accuracy": 0.41353383458646614,
+          "control_brier": 0.7711215564924875,
+          "candidate_brier": 0.7739078085474465,
+          "zone": "UNDERPASS",
+          "target_class_index": 8,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 500,
+          "matches": 50,
+          "control_log_loss": 1.430188531031655,
+          "candidate_log_loss": 1.3896762600315873,
+          "candidate_minus_control_log_loss": -0.04051227100006782,
+          "control_accuracy": 0.472,
+          "candidate_accuracy": 0.526,
+          "control_brier": 0.6615383394661443,
+          "candidate_brier": 0.6415426482144089,
+          "zone": "B_SHORT",
+          "target_class_index": 9,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 1525,
+          "matches": 53,
+          "control_log_loss": 1.0803653702500269,
+          "candidate_log_loss": 1.031817764797121,
+          "candidate_minus_control_log_loss": -0.04854760545290593,
+          "control_accuracy": 0.6026229508196721,
+          "candidate_accuracy": 0.6078688524590163,
+          "control_brier": 0.5613709273267534,
+          "candidate_brier": 0.5432464614939762,
+          "zone": "B_LOBBY",
+          "target_class_index": 10,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 866,
+          "matches": 53,
+          "control_log_loss": 0.8551013839655829,
+          "candidate_log_loss": 0.8179577077200264,
+          "candidate_minus_control_log_loss": -0.03714367624555648,
+          "control_accuracy": 0.6859122401847575,
+          "candidate_accuracy": 0.6974595842956121,
+          "control_brier": 0.461432688712247,
+          "candidate_brier": 0.4367464925826346,
+          "zone": "B_APPS",
+          "target_class_index": 11,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 935,
+          "matches": 53,
+          "control_log_loss": 0.5189265965247479,
+          "candidate_log_loss": 0.48390390693703034,
+          "candidate_minus_control_log_loss": -0.03502268958771759,
+          "control_accuracy": 0.788235294117647,
+          "candidate_accuracy": 0.8074866310160428,
+          "control_brier": 0.2684152395797149,
+          "candidate_brier": 0.2501184466592239,
+          "zone": "B_SITE_COMPLEX",
+          "target_class_index": 12,
+          "interpretation_warning": null
+        },
+        {
+          "rows": 4,
+          "matches": 3,
+          "control_log_loss": 8.353019364645428,
+          "candidate_log_loss": 8.660619185455456,
+          "candidate_minus_control_log_loss": 0.3075998208100277,
+          "control_accuracy": 0.0,
+          "candidate_accuracy": 0.0,
+          "control_brier": 1.48280380542829,
+          "candidate_brier": 1.5265878339295593,
+          "zone": "MARKET",
+          "target_class_index": 13,
+          "interpretation_warning": "Low support; descriptive only."
+        },
+        {
+          "rows": 28,
+          "matches": 11,
+          "control_log_loss": 3.6281721011490453,
+          "candidate_log_loss": 3.55329764747409,
+          "candidate_minus_control_log_loss": -0.07487445367495527,
+          "control_accuracy": 0.0,
+          "candidate_accuracy": 0.0,
+          "control_brier": 1.341009424912942,
+          "candidate_brier": 1.3599852838907374,
+          "zone": "CT_SPAWN",
+          "target_class_index": 14,
+          "interpretation_warning": "Low support; descriptive only."
+        }
+      ],
+      "match_level": {
+        "matches": 53,
+        "candidate_lower_log_loss_matches": 52,
+        "candidate_higher_log_loss_matches": 1,
+        "equal_log_loss_matches": 0,
+        "equal_match_mean_delta": -0.032117197878914934,
+        "per_match": [
+          {
+            "demo_filename": "2026-05-12_legacy_vs_m80_mirage.dem",
+            "rows": 240,
+            "control_ll": 0.8295051693038111,
+            "candidate_ll": 0.7901882501560294,
+            "delta_ll": -0.039316919147781716
+          },
+          {
+            "demo_filename": "2026-06-03_illwill_vs_ex-zero-tenacity_mirage.dem",
+            "rows": 298,
+            "control_ll": 0.9787802335917363,
+            "candidate_ll": 0.9258491574052787,
+            "delta_ll": -0.0529310761864576
+          },
+          {
+            "demo_filename": "2026-06-06_pain_vs_tyloo_mirage.dem",
+            "rows": 272,
+            "control_ll": 0.9320435815877771,
+            "candidate_ll": 0.8805746799114545,
+            "delta_ll": -0.051468901676322586
+          },
+          {
+            "demo_filename": "2026-06-10_ground-zero_vs_masked-regime_mirage.dem",
+            "rows": 248,
+            "control_ll": 0.8384031091686206,
+            "candidate_ll": 0.8060372050017431,
+            "delta_ll": -0.03236590416687748
+          },
+          {
+            "demo_filename": "2026-06-14_detonate_vs_iowa-stormboar_mirage.dem",
+            "rows": 381,
+            "control_ll": 0.8749675532501333,
+            "candidate_ll": 0.8592746811260541,
+            "delta_ll": -0.01569287212407923
+          },
+          {
+            "demo_filename": "2026-06-16_ground-zero_vs_rooster_mirage.dem",
+            "rows": 268,
+            "control_ll": 0.9864184519244135,
+            "candidate_ll": 0.9644574861642895,
+            "delta_ll": -0.021960965760123796
+          },
+          {
+            "demo_filename": "2026-06-16_illwill_vs_ex-ruby_mirage.dem",
+            "rows": 451,
+            "control_ll": 0.8137230341085802,
+            "candidate_ll": 0.7761314114820207,
+            "delta_ll": -0.0375916226265596
+          },
+          {
+            "demo_filename": "2026-07-09_bounty-hunters_vs_imperial_mirage.dem",
+            "rows": 414,
+            "control_ll": 0.8503045167779099,
+            "candidate_ll": 0.8332743762519842,
+            "delta_ll": -0.017030140525925594
+          },
+          {
+            "demo_filename": "2026-07-17_ground-zero_vs_arcade_mirage.dem",
+            "rows": 259,
+            "control_ll": 0.885630256964601,
+            "candidate_ll": 0.8568073983818991,
+            "delta_ll": -0.02882285858270172
+          },
+          {
+            "demo_filename": "2026-07-26_los-kogutos_vs_megoshort_mirage.dem",
+            "rows": 233,
+            "control_ll": 1.0351292228552413,
+            "candidate_ll": 0.9671409751945601,
+            "delta_ll": -0.06798824766068126
+          },
+          {
+            "demo_filename": "2026-08-14_b8_vs_vitality_mirage.dem",
+            "rows": 407,
+            "control_ll": 0.6187576630697457,
+            "candidate_ll": 0.582633708962286,
+            "delta_ll": -0.03612395410745983
+          },
+          {
+            "demo_filename": "2026-08-16_eac_vs_lavked_mirage.dem",
+            "rows": 210,
+            "control_ll": 0.8334127479150684,
+            "candidate_ll": 0.8189144266863796,
+            "delta_ll": -0.014498321228688679
+          },
+          {
+            "demo_filename": "2026-08-18_pcific_vs_just-players_mirage.dem",
+            "rows": 271,
+            "control_ll": 0.9313564022743557,
+            "candidate_ll": 0.8832232024184977,
+            "delta_ll": -0.04813319985585795
+          },
+          {
+            "demo_filename": "2026-08-23_just-players_vs_ex-zero-tenacity_mirage.dem",
+            "rows": 249,
+            "control_ll": 0.8197194766073935,
+            "candidate_ll": 0.8041592296457527,
+            "delta_ll": -0.015560246961640862
+          },
+          {
+            "demo_filename": "2026-08-26_ex-zero-tenacity_vs_honved_mirage.dem",
+            "rows": 238,
+            "control_ll": 0.9972851791841526,
+            "candidate_ll": 0.933814032470318,
+            "delta_ll": -0.0634711467138346
+          },
+          {
+            "demo_filename": "2026-08-26_navi_vs_m80_mirage.dem",
+            "rows": 286,
+            "control_ll": 1.0133999178019057,
+            "candidate_ll": 0.9767831163096403,
+            "delta_ll": -0.03661680149226523
+          },
+          {
+            "demo_filename": "2026-08-29_sinners_vs_ex-zero-tenacity_mirage.dem",
+            "rows": 289,
+            "control_ll": 0.8224294273875218,
+            "candidate_ll": 0.7790757828116359,
+            "delta_ll": -0.04335364457588585
+          },
+          {
+            "demo_filename": "2026-09-07_lavked_vs_leo_mirage.dem",
+            "rows": 207,
+            "control_ll": 0.7115136748613845,
+            "candidate_ll": 0.6479604098185404,
+            "delta_ll": -0.06355326504284405
+          },
+          {
+            "demo_filename": "2026-09-08_mouz-nxt_vs_unity_mirage.dem",
+            "rows": 173,
+            "control_ll": 0.8000291394140124,
+            "candidate_ll": 0.7766332912427204,
+            "delta_ll": -0.0233958481712921
+          },
+          {
+            "demo_filename": "2026-09-10_liquid_vs_antivalue_mirage.dem",
+            "rows": 197,
+            "control_ll": 0.9071406072902987,
+            "candidate_ll": 0.8745936616603905,
+            "delta_ll": -0.03254694562990808
+          },
+          {
+            "demo_filename": "2026-09-10_madlikewizards_vs_arcade_mirage.dem",
+            "rows": 225,
+            "control_ll": 0.8370407430846848,
+            "candidate_ll": 0.8005752018462206,
+            "delta_ll": -0.036465541238464294
+          },
+          {
+            "demo_filename": "2026-09-10_megoshort_vs_misa_mirage.dem",
+            "rows": 280,
+            "control_ll": 0.8024500981330596,
+            "candidate_ll": 0.7622916439421618,
+            "delta_ll": -0.0401584541908978
+          },
+          {
+            "demo_filename": "2026-09-10_mibr_vs_betboom_mirage.dem",
+            "rows": 335,
+            "control_ll": 0.8821386816112547,
+            "candidate_ll": 0.8667903296928096,
+            "delta_ll": -0.015348351918445214
+          },
+          {
+            "demo_filename": "2026-09-10_navi-junior_vs_oldboys-pl_mirage.dem",
+            "rows": 217,
+            "control_ll": 0.7313251443378337,
+            "candidate_ll": 0.7103205898197827,
+            "delta_ll": -0.021004554518050982
+          },
+          {
+            "demo_filename": "2026-09-10_nemiga_vs_k27_mirage.dem",
+            "rows": 230,
+            "control_ll": 0.9582083716430164,
+            "candidate_ll": 0.8753223213635306,
+            "delta_ll": -0.0828860502794859
+          },
+          {
+            "demo_filename": "2026-09-10_ninjas-in-pyjamas_vs_infinite_mirage.dem",
+            "rows": 279,
+            "control_ll": 0.8583807207062416,
+            "candidate_ll": 0.8324561409841505,
+            "delta_ll": -0.025924579722090963
+          },
+          {
+            "demo_filename": "2026-09-10_noir-verse_vs_ex-zero-tenacity_mirage.dem",
+            "rows": 273,
+            "control_ll": 0.8412779049662796,
+            "candidate_ll": 0.8249584610428705,
+            "delta_ll": -0.016319443923409113
+          },
+          {
+            "demo_filename": "2026-09-10_pain_vs_back-to-back_mirage.dem",
+            "rows": 261,
+            "control_ll": 0.9962902126559112,
+            "candidate_ll": 0.9813475872529634,
+            "delta_ll": -0.014942625402947758
+          },
+          {
+            "demo_filename": "2026-09-10_titanflow_vs_bojong_mirage.dem",
+            "rows": 207,
+            "control_ll": 1.0349267482740232,
+            "candidate_ll": 0.9893705154859733,
+            "delta_ll": -0.045556232788049884
+          },
+          {
+            "demo_filename": "2026-09-11_banger-gang_vs_wbt-academy_mirage.dem",
+            "rows": 272,
+            "control_ll": 0.8190989050431446,
+            "candidate_ll": 0.7911919512628088,
+            "delta_ll": -0.027906953780335836
+          },
+          {
+            "demo_filename": "2026-09-11_inner-circle_vs_b8_mirage.dem",
+            "rows": 317,
+            "control_ll": 0.7323155647528762,
+            "candidate_ll": 0.7091658600423199,
+            "delta_ll": -0.02314970471055635
+          },
+          {
+            "demo_filename": "2026-09-12_iowa-stormboar_vs_sportsbetexpert_mirage.dem",
+            "rows": 307,
+            "control_ll": 0.9376192303267533,
+            "candidate_ll": 0.923301376610073,
+            "delta_ll": -0.014317853716680434
+          },
+          {
+            "demo_filename": "2026-09-13_g2-ares_vs_honved_mirage.dem",
+            "rows": 270,
+            "control_ll": 0.9246373114623586,
+            "candidate_ll": 0.8992554447684104,
+            "delta_ll": -0.025381866693948263
+          },
+          {
+            "demo_filename": "2026-09-13_vexar_vs_benched-gods_mirage.dem",
+            "rows": 306,
+            "control_ll": 0.9096143012310915,
+            "candidate_ll": 0.8815534117234247,
+            "delta_ll": -0.02806088950766697
+          },
+          {
+            "demo_filename": "2026-09-13_without-a-roof_vs_lag_mirage.dem",
+            "rows": 291,
+            "control_ll": 0.8888625209427724,
+            "candidate_ll": 0.8703301846539006,
+            "delta_ll": -0.01853233628887189
+          },
+          {
+            "demo_filename": "2026-09-14_benched-gods_vs_spirit-academy_mirage.dem",
+            "rows": 231,
+            "control_ll": 1.068675283097273,
+            "candidate_ll": 1.026009230598331,
+            "delta_ll": -0.04266605249894182
+          },
+          {
+            "demo_filename": "2026-09-14_bet-m_vs_hyperspace_mirage.dem",
+            "rows": 122,
+            "control_ll": 1.2389603960849425,
+            "candidate_ll": 1.1989166900634234,
+            "delta_ll": -0.04004370602151896
+          },
+          {
+            "demo_filename": "2026-09-14_bushido-wildcats_vs_navi-junior_mirage.dem",
+            "rows": 339,
+            "control_ll": 0.7981438647519975,
+            "candidate_ll": 0.7548770612116439,
+            "delta_ll": -0.04326680354035364
+          },
+          {
+            "demo_filename": "2026-09-14_butterfly_vs_hyperspace_mirage.dem",
+            "rows": 133,
+            "control_ll": 0.7632745235074638,
+            "candidate_ll": 0.7803312766068504,
+            "delta_ll": 0.017056753099386465
+          },
+          {
+            "demo_filename": "2026-09-14_ence_vs_falcons-force_mirage.dem",
+            "rows": 268,
+            "control_ll": 0.8554118296166423,
+            "candidate_ll": 0.8230627948053899,
+            "delta_ll": -0.032349034811252377
+          },
+          {
+            "demo_filename": "2026-09-14_falcons-force_vs_navi-junior_mirage.dem",
+            "rows": 333,
+            "control_ll": 0.8002310063566881,
+            "candidate_ll": 0.7607232373659861,
+            "delta_ll": -0.03950776899070191
+          },
+          {
+            "demo_filename": "2026-09-14_illyrians_vs_permitta_mirage.dem",
+            "rows": 231,
+            "control_ll": 0.854665636790935,
+            "candidate_ll": 0.8172794103251474,
+            "delta_ll": -0.03738622646578762
+          },
+          {
+            "demo_filename": "2026-09-14_metizport_vs_nemiga_mirage.dem",
+            "rows": 344,
+            "control_ll": 0.7213134801303012,
+            "candidate_ll": 0.6845505840481617,
+            "delta_ll": -0.03676289608213945
+          },
+          {
+            "demo_filename": "2026-09-14_sportsbetexpert_vs_without-a-roof_mirage.dem",
+            "rows": 141,
+            "control_ll": 0.8013910149847715,
+            "candidate_ll": 0.7437851819070793,
+            "delta_ll": -0.057605833077692195
+          },
+          {
+            "demo_filename": "2026-09-15_9ine_vs_aimclub_mirage.dem",
+            "rows": 284,
+            "control_ll": 0.6447745331521382,
+            "candidate_ll": 0.6261980282348796,
+            "delta_ll": -0.018576504917258645
+          },
+          {
+            "demo_filename": "2026-09-15_baks_vs_spirit-academy_mirage.dem",
+            "rows": 368,
+            "control_ll": 0.7603103665167386,
+            "candidate_ll": 0.7458001136787251,
+            "delta_ll": -0.014510252838013462
+          },
+          {
+            "demo_filename": "2026-09-15_brute_vs_g2-ares_mirage.dem",
+            "rows": 224,
+            "control_ll": 0.8094426846853464,
+            "candidate_ll": 0.8085679241678492,
+            "delta_ll": -0.0008747605174971841
+          },
+          {
+            "demo_filename": "2026-09-15_detonate_vs_overtake-sector_mirage.dem",
+            "rows": 168,
+            "control_ll": 1.1143003711244925,
+            "candidate_ll": 1.0747227266149302,
+            "delta_ll": -0.039577644509562394
+          },
+          {
+            "demo_filename": "2026-09-15_entropy_vs_vexar_mirage.dem",
+            "rows": 186,
+            "control_ll": 0.6685623311910088,
+            "candidate_ll": 0.6556453268962031,
+            "delta_ll": -0.012917004294805691
+          },
+          {
+            "demo_filename": "2026-09-15_g2-ares_vs_azuolas_mirage.dem",
+            "rows": 369,
+            "control_ll": 0.8286497658407729,
+            "candidate_ll": 0.8280509262771525,
+            "delta_ll": -0.0005988395636203949
+          },
+          {
+            "demo_filename": "2026-09-15_quazar_vs_permitta_mirage.dem",
+            "rows": 328,
+            "control_ll": 0.7521061553724879,
+            "candidate_ll": 0.7197536064822913,
+            "delta_ll": -0.0323525488901967
+          },
+          {
+            "demo_filename": "2026-09-15_young27_vs_ww_mirage.dem",
+            "rows": 258,
+            "control_ll": 0.8708881077168916,
+            "candidate_ll": 0.8417204081289342,
+            "delta_ll": -0.02916769958795735
+          },
+          {
+            "demo_filename": "havu-vs-mellren-m1-mirage.dem",
+            "rows": 208,
+            "control_ll": 0.9039695151523777,
+            "candidate_ll": 0.8412431719948894,
+            "delta_ll": -0.0627263431574882
+          }
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "These are post-experiment exploratory subgroup analyses.",
+    "Staying and Moving are determined using the future target label. They are evaluation groups, not features available at prediction time.",
+    "Per-zone subgroups may have low support.",
+    "Multiple observations from one match are dependent.",
+    "The two prediction horizons are not independent experimental samples.",
+    "Descriptive subgroup differences do not establish why the model predictions changed.",
+    "This development analysis does not replace fresh independent V4 confirmation."
+  ]
+}
