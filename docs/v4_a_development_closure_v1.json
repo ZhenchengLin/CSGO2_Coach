@@ -1,0 +1,128 @@
+{
+  "version": "V4_A_DEVELOPMENT_CLOSURE_V1",
+  "status": "DEVELOPMENT_CLOSED_NOT_INDEPENDENTLY_CONFIRMED",
+  "research_question": "Does current-time team spatial context improve future bomb macro-zone forecasting beyond the existing V3 B3 information?",
+  "scope": {
+    "map": "de_mirage",
+    "development_matches": 53,
+    "development_target_rows": 29065,
+    "horizons_sec": [
+      5,
+      10
+    ],
+    "target_classes": 15,
+    "control_dimensions": 24,
+    "candidate_dimensions": 56,
+    "cv": "5-fold grouped by match",
+    "new_model_fits": 20
+  },
+  "development_results": {
+    "5": {
+      "rows": 14869,
+      "control_log_loss": 0.4973077963726136,
+      "candidate_log_loss": 0.4831174082111756,
+      "candidate_minus_control_log_loss": -0.014190388161438017,
+      "equal_match_mean_delta": -0.01405057705286827,
+      "match_bootstrap_95ci": [
+        -0.016660461956659017,
+        -0.01145206031670545
+      ],
+      "matches_with_lower_candidate_ll": 49,
+      "matches_with_higher_candidate_ll": 4,
+      "staying_rows": 11316,
+      "moving_rows": 3553,
+      "staying_multiclass_delta": -0.0026333362495713497,
+      "moving_multiclass_delta": -0.050998606409308644,
+      "all_rows_movement_binary_ll_delta": -0.00880666917220027,
+      "all_rows_movement_binary_brier_delta": -0.003012441143800662,
+      "moving_rows_event_ll_delta": -0.028468204593666287,
+      "moving_rows_destination_ll_delta": -0.022530401815642
+    },
+    "10": {
+      "rows": 14196,
+      "control_log_loss": 0.8564347139687422,
+      "candidate_log_loss": 0.8250296488609199,
+      "candidate_minus_control_log_loss": -0.03140506510782218,
+      "equal_match_mean_delta": -0.03211719787891493,
+      "match_bootstrap_95ci": [
+        -0.03709016604663723,
+        -0.02717586539322744
+      ],
+      "matches_with_lower_candidate_ll": 52,
+      "matches_with_higher_candidate_ll": 1,
+      "staying_rows": 8688,
+      "moving_rows": 5508,
+      "staying_multiclass_delta": -0.007714456129022107,
+      "moving_multiclass_delta": -0.06877325879115848,
+      "all_rows_movement_binary_ll_delta": -0.014636922781446017,
+      "all_rows_movement_binary_brier_delta": -0.005792833408250963,
+      "moving_rows_event_ll_delta": -0.025556020507709273,
+      "moving_rows_destination_ll_delta": -0.0432172382834488
+    }
+  },
+  "development_findings": [
+    "The 56D candidate had lower development OOF multiclass Log Loss than the 24D control at both evaluated horizons.",
+    "The descriptive Log Loss difference was larger on actual Moving rows than Staying rows.",
+    "Movement-event binary Log Loss and binary Brier decreased on the development observations.",
+    "On actual Moving rows, the multiclass Log Loss difference decomposed into movement-event and conditional-destination components."
+  ],
+  "limitations": [
+    "All reported V4-A results are from historical development data, not fresh independent confirmation.",
+    "Repeated observations within matches are dependent. The reported bootstrap resamples matches.",
+    "Gate 5A and Gate 5B are post-experiment exploratory subgroup analyses.",
+    "Moving means a different macro-zone at the target time; it does not measure arbitrary physical motion.",
+    "Per-zone comparisons with very low support do not establish stable zone-specific effects.",
+    "The analyses do not establish player-level causal effects or tactical decision-making ability."
+  ],
+  "research_boundaries": {
+    "v2_confirmation_used": false,
+    "v3_confirmation_used": false,
+    "fresh_v4_confirmation_used": false,
+    "v3_frozen_artifacts_modified": false,
+    "v4_a_features_and_model_experiment_protocol_frozen": true,
+    "full_development_models_fitted_for_confirmation": false,
+    "full_development_model_artifacts_frozen": false,
+    "v4_confirmation_corpus_acquired": false,
+    "v4_confirmation_protocol_frozen": false,
+    "v4_independent_confirmation_complete": false,
+    "tactical_decision_layer_in_scope": false
+  },
+  "post_closure_rules": [
+    "Do not silently modify the frozen V4-A V1 features, training configuration, or evaluation.",
+    "Do not treat the previously exposed V2 or V3 confirmation corpora as fresh V4 confirmation.",
+    "A future V4-A confirmation requires separate prospectively fixed eligibility, acquisition, fit, scoring, and exclusion protocols.",
+    "Before examining new confirmation outcomes, freeze the final development-fitted model artifacts and their preprocessing provenance.",
+    "Any exploratory feature or model changes belong to a separately versioned experiment."
+  ],
+  "source_artifacts": {
+    "feature_contract": {
+      "path": "docs/v4_team_context_feature_contract_v1_frozen.json",
+      "sha256": "2e659a46a282336aafeb27ff4b147a4e1e8f2e02c1635b1b1e284a67e354e3a4"
+    },
+    "experiment_protocol": {
+      "path": "docs/v4_a_model_experiment_protocol_v1_frozen.json",
+      "sha256": "6051294e673e970430a22ef077b2550a38406bb227a9dbc7279a05c1944863a3"
+    },
+    "experiment_results": {
+      "path": "docs/v4_a_development_oof_results_v1.json",
+      "sha256": "71a04089710ea5bbedfbc17bc264e0e20afbc5e49b581688a45ce7012463a1fc"
+    },
+    "gate5a": {
+      "path": "docs/v4_a_development_error_analysis_v1.json",
+      "sha256": "49e7b635294aea9dfe34939ac7b5f1c284c07d1887bfbd1c05f90e6e648f16cd"
+    },
+    "gate5b": {
+      "path": "docs/v4_a_movement_destination_analysis_v1.json",
+      "sha256": "8e1d45cc7478bd1f4a7d150e065e31361a849734753e78eb98ae6e5ba0c61738"
+    },
+    "oof_predictions": {
+      "path": "data/interim/v4_a_control_vs_team_oof_v1.parquet",
+      "sha256": "e3b6d7d8f1c6e7a4187f56c4fd7fad43c526e5a2dfb02554a0fd1e34590bf7de"
+    },
+    "gate4b_auditor": {
+      "path": "scripts/audit_v4_a_development_oof_v1.py",
+      "sha256": "9f94ccc47d7503f08a95599cf9b0f3955db0ee9dbb6c3e2498b27da81cfe79db"
+    }
+  },
+  "next_action": "Review the frozen V4-A V1 candidate for possible independent confirmation. If proceeding, separately freeze full-development fitting, eligible fresh confirmation acquisition, and scoring protocols before accessing confirmation outcomes."
+}
