@@ -1,0 +1,89 @@
+{
+  "version": "V3_DEVELOPMENT_CLOSURE_V1",
+  "status": "DEVELOPMENT_CLOSED",
+  "development_corpus": {
+    "matches": 53,
+    "roles": {
+      "V0_DEVELOPMENT": 20,
+      "V2_RESERVE": 13,
+      "V3_FRESH": 20
+    },
+    "important_note": "All 53 matches are development data. V3_FRESH is not confirmation evidence."
+  },
+  "selected_confirmation_candidate": {
+    "name": "B3_TABULAR_MAP_AWARE_V1",
+    "selection_metric": "development OOF multiclass log loss",
+    "feature_protocol": "docs/v3_b3_feature_protocol_v1.json",
+    "model_protocol": "docs/v3_b3_model_protocol_v1.json",
+    "feature_or_hyperparameter_changes_after_selection": false
+  },
+  "development_results": {
+    "5": {
+      "b0_log_loss": 1.1806906113973805,
+      "b1_log_loss": 1.4162956000940967,
+      "b2_log_loss": 0.7640849806205242,
+      "b3_log_loss": 0.497307795921124,
+      "b3_minus_b2_row_delta": -0.2667771846994003,
+      "b3_minus_b2_equal_match_delta": -0.26587157793866417,
+      "b3_minus_b2_match_bootstrap_95ci": [
+        -0.2760381698153833,
+        -0.2556446709231899
+      ],
+      "b3_lower_ll_matches": 53,
+      "total_matches": 53,
+      "v3_fresh_lower_ll_matches": 20,
+      "v3_fresh_total_matches": 20,
+      "v3_fresh_mean_delta": -0.25935005565132896,
+      "b3_accuracy": 0.8190866904297531,
+      "b3_macro_f1": 0.630385907244056,
+      "b3_top2_accuracy": 0.9542000134508036
+    },
+    "10": {
+      "b0_log_loss": 1.6920425971102793,
+      "b1_log_loss": 1.9824328001674336,
+      "b2_log_loss": 1.088851760325882,
+      "b3_log_loss": 0.8564347138278494,
+      "b3_minus_b2_row_delta": -0.23241704649803266,
+      "b3_minus_b2_equal_match_delta": -0.2281223791449018,
+      "b3_minus_b2_match_bootstrap_95ci": [
+        -0.2417434128002443,
+        -0.21319665318856768
+      ],
+      "b3_lower_ll_matches": 53,
+      "total_matches": 53,
+      "v3_fresh_lower_ll_matches": 20,
+      "v3_fresh_total_matches": 20,
+      "v3_fresh_mean_delta": -0.2193727303301888,
+      "b3_accuracy": 0.7018878557340096,
+      "b3_macro_f1": 0.4520060477817201,
+      "b3_top2_accuracy": 0.8754578754578755
+    }
+  },
+  "remaining_development_limitations": [
+    "Macro F1 remains below B0 despite strong log-loss, accuracy, and top-2 improvements.",
+    "Rare classes such as MID_WINDOW, MARKET, and CT_SPAWN have extremely low support.",
+    "A_RAMP and CONNECTOR remain meaningful route-specific hard-classification weaknesses.",
+    "Development evidence must not be described as independent confirmation."
+  ],
+  "post_closure_rules": [
+    "Do not silently modify B3 V1 features, preprocessing, or hyperparameters.",
+    "Do not create additional B3 variants before the planned untouched V3 confirmation evaluation.",
+    "Any later exploratory model change must be declared as a new experiment/version and must not retroactively replace B3 V1.",
+    "V2 D_CONFIRM remains permanently forbidden for V3.",
+    "Future D_V3_CONFIRM must be later than all development matches and untouched until confirmation protocols and final fitted development artifacts are frozen."
+  ],
+  "artifact_sha256": {
+    "b0_results": "02b9f1955d03a592683381f38e1655f69a65d3c6582626ed38e2e82d0f0cd67a",
+    "b1_results": "e81e1cb56f091ea28c9b66e4858fb7bb1ddbf3f0bc332a6999fdb52f27a0cee2",
+    "b2_results": "d3707f88db3fef16bce464060656f67ae18ad5cb04d1c479f89a7cc37f7f7ca2",
+    "b3_results": "48300edf5b19c9831d2d46bbbfd3f7677dc0fcc142e92aab4ad3fa1e6f83546d",
+    "targets": "e10929107ff2d3357b96798f0a5a9e13f16ab602aaf972c919daef7b1dae288e",
+    "b0_oof": "b8736c084ba4cbdecfe4ee9c8ed36a0d47ec26c56a9e1ac6a63744ffc654dd48",
+    "b1_oof": "3a8ffb7ef110b197f21aad0b50ca9671855e6e9d8277f6a68b2ba4713e0ac353",
+    "b2_oof": "61c40b2c45c0d77ac6f6b1b998cf88f076ea8eef6c962fe2d429e7114d1bf7df",
+    "b3_oof": "72a3018a809cc3bd896566875bf058c4b7aa320a1ab2c4c613d873dc9bac73ee"
+  },
+  "v2_d_confirm_used": false,
+  "v3_confirmation_used": false,
+  "next_action": "Freeze full-development fitted B0-B3 artifacts and the untouched D_V3_CONFIRM protocol before accessing confirmation outcomes."
+}

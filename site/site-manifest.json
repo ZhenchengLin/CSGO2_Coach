@@ -1,12 +1,13 @@
 {
   "project": "CS2 Tactical Intelligence Lab",
-  "stage": "V2 confirmation data integrity passed",
-  "v0_status": "TIMING CORRECTED \u00b7 EVIDENCE + RUNTIME FROZEN \u00b7 REAL CAPTURE DEFERRED",
+  "stage": "V3 independent confirmation complete",
+  "v0_status": "TIMING CORRECTED · EVIDENCE + RUNTIME FROZEN · REAL CAPTURE DEFERRED",
   "pages": [
     "index.html",
     "pages/v0.html",
     "pages/v1.html",
     "pages/v2.html",
+    "pages/v3.html",
     "pages/evidence.html",
     "pages/models.html",
     "pages/data.html",
@@ -24,24 +25,24 @@
     "error analysis",
     "next version"
   ],
-  "selected_model": "V0 XGB-A5 \u00b7 corrected timing",
+  "selected_model": "V0 XGB-A5 · corrected timing",
   "observation_scope": "Mirage, full observer, true 10/20/30/40 seconds after freeze_end",
   "explanation_chapters": 24,
   "observations": 1686,
   "measured_tick_rate": 64,
-  "v1_status": "SCIENTIFICALLY FROZEN \u00b7 H2 PROMISING NOT PROMOTED \u00b7 T0 REJECTED",
+  "v1_status": "SCIENTIFICALLY FROZEN · H2 PROMISING NOT PROMOTED · T0 REJECTED",
   "v1_best_pooled_model": "H2 calibrated hierarchy",
   "v1_best_pooled_log_loss": 0.837397,
   "v1_decision": "V0 remains selected; seek new information/data before more tuning",
-  "v2_status": "D_CONFIRM BUILT + QA PASSED \u00b7 BASELINE REBUILD PENDING \u00b7 NO CONFIRMATION SCORING YET",
+  "v2_status": "INDEPENDENT CONFIRMATION COMPLETE · V0 REMAINS PRIMARY FOR V0/V2 TASK",
   "d_confirm_matches": 30,
   "d_confirm_observations": 2269,
   "d_confirm_sha256": "e781dbebe0956322476cd8841675ad9a22e9d680c6dec7a47f5d23c35829c367",
   "legacy_label_repairs": 44,
   "legacy_label_repair_fraction": 0.02609727164887307,
-  "baseline_status": "Pre-repair V0/V1 metrics are historical; corrected no-retuning rebuild required",
-  "next_gate": "Rebuild corrected V0/H2 with frozen methods, freeze artifacts, then one formal D_CONFIRM evaluation",
-  "current_stage": "V2 independent confirmation complete",
+  "baseline_status": "Corrected V0/H2 rebuilt and evaluated; V0 retained for the V0/V2 plant-outcome task",
+  "next_gate": "Publish V3 research record; define separate V4 research question before new data or models",
+  "current_stage": "V3 independent confirmation complete; V4 not frozen",
   "v2_confirmation": {
     "status": "complete",
     "matches": 30,
@@ -56,5 +57,40 @@
       0.014124
     ],
     "decision": "V0 remains primary; H2 not promoted"
+  },
+  "v3_status": "FORMAL INDEPENDENT CONFIRMATION COMPLETE · VERSION CLOSED",
+  "v3_selected_model": "B3_TABULAR_MAP_AWARE_V1 (V3 bomb-zone task only)",
+  "v3_confirmation": {
+    "status": "complete",
+    "task": "Mirage bomb macro-zone at +5s / +10s",
+    "development_matches": 53,
+    "confirmation_matches": 20,
+    "eligible_rows_by_horizon": {
+      "5": 5861,
+      "10": 5622
+    },
+    "primary_comparison": "B3 minus B2 pooled multiclass log loss",
+    "results_by_horizon": {
+      "5": {
+        "b2_log_loss": 0.7545501060220111,
+        "b3_log_loss": 0.49164090477533645,
+        "b3_minus_b2": -0.26290920124667466,
+        "match_bootstrap_95ci": [
+          -0.2840174772678118,
+          -0.2454110309554067
+        ]
+      },
+      "10": {
+        "b2_log_loss": 1.0648234324316337,
+        "b3_log_loss": 0.8392363443711074,
+        "b3_minus_b2": -0.22558708806052638,
+        "match_bootstrap_95ci": [
+          -0.24081867566794055,
+          -0.2106955019034294
+        ]
+      }
+    },
+    "manifest_sha256": "68411147301c9e37a4649ad0b4ceac61f7b87a01493f1cff3a692b16dc8de3b7",
+    "source": "assets/sources/v3_confirm_results_v1.json"
   }
 }

@@ -1,0 +1,98 @@
+{
+  "version": "V3",
+  "artifact": "Mirage tactical macro-zone mapping",
+  "mapping_version": "v1",
+  "status": "FROZEN",
+  "frozen_date": "2026-09-15",
+  "map": "de_mirage",
+  "n_fine_places": 23,
+  "n_macro_zones": 15,
+  "zones": {
+    "T_SPAWN": [
+      "TSpawn"
+    ],
+    "MID_ENTRY": [
+      "SideAlley",
+      "TopofMid"
+    ],
+    "A_RAMP": [
+      "TRamp"
+    ],
+    "PALACE": [
+      "PalaceAlley",
+      "PalaceInterior",
+      "Scaffolding"
+    ],
+    "A_SITE_COMPLEX": [
+      "BombsiteA",
+      "Stairs",
+      "Jungle"
+    ],
+    "CONNECTOR": [
+      "Connector"
+    ],
+    "MID": [
+      "Middle"
+    ],
+    "MID_WINDOW": [
+      "SnipersNest",
+      "Ladder"
+    ],
+    "UNDERPASS": [
+      "Underpass"
+    ],
+    "B_SHORT": [
+      "Catwalk"
+    ],
+    "B_LOBBY": [
+      "House",
+      "BackAlley"
+    ],
+    "B_APPS": [
+      "Apartments"
+    ],
+    "B_SITE_COMPLEX": [
+      "BombsiteB",
+      "Truck"
+    ],
+    "MARKET": [
+      "Shop"
+    ],
+    "CT_SPAWN": [
+      "CTSpawn"
+    ]
+  },
+  "preserved_route_distinctions": [
+    "A_RAMP vs PALACE",
+    "MID vs CONNECTOR",
+    "MID vs B_SHORT",
+    "MID vs UNDERPASS",
+    "B_LOBBY vs B_APPS",
+    "CT_SPAWN vs MARKET"
+  ],
+  "manual_visual_review": {
+    "status": "PASS",
+    "views_reviewed": [
+      "XY",
+      "XZ",
+      "YZ"
+    ],
+    "finding": "No obvious unrelated-region bridge or structurally invalid macro-zone was found. Important route and vertical distinctions remain represented."
+  },
+  "scientific_boundary": {
+    "v2_d_confirm_used": false,
+    "mapping_may_be_changed_during_gate2": false,
+    "revision_policy": "Any future map-representation change must create a new mapping version. Frozen v1 must not be silently mutated."
+  },
+  "evidence_sha256": {
+    "docs/v3_macro_zone_candidate_v1.json": "e867e7bf577a4586b0be4967d1beb75fecedd81e9692edb08eb2a95afbbb5900",
+    "docs/v3_semantic_seed_freeze.json": "52a9ed1b641e46aaf8f41a20d6dfb7cbd5f16786f5d1f31b84a424d42ee4967a",
+    "docs/v3_gate1_spatial_semantic_evidence.json": "8b8237f6efc8ccdff1cc52c310fcc31e7618300414f7fd8860a3e20833b986d1",
+    "docs/v3_macro_zone_candidate_v1_structure_audit.json": "e3bea96eed8dd22a90f5320534b99f03d7752917cfaee8f74175c500022d5be0",
+    "data/interim/v3_macro_zone_candidate_v1_evaluation.csv": "ace18b012f784415749393008aaba0853e1182b5796a5d6abfdf98871e994f86",
+    "data/interim/v3_macro_zone_candidate_v1_spatial_summary.csv": "64a623b682e9547b125b595652b9dcd8333192aafd776cc0d4392f94285782df",
+    "artifacts/v3_macro_zone_candidate_v1_visual_audit/v3_macro_zones_xy.png": "7d7fb47ba4db1abed29c7059067d1a8b195a9303772991eb32c5cc4148f710bb",
+    "artifacts/v3_macro_zone_candidate_v1_visual_audit/v3_macro_zones_xz.png": "63954d4e2df2e744010dc0fff390c99f6202ed955047db5186ff74681973460c",
+    "artifacts/v3_macro_zone_candidate_v1_visual_audit/v3_macro_zones_yz.png": "739227424ff0cdb7ab4f7b7b65dabccdb01a604fe459c6ff326c7bbc8e9b563b"
+  }
+}

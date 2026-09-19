@@ -1,0 +1,731 @@
+{
+  "version": "V3_CONFIRM_RESULTS_V1",
+  "status": "FORMAL_CONFIRMATION_SCORING_COMPLETE",
+  "manifest_sha256": "68411147301c9e37a4649ad0b4ceac61f7b87a01493f1cff3a692b16dc8de3b7",
+  "scoring_protocol_sha256": "362a5c598cde2bcb91724994330cc72751adaf1f7084f1e7bb5d793c8996a203",
+  "model_freeze_sha256": "65bf09ec3e3cbeaacfb5ff4bb28a504d927fbcc55898b40e1413153ef11dba85",
+  "evaluator_source_sha256": "70153c6174857a7f9ce6b885c50addeb032e41affe04c257c80ae5e443c84ba6",
+  "frozen_target_builder_sha256": "739d29c4249b1c042368044524195effb991a422e303a091b68e4d04e1b208bb",
+  "matches": 20,
+  "eligible_rows_by_horizon": {
+    "5": 5861,
+    "10": 5622
+  },
+  "results_by_horizon": {
+    "5": {
+      "B0": {
+        "rows": 5861,
+        "matches": 20,
+        "log_loss": 1.2021827964394642,
+        "equal_match_mean_log_loss": 1.2175255531933913,
+        "multiclass_brier_score": 0.4252324573141669,
+        "accuracy": 0.7553318546323153,
+        "macro_f1": 0.6138383311247576,
+        "per_zone": [
+          {
+            "zone": "T_SPAWN",
+            "support": 558,
+            "recall": 0.8279569892473119
+          },
+          {
+            "zone": "MID_ENTRY",
+            "support": 1477,
+            "recall": 0.922816519972918
+          },
+          {
+            "zone": "A_RAMP",
+            "support": 218,
+            "recall": 0.4036697247706422
+          },
+          {
+            "zone": "PALACE",
+            "support": 812,
+            "recall": 0.7229064039408867
+          },
+          {
+            "zone": "A_SITE_COMPLEX",
+            "support": 824,
+            "recall": 0.7135922330097088
+          },
+          {
+            "zone": "CONNECTOR",
+            "support": 70,
+            "recall": 0.3142857142857143
+          },
+          {
+            "zone": "MID",
+            "support": 278,
+            "recall": 0.6187050359712231
+          },
+          {
+            "zone": "MID_WINDOW",
+            "support": 21,
+            "recall": 0.7142857142857143
+          },
+          {
+            "zone": "UNDERPASS",
+            "support": 84,
+            "recall": 0.6547619047619048
+          },
+          {
+            "zone": "B_SHORT",
+            "support": 151,
+            "recall": 0.7019867549668874
+          },
+          {
+            "zone": "B_LOBBY",
+            "support": 724,
+            "recall": 0.787292817679558
+          },
+          {
+            "zone": "B_APPS",
+            "support": 344,
+            "recall": 0.6308139534883721
+          },
+          {
+            "zone": "B_SITE_COMPLEX",
+            "support": 292,
+            "recall": 0.6198630136986302
+          },
+          {
+            "zone": "MARKET",
+            "support": 3,
+            "recall": 0.3333333333333333
+          },
+          {
+            "zone": "CT_SPAWN",
+            "support": 5,
+            "recall": 0.0
+          }
+        ]
+      },
+      "B1": {
+        "rows": 5861,
+        "matches": 20,
+        "log_loss": 1.413095859690253,
+        "equal_match_mean_log_loss": 1.4279620862167632,
+        "multiclass_brier_score": 0.5076635056660975,
+        "accuracy": 0.6969800375362566,
+        "macro_f1": 0.5177582224053175,
+        "per_zone": [
+          {
+            "zone": "T_SPAWN",
+            "support": 558,
+            "recall": 0.7831541218637993
+          },
+          {
+            "zone": "MID_ENTRY",
+            "support": 1477,
+            "recall": 0.7433987813134733
+          },
+          {
+            "zone": "A_RAMP",
+            "support": 218,
+            "recall": 0.27522935779816515
+          },
+          {
+            "zone": "PALACE",
+            "support": 812,
+            "recall": 0.7586206896551724
+          },
+          {
+            "zone": "A_SITE_COMPLEX",
+            "support": 824,
+            "recall": 0.7317961165048543
+          },
+          {
+            "zone": "CONNECTOR",
+            "support": 70,
+            "recall": 0.37142857142857144
+          },
+          {
+            "zone": "MID",
+            "support": 278,
+            "recall": 0.564748201438849
+          },
+          {
+            "zone": "MID_WINDOW",
+            "support": 21,
+            "recall": 0.38095238095238093
+          },
+          {
+            "zone": "UNDERPASS",
+            "support": 84,
+            "recall": 0.5714285714285714
+          },
+          {
+            "zone": "B_SHORT",
+            "support": 151,
+            "recall": 0.45695364238410596
+          },
+          {
+            "zone": "B_LOBBY",
+            "support": 724,
+            "recall": 0.7016574585635359
+          },
+          {
+            "zone": "B_APPS",
+            "support": 344,
+            "recall": 0.6540697674418605
+          },
+          {
+            "zone": "B_SITE_COMPLEX",
+            "support": 292,
+            "recall": 0.7808219178082192
+          },
+          {
+            "zone": "MARKET",
+            "support": 3,
+            "recall": 0.6666666666666666
+          },
+          {
+            "zone": "CT_SPAWN",
+            "support": 5,
+            "recall": 0.0
+          }
+        ]
+      },
+      "B2": {
+        "rows": 5861,
+        "matches": 20,
+        "log_loss": 0.7545501060220111,
+        "equal_match_mean_log_loss": 0.7624256388369194,
+        "multiclass_brier_score": 0.37579609710497,
+        "accuracy": 0.758744241596997,
+        "macro_f1": 0.5669171420256383,
+        "per_zone": [
+          {
+            "zone": "T_SPAWN",
+            "support": 558,
+            "recall": 0.8279569892473119
+          },
+          {
+            "zone": "MID_ENTRY",
+            "support": 1477,
+            "recall": 0.922816519972918
+          },
+          {
+            "zone": "A_RAMP",
+            "support": 218,
+            "recall": 0.4036697247706422
+          },
+          {
+            "zone": "PALACE",
+            "support": 812,
+            "recall": 0.7229064039408867
+          },
+          {
+            "zone": "A_SITE_COMPLEX",
+            "support": 824,
+            "recall": 0.7657766990291263
+          },
+          {
+            "zone": "CONNECTOR",
+            "support": 70,
+            "recall": 0.0
+          },
+          {
+            "zone": "MID",
+            "support": 278,
+            "recall": 0.6187050359712231
+          },
+          {
+            "zone": "MID_WINDOW",
+            "support": 21,
+            "recall": 0.7142857142857143
+          },
+          {
+            "zone": "UNDERPASS",
+            "support": 84,
+            "recall": 0.6547619047619048
+          },
+          {
+            "zone": "B_SHORT",
+            "support": 151,
+            "recall": 0.7019867549668874
+          },
+          {
+            "zone": "B_LOBBY",
+            "support": 724,
+            "recall": 0.787292817679558
+          },
+          {
+            "zone": "B_APPS",
+            "support": 344,
+            "recall": 0.6308139534883721
+          },
+          {
+            "zone": "B_SITE_COMPLEX",
+            "support": 292,
+            "recall": 0.6198630136986302
+          },
+          {
+            "zone": "MARKET",
+            "support": 3,
+            "recall": 0.0
+          },
+          {
+            "zone": "CT_SPAWN",
+            "support": 5,
+            "recall": 0.0
+          }
+        ]
+      },
+      "B3": {
+        "rows": 5861,
+        "matches": 20,
+        "log_loss": 0.49164090477533645,
+        "equal_match_mean_log_loss": 0.49612683164918076,
+        "multiclass_brier_score": 0.2534302396281481,
+        "accuracy": 0.8235795939259511,
+        "macro_f1": 0.6027557784696114,
+        "per_zone": [
+          {
+            "zone": "T_SPAWN",
+            "support": 558,
+            "recall": 0.8297491039426523
+          },
+          {
+            "zone": "MID_ENTRY",
+            "support": 1477,
+            "recall": 0.9146919431279621
+          },
+          {
+            "zone": "A_RAMP",
+            "support": 218,
+            "recall": 0.3532110091743119
+          },
+          {
+            "zone": "PALACE",
+            "support": 812,
+            "recall": 0.8620689655172413
+          },
+          {
+            "zone": "A_SITE_COMPLEX",
+            "support": 824,
+            "recall": 0.8822815533980582
+          },
+          {
+            "zone": "CONNECTOR",
+            "support": 70,
+            "recall": 0.37142857142857144
+          },
+          {
+            "zone": "MID",
+            "support": 278,
+            "recall": 0.762589928057554
+          },
+          {
+            "zone": "MID_WINDOW",
+            "support": 21,
+            "recall": 0.0
+          },
+          {
+            "zone": "UNDERPASS",
+            "support": 84,
+            "recall": 0.7261904761904762
+          },
+          {
+            "zone": "B_SHORT",
+            "support": 151,
+            "recall": 0.7086092715231788
+          },
+          {
+            "zone": "B_LOBBY",
+            "support": 724,
+            "recall": 0.7831491712707183
+          },
+          {
+            "zone": "B_APPS",
+            "support": 344,
+            "recall": 0.8197674418604651
+          },
+          {
+            "zone": "B_SITE_COMPLEX",
+            "support": 292,
+            "recall": 0.8698630136986302
+          },
+          {
+            "zone": "MARKET",
+            "support": 3,
+            "recall": 0.0
+          },
+          {
+            "zone": "CT_SPAWN",
+            "support": 5,
+            "recall": 0.0
+          }
+        ]
+      },
+      "B3_minus_B2": {
+        "pooled_log_loss_delta": -0.26290920124667466,
+        "equal_match_log_loss_delta": -0.26629880718773874,
+        "match_bootstrap_95ci": [
+          -0.2840174772678118,
+          -0.2454110309554067
+        ],
+        "bootstrap_resamples": 10000,
+        "seed": 42
+      }
+    },
+    "10": {
+      "B0": {
+        "rows": 5622,
+        "matches": 20,
+        "log_loss": 1.7207891503914354,
+        "equal_match_mean_log_loss": 1.742808245187378,
+        "multiclass_brier_score": 0.6256491836673908,
+        "accuracy": 0.6026325151191747,
+        "macro_f1": 0.4329007030218063,
+        "per_zone": [
+          {
+            "zone": "T_SPAWN",
+            "support": 483,
+            "recall": 0.6811594202898551
+          },
+          {
+            "zone": "MID_ENTRY",
+            "support": 1287,
+            "recall": 0.8888888888888888
+          },
+          {
+            "zone": "A_RAMP",
+            "support": 215,
+            "recall": 0.20465116279069767
+          },
+          {
+            "zone": "PALACE",
+            "support": 726,
+            "recall": 0.5785123966942148
+          },
+          {
+            "zone": "A_SITE_COMPLEX",
+            "support": 975,
+            "recall": 0.5374358974358975
+          },
+          {
+            "zone": "CONNECTOR",
+            "support": 70,
+            "recall": 0.18571428571428572
+          },
+          {
+            "zone": "MID",
+            "support": 278,
+            "recall": 0.38489208633093525
+          },
+          {
+            "zone": "MID_WINDOW",
+            "support": 21,
+            "recall": 0.5238095238095238
+          },
+          {
+            "zone": "UNDERPASS",
+            "support": 84,
+            "recall": 0.42857142857142855
+          },
+          {
+            "zone": "B_SHORT",
+            "support": 149,
+            "recall": 0.48322147651006714
+          },
+          {
+            "zone": "B_LOBBY",
+            "support": 628,
+            "recall": 0.6592356687898089
+          },
+          {
+            "zone": "B_APPS",
+            "support": 344,
+            "recall": 0.375
+          },
+          {
+            "zone": "B_SITE_COMPLEX",
+            "support": 354,
+            "recall": 0.4096045197740113
+          },
+          {
+            "zone": "MARKET",
+            "support": 3,
+            "recall": 0.0
+          },
+          {
+            "zone": "CT_SPAWN",
+            "support": 5,
+            "recall": 0.0
+          }
+        ]
+      },
+      "B1": {
+        "rows": 5622,
+        "matches": 20,
+        "log_loss": 1.9675310645460062,
+        "equal_match_mean_log_loss": 1.9850016687944176,
+        "multiclass_brier_score": 0.7161572201101397,
+        "accuracy": 0.5168979011028104,
+        "macro_f1": 0.3407280732114295,
+        "per_zone": [
+          {
+            "zone": "T_SPAWN",
+            "support": 483,
+            "recall": 0.6749482401656315
+          },
+          {
+            "zone": "MID_ENTRY",
+            "support": 1287,
+            "recall": 0.6464646464646465
+          },
+          {
+            "zone": "A_RAMP",
+            "support": 215,
+            "recall": 0.09302325581395349
+          },
+          {
+            "zone": "PALACE",
+            "support": 726,
+            "recall": 0.6391184573002755
+          },
+          {
+            "zone": "A_SITE_COMPLEX",
+            "support": 975,
+            "recall": 0.5005128205128205
+          },
+          {
+            "zone": "CONNECTOR",
+            "support": 70,
+            "recall": 0.07142857142857142
+          },
+          {
+            "zone": "MID",
+            "support": 278,
+            "recall": 0.2302158273381295
+          },
+          {
+            "zone": "MID_WINDOW",
+            "support": 21,
+            "recall": 0.19047619047619047
+          },
+          {
+            "zone": "UNDERPASS",
+            "support": 84,
+            "recall": 0.30952380952380953
+          },
+          {
+            "zone": "B_SHORT",
+            "support": 149,
+            "recall": 0.2483221476510067
+          },
+          {
+            "zone": "B_LOBBY",
+            "support": 628,
+            "recall": 0.43312101910828027
+          },
+          {
+            "zone": "B_APPS",
+            "support": 344,
+            "recall": 0.42151162790697677
+          },
+          {
+            "zone": "B_SITE_COMPLEX",
+            "support": 354,
+            "recall": 0.6242937853107344
+          },
+          {
+            "zone": "MARKET",
+            "support": 3,
+            "recall": 0.3333333333333333
+          },
+          {
+            "zone": "CT_SPAWN",
+            "support": 5,
+            "recall": 0.2
+          }
+        ]
+      },
+      "B2": {
+        "rows": 5622,
+        "matches": 20,
+        "log_loss": 1.0648234324316337,
+        "equal_match_mean_log_loss": 1.0769211689578784,
+        "multiclass_brier_score": 0.5188623166520686,
+        "accuracy": 0.6218427605834222,
+        "macro_f1": 0.41118543528037416,
+        "per_zone": [
+          {
+            "zone": "T_SPAWN",
+            "support": 483,
+            "recall": 0.6811594202898551
+          },
+          {
+            "zone": "MID_ENTRY",
+            "support": 1287,
+            "recall": 0.8888888888888888
+          },
+          {
+            "zone": "A_RAMP",
+            "support": 215,
+            "recall": 0.0
+          },
+          {
+            "zone": "PALACE",
+            "support": 726,
+            "recall": 0.5785123966942148
+          },
+          {
+            "zone": "A_SITE_COMPLEX",
+            "support": 975,
+            "recall": 0.7066666666666667
+          },
+          {
+            "zone": "CONNECTOR",
+            "support": 70,
+            "recall": 0.0
+          },
+          {
+            "zone": "MID",
+            "support": 278,
+            "recall": 0.38489208633093525
+          },
+          {
+            "zone": "MID_WINDOW",
+            "support": 21,
+            "recall": 0.5238095238095238
+          },
+          {
+            "zone": "UNDERPASS",
+            "support": 84,
+            "recall": 0.42857142857142855
+          },
+          {
+            "zone": "B_SHORT",
+            "support": 149,
+            "recall": 0.48322147651006714
+          },
+          {
+            "zone": "B_LOBBY",
+            "support": 628,
+            "recall": 0.6592356687898089
+          },
+          {
+            "zone": "B_APPS",
+            "support": 344,
+            "recall": 0.375
+          },
+          {
+            "zone": "B_SITE_COMPLEX",
+            "support": 354,
+            "recall": 0.4096045197740113
+          },
+          {
+            "zone": "MARKET",
+            "support": 3,
+            "recall": 0.0
+          },
+          {
+            "zone": "CT_SPAWN",
+            "support": 5,
+            "recall": 0.0
+          }
+        ]
+      },
+      "B3": {
+        "rows": 5622,
+        "matches": 20,
+        "log_loss": 0.8392363443711074,
+        "equal_match_mean_log_loss": 0.8524712840135166,
+        "multiclass_brier_score": 0.4130551015602203,
+        "accuracy": 0.7054429028815368,
+        "macro_f1": 0.4520912918704767,
+        "per_zone": [
+          {
+            "zone": "T_SPAWN",
+            "support": 483,
+            "recall": 0.6356107660455487
+          },
+          {
+            "zone": "MID_ENTRY",
+            "support": 1287,
+            "recall": 0.8733488733488733
+          },
+          {
+            "zone": "A_RAMP",
+            "support": 215,
+            "recall": 0.06976744186046512
+          },
+          {
+            "zone": "PALACE",
+            "support": 726,
+            "recall": 0.8209366391184573
+          },
+          {
+            "zone": "A_SITE_COMPLEX",
+            "support": 975,
+            "recall": 0.8307692307692308
+          },
+          {
+            "zone": "CONNECTOR",
+            "support": 70,
+            "recall": 0.02857142857142857
+          },
+          {
+            "zone": "MID",
+            "support": 278,
+            "recall": 0.4712230215827338
+          },
+          {
+            "zone": "MID_WINDOW",
+            "support": 21,
+            "recall": 0.0
+          },
+          {
+            "zone": "UNDERPASS",
+            "support": 84,
+            "recall": 0.47619047619047616
+          },
+          {
+            "zone": "B_SHORT",
+            "support": 149,
+            "recall": 0.48322147651006714
+          },
+          {
+            "zone": "B_LOBBY",
+            "support": 628,
+            "recall": 0.5907643312101911
+          },
+          {
+            "zone": "B_APPS",
+            "support": 344,
+            "recall": 0.6598837209302325
+          },
+          {
+            "zone": "B_SITE_COMPLEX",
+            "support": 354,
+            "recall": 0.7655367231638418
+          },
+          {
+            "zone": "MARKET",
+            "support": 3,
+            "recall": 0.0
+          },
+          {
+            "zone": "CT_SPAWN",
+            "support": 5,
+            "recall": 0.0
+          }
+        ]
+      },
+      "B3_minus_B2": {
+        "pooled_log_loss_delta": -0.22558708806052638,
+        "equal_match_log_loss_delta": -0.22444988494436174,
+        "match_bootstrap_95ci": [
+          -0.24081867566794055,
+          -0.2106955019034294
+        ],
+        "bootstrap_resamples": 10000,
+        "seed": 42
+      }
+    }
+  },
+  "interpretation_note": "Independent 20-match replication. No confirmation-based tuning, model regeneration or data substitution.",
+  "predictions_sha256": "fea88e0ed0e6012d133b7dbaaa25f6bec92e0f6c8acf3ab1f4a05bdc57f69ea9",
+  "confirmation_motion_sha256": "d5be08d72373d8e124cfc13c4d358af08041ef44407f569cc8987f15b88d759a"
+}

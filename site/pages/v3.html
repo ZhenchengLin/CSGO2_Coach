@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A controlled sequence of hierarchical, calibration, robustness, and temporal experiments. H2 was promising, but V0 remains the selected development baseline."><meta name="theme-color" content="#142623"><title>V3 independent confirmation — CS2 Tactical Intelligence Lab</title><link rel="stylesheet" href="../assets/style.css?v=v2-confirmation"></head>
+<body data-page="v3"><a class="skip-link" href="#main">Skip to content</a><div class="shell"><aside class="side" id="site-navigation" aria-label="Lab navigation"><a class="brand" href="../index.html"><span class="mark">cti<span>↗</span></span><span><small>Independent research</small><strong>CS2 Tactical<br>Intelligence Lab</strong></span></a><div class="nav-label">The research notebook</div><nav class="nav"><a data-page="home" href="../index.html"><span>01</span>Overview</a><a data-page="v0" href="../pages/v0.html"><span>02</span>Understanding V0</a><a data-page="v1" href="../pages/v1.html"><span>03</span>Understanding V1</a><a data-page="v2" href="../pages/v2.html"><span>04</span>V2 confirmation</a><a class="active" aria-current="page" data-page="v3" href="../pages/v3.html"><span>05</span>V3 forecasting</a><a data-page="evidence" href="../pages/evidence.html"><span>06</span>Results & evidence</a><a data-page="models" href="../pages/models.html"><span>07</span>Models</a><a data-page="data" href="../pages/data.html"><span>08</span>Data & pipeline</a><a data-page="roadmap" href="../pages/roadmap.html"><span>09</span>Roadmap</a><a data-page="decisions" href="../pages/decisions.html"><span>10</span>Design decisions</a><a data-page="research" href="../pages/research.html"><span>11</span>Research horizons</a><a data-page="build-log" href="../pages/build-log.html"><span>12</span>Build log</a><a data-page="journey" href="../pages/journey.html"><span>13</span>The journey</a></nav><div class="side-bottom"><div class="status">V3 · Independent confirmation complete</div><p>Observe. Test. Understand.<br>Let evidence lead the next version.</p><span class="edition">RESEARCH SERIES / 001</span></div></aside><div class="menu-backdrop" hidden></div><main class="main" id="main"><div class="top"><button class="menu" aria-controls="site-navigation" aria-expanded="false" aria-label="Open navigation">☰ <span>Menu</span></button><span class="breadcrumb">The notebook <span>/</span> V3 independent confirmation</span><span class="top-meta">MIRAGE <span>·</span> V3 RESEARCH CLOSED</span></div><div class="content">
+<header class="hero">
+    <div class="kicker">
+        Version 3 / Independent research record
+    </div>
+
+    <h1>Forecasting the bomb's next macro-zone.</h1>
+
+    <p class="lead">
+        At an observation time in a Mirage round, estimate the
+        bomb's macro-zone 5 or 10 seconds later using only
+        information available at or before the observation.
+
+        This is a different prediction target from the
+        V0/V2 round-level plant outcome.
+    </p>
+
+    <div class="badges">
+        <span class="badge ok">
+            V3 closed · independently evaluated
+        </span>
+        <span class="badge">
+            53 development matches
+        </span>
+        <span class="badge">
+            20 independent confirmation matches
+        </span>
+        <span class="badge">
+            15 frozen zones · +5s / +10s
+        </span>
+    </div>
+</header>
+
+<section class="section">
+    <div class="section-head">
+        <h2>At a glance</h2>
+
+        <p>
+            One frozen B3 model per horizon was evaluated
+            alongside three fixed baselines on identical
+            confirmation observations.
+        </p>
+    </div>
+
+    <div class="grid">
+        <article class="card">
+            <div class="stat-label">Confirmation matches</div>
+            <div class="stat">20</div>
+            <p>
+                Later-period Mirage demos
+                (2026-09-16 to 2026-09-17).
+                The first 20 technically eligible candidates
+                in the frozen queue.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="stat-label">Valid +5s observations</div>
+            <div class="stat">
+                5,861
+            </div>
+            <p>
+                Repeated within-match observations,
+                not independent matches.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="stat-label">Valid +10s observations</div>
+            <div class="stat">
+                5,622
+            </div>
+            <p>
+                Evaluated separately from the +5s horizon.
+            </p>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-head">
+        <h2>The frozen experiment</h2>
+
+        <p>
+            Development contains
+            53 matches:
+            20
+            original development,
+            13
+            V2 reserve, and
+            20
+            V3 fresh development matches.
+
+            The V2 <code>D_CONFIRM</code> set was not reused
+            as V3 development or confirmation.
+        </p>
+    </div>
+
+    <div class="flow">
+        <div class="node">
+            <b>Current state at t</b><br>
+            Zone · C4 source · XYZ · causal 1s motion
+        </div>
+
+        <span class="arrow">→</span>
+
+        <div class="node">
+            <b>Frozen B0–B3</b><br>
+            Separate +5s / +10s probability vectors
+        </div>
+
+        <span class="arrow">→</span>
+
+        <div class="node">
+            <b>Future label</b><br>
+            One of 15 Mirage macro-zones
+        </div>
+    </div>
+
+    <p>
+        <a href="../assets/sources/v3_research_design.md">Research design ↗</a>
+        ·
+        <a href="../assets/sources/v3_b3_feature_protocol_v1.json">Frozen B3 feature protocol ↗</a>
+        ·
+        <a href="../assets/sources/v3_macro_zone_mapping_v1_frozen.json">Macro-zone definitions ↗</a>
+    </p>
+</section>
+
+<section class="section">
+    <div class="section-head">
+        <h2>What each baseline asks</h2>
+
+        <p>
+            These four models address the same V3 target.
+            They are not ranked against the earlier V0/V2
+            plant-outcome models.
+        </p>
+    </div>
+
+    <div class="grid">
+        <article class="card half">
+            <h3>B0 · Persistence</h3>
+            <p>
+                Predict that the bomb stays in its current
+                macro-zone, with a frozen development-fitted
+                probability adapter.
+            </p>
+        </article>
+
+        <article class="card half">
+            <h3>B1 · Constant motion</h3>
+            <p>
+                Project current XYZ using one second of
+                causal velocity. Resolve the projected XYZ
+                against frozen development-only spatial samples
+                and apply the frozen probability adapter.
+            </p>
+        </article>
+
+        <article class="card half">
+            <h3>B2 · Zone Markov</h3>
+            <p>
+                Use the development-fitted conditional
+                probability of future macro-zone given
+                current macro-zone, separately for each horizon.
+            </p>
+        </article>
+
+        <article class="card half">
+            <h3>B3 · Tabular map-aware</h3>
+            <p>
+                Use a frozen 24-feature XGBoost model combining
+                one-hot current zone, C4 state, XYZ, velocity
+                and speed. Separate models predict +5s and +10s.
+            </p>
+        </article>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-head">
+        <h2>Formal independent confirmation</h2>
+
+        <p>
+            Primary comparison: B3 minus B2 pooled multiclass
+            Log Loss, reported separately for each horizon.
+
+            Negative differences mean lower B3 Log Loss
+            on the frozen confirmation sample.
+        </p>
+    </div>
+
+    <div
+        class="table-wrap"
+        role="region"
+        aria-label="V3 paired confirmation results"
+        tabindex="0"
+    >
+        <table>
+            <thead>
+                <tr>
+                    <th>Horizon</th>
+                    <th>Rows</th>
+                    <th>B2 Log Loss</th>
+                    <th>B3 Log Loss</th>
+                    <th>B3 − B2</th>
+                    <th>95% match-bootstrap CI</th>
+                    <th>Observed relative reduction</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr><td>+5s</td><td>5,861</td><td>0.754550</td><td>0.491641</td><td>-0.262909</td><td>[-0.284017, -0.245411]</td><td>34.8%</td></tr><tr><td>+10s</td><td>5,622</td><td>1.064823</td><td>0.839236</td><td>-0.225587</td><td>[-0.240819, -0.210696]</td><td>21.2%</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>
+        The 95% percentile intervals use 10,000 paired,
+        match-level bootstrap resamples (seed 42).
+
+        Both intervals are below zero for this frozen
+        20-match sample.
+
+        This does not establish performance on other maps,
+        populations or real-time player-view inputs.
+    </p>
+</section>
+
+<section class="section">
+    <div class="section-head">
+        <h2>All four frozen models</h2>
+
+        <p>
+            Log Loss and Brier: lower is better.
+            Accuracy and macro F1: higher is better.
+
+            Equal-match Log Loss gives each match the
+            same weight rather than weighting by its
+            number of observations.
+        </p>
+    </div>
+
+    <div
+        class="table-wrap"
+        role="region"
+        aria-label="V3 complete model comparison"
+        tabindex="0"
+    >
+        <table>
+            <thead>
+                <tr>
+                    <th>Horizon</th>
+                    <th>Model</th>
+                    <th>Log Loss</th>
+                    <th>Accuracy</th>
+                    <th>Macro F1</th>
+                    <th>Multiclass Brier</th>
+                    <th>Equal-match Log Loss</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr><td>+5s</td><td>B0 · Persistence</td><td>1.202183</td><td>75.53%</td><td>0.613838</td><td>0.425232</td><td>1.217526</td></tr><tr><td>+5s</td><td>B1 · Constant motion</td><td>1.413096</td><td>69.70%</td><td>0.517758</td><td>0.507664</td><td>1.427962</td></tr><tr><td>+5s</td><td>B2 · Zone Markov</td><td>0.754550</td><td>75.87%</td><td>0.566917</td><td>0.375796</td><td>0.762426</td></tr><tr><td>+5s</td><td>B3 · Tabular map-aware</td><td>0.491641</td><td>82.36%</td><td>0.602756</td><td>0.253430</td><td>0.496127</td></tr><tr><td>+10s</td><td>B0 · Persistence</td><td>1.720789</td><td>60.26%</td><td>0.432901</td><td>0.625649</td><td>1.742808</td></tr><tr><td>+10s</td><td>B1 · Constant motion</td><td>1.967531</td><td>51.69%</td><td>0.340728</td><td>0.716157</td><td>1.985002</td></tr><tr><td>+10s</td><td>B2 · Zone Markov</td><td>1.064823</td><td>62.18%</td><td>0.411185</td><td>0.518862</td><td>1.076921</td></tr><tr><td>+10s</td><td>B3 · Tabular map-aware</td><td>0.839236</td><td>70.54%</td><td>0.452091</td><td>0.413055</td><td>0.852471</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-head">
+        <h2>Per-zone audit · B3</h2>
+
+        <p>
+            These are hard-label recall and support,
+            not confidence intervals.
+
+            Small-support zones are particularly uncertain
+            and should not be generalized from a handful
+            of observations.
+        </p>
+    </div>
+
+    <div
+        class="table-wrap"
+        role="region"
+        aria-label="B3 per-zone recall and support"
+        tabindex="0"
+    >
+        <table>
+            <thead>
+                <tr>
+                    <th>Target zone</th>
+                    <th>+5s support</th>
+                    <th>+5s recall</th>
+                    <th>+10s support</th>
+                    <th>+10s recall</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr><td><code>T_SPAWN</code></td><td>558</td><td>83.0%</td><td>483</td><td>63.6%</td></tr><tr><td><code>MID_ENTRY</code></td><td>1477</td><td>91.5%</td><td>1287</td><td>87.3%</td></tr><tr><td><code>A_RAMP</code></td><td>218</td><td>35.3%</td><td>215</td><td>7.0%</td></tr><tr><td><code>PALACE</code></td><td>812</td><td>86.2%</td><td>726</td><td>82.1%</td></tr><tr><td><code>A_SITE_COMPLEX</code></td><td>824</td><td>88.2%</td><td>975</td><td>83.1%</td></tr><tr><td><code>CONNECTOR</code></td><td>70</td><td>37.1%</td><td>70</td><td>2.9%</td></tr><tr><td><code>MID</code></td><td>278</td><td>76.3%</td><td>278</td><td>47.1%</td></tr><tr><td><code>MID_WINDOW</code></td><td>21</td><td>0.0%</td><td>21</td><td>0.0%</td></tr><tr><td><code>UNDERPASS</code></td><td>84</td><td>72.6%</td><td>84</td><td>47.6%</td></tr><tr><td><code>B_SHORT</code></td><td>151</td><td>70.9%</td><td>149</td><td>48.3%</td></tr><tr><td><code>B_LOBBY</code></td><td>724</td><td>78.3%</td><td>628</td><td>59.1%</td></tr><tr><td><code>B_APPS</code></td><td>344</td><td>82.0%</td><td>344</td><td>66.0%</td></tr><tr><td><code>B_SITE_COMPLEX</code></td><td>292</td><td>87.0%</td><td>354</td><td>76.6%</td></tr><tr><td><code>MARKET</code></td><td>3</td><td>0.0%</td><td>3</td><td>0.0%</td></tr><tr><td><code>CT_SPAWN</code></td><td>5</td><td>0.0%</td><td>5</td><td>0.0%</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-head">
+        <h2>Research boundary and next questions</h2>
+
+        <p>
+            V3 is an observer/replay offline forecasting
+            experiment on Mirage.
+
+            It does not validate live machine capture,
+            player-view partial observation, other maps,
+            tactical prescriptions or a deployed assistant.
+        </p>
+    </div>
+
+    <div class="callout warn">
+        <strong>Do not retune on D_V3_CONFIRM.</strong>
+
+        All 20 matches are now exposed by formal scoring.
+
+        V4 must define a new problem or experiment and obtain
+        suitable new evaluation evidence.
+    </div>
+
+    <p>
+        Potential next investigations include descriptive
+        error analysis by zone and movement regime, the value
+        of causally observable team context, and how to present
+        forecasts as observer/replay research signals.
+
+        None is a frozen V4 experiment yet.
+    </p>
+</section>
+
+<section class="section">
+    <div class="section-head">
+        <h2>Reproducible record</h2>
+
+        <p>
+            The website republishes frozen research files.
+            Its HTML contains no new model inference,
+            training or rescoring.
+        </p>
+    </div>
+
+    <p>
+        <a href="../assets/sources/v3_closure_v1.md">V3 closure report ↗</a>
+        ·
+        <a href="../assets/sources/v3_confirm_results_v1.json">Full formal metrics and per-zone evidence ↗</a>
+        ·
+        <a href="../assets/sources/v3_confirm_manifest_identity.json">Manifest identity ↗</a>
+        ·
+        <a href="../assets/sources/v3_confirm_scoring_protocol_v1.json">Frozen scoring protocol ↗</a>
+        ·
+        <a href="../assets/sources/v3_confirm_model_freeze.json">Frozen model identities ↗</a>
+        ·
+        <a href="../assets/sources/v3_development_closure_v1.json">Development closure ↗</a>
+    </p>
+
+    <p>
+        <small>
+            Manifest SHA256:
+            <code>68411147301c9e37a4649ad0b4ceac61f7b87a01493f1cff3a692b16dc8de3b7</code>
+            <br>
+
+            Scoring protocol SHA256:
+            <code>362a5c598cde2bcb91724994330cc72751adaf1f7084f1e7bb5d793c8996a203</code>
+            <br>
+
+            Frozen model record SHA256:
+            <code>65bf09ec3e3cbeaacfb5ff4bb28a504d927fbcc55898b40e1413153ef11dba85</code>
+        </small>
+    </p>
+</section>
+<footer class="footer"><a href="../index.html">CS2 Tactical Intelligence Lab</a><span>V3 independent confirmation complete · September 2026</span><a href="../pages/roadmap.html#v3-release">Research roadmap ↗</a></footer></div></main></div><script src="../assets/site.js"></script></body></html>

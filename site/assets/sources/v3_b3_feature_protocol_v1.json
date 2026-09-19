@@ -1,0 +1,128 @@
+{
+  "version": "V3_B3_FEATURE_PROTOCOL_V1",
+  "status": "FROZEN_BEFORE_FIRST_B3_FIT",
+  "parent_baseline": "B3_tabular_map_aware",
+  "research_question": "Can a nonlinear tabular model combine current map state and recent causal bomb motion to improve near-future macro-zone forecasting beyond the frozen B0-B2 development baselines?",
+  "causality_rule": "Every feature must be observable at or before current time t.",
+  "models": {
+    "5": "separate multiclass model",
+    "10": "separate multiclass model"
+  },
+  "features": {
+    "current_macro_zone": {
+      "encoding": "full one-hot",
+      "categories": [
+        "T_SPAWN",
+        "MID_ENTRY",
+        "A_RAMP",
+        "PALACE",
+        "A_SITE_COMPLEX",
+        "CONNECTOR",
+        "MID",
+        "MID_WINDOW",
+        "UNDERPASS",
+        "B_SHORT",
+        "B_LOBBY",
+        "B_APPS",
+        "B_SITE_COMPLEX",
+        "MARKET",
+        "CT_SPAWN"
+      ],
+      "dimensions": 15
+    },
+    "bomb_state": {
+      "encoding": "full one-hot",
+      "categories": [
+        "CARRIED",
+        "DROPPED"
+      ],
+      "source_mapping": {
+        "CARRIED_INVENTORY": "CARRIED",
+        "CARRIED_PICKUP_FALLBACK": "CARRIED",
+        "DROPPED": "DROPPED"
+      },
+      "dimensions": 2,
+      "provenance_not_exposed_as_feature": true
+    },
+    "current_xyz": {
+      "columns": [
+        "current_bomb_X",
+        "current_bomb_Y",
+        "current_bomb_Z"
+      ],
+      "transform": "raw",
+      "dimensions": 3
+    },
+    "recent_velocity": {
+      "columns": [
+        "velocity_X",
+        "velocity_Y",
+        "velocity_Z"
+      ],
+      "history_seconds": 1.0,
+      "transform": "raw",
+      "dimensions": 3
+    },
+    "speed": {
+      "definition": "sqrt(vx^2 + vy^2 + vz^2)",
+      "transform": "raw",
+      "clipping": null,
+      "dimensions": 1
+    }
+  },
+  "feature_order": [
+    "zone__T_SPAWN",
+    "zone__MID_ENTRY",
+    "zone__A_RAMP",
+    "zone__PALACE",
+    "zone__A_SITE_COMPLEX",
+    "zone__CONNECTOR",
+    "zone__MID",
+    "zone__MID_WINDOW",
+    "zone__UNDERPASS",
+    "zone__B_SHORT",
+    "zone__B_LOBBY",
+    "zone__B_APPS",
+    "zone__B_SITE_COMPLEX",
+    "zone__MARKET",
+    "zone__CT_SPAWN",
+    "bomb_state__CARRIED",
+    "bomb_state__DROPPED",
+    "current_bomb_X",
+    "current_bomb_Y",
+    "current_bomb_Z",
+    "velocity_X",
+    "velocity_Y",
+    "velocity_Z",
+    "speed"
+  ],
+  "total_dimensions": 24,
+  "explicitly_excluded": [
+    "prior_source provenance",
+    "current resolver provenance as separate categories",
+    "demo identity",
+    "team identity",
+    "player identity",
+    "future target information",
+    "future player information",
+    "B2 prediction vector",
+    "V2 D_CONFIRM",
+    "future D_V3_CONFIRM"
+  ],
+  "speed_audit": {
+    "unique_motion_rows": 14869,
+    "gt_300": 61,
+    "maximum": 1483.561224121887,
+    "policy": "Retain raw values. No clipping is introduced before first B3 fit."
+  },
+  "development_rows": 29065,
+  "development_matches": 53,
+  "target_dataset_sha256": "e10929107ff2d3357b96798f0a5a9e13f16ab602aaf972c919daef7b1dae288e",
+  "motion_cache_sha256": "412cee7968abbf340e5c49dffebe848b0e6101202b9f7dbbfb5585f115c42289",
+  "macro_mapping_sha256": "557bd091789e43e463bdd85251cd7d581a912723f38b5989ce6045e76692d9b3",
+  "baseline_protocol_sha256": "cadb5d4c4dc54b0608d8173c22d8a04b7d5423e30d7261d84c205a88b6952914",
+  "feature_selection_using_confirmation_data": false,
+  "v2_d_confirm_used": false,
+  "v3_confirmation_used": false,
+  "next_action": "Freeze exact B3 model configuration before first B3 model fit."
+}
