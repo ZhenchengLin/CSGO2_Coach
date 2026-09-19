@@ -1,0 +1,44 @@
+{
+  "version": "V3_CONFIRM_SCORING_PROTOCOL_V1",
+  "status": "FROZEN_BEFORE_CONFIRMATION_SCORING",
+  "dataset": "D_V3_CONFIRM",
+  "manifest_sha256": "68411147301c9e37a4649ad0b4ceac61f7b87a01493f1cff3a692b16dc8de3b7",
+  "model_freeze_sha256": "65bf09ec3e3cbeaacfb5ff4bb28a504d927fbcc55898b40e1413153ef11dba85",
+  "candidate": "B3_TABULAR_MAP_AWARE_V1",
+  "primary_comparator": "B2_ZONE_MARKOV_V1",
+  "supporting_comparators": [
+    "B0_PERSISTENCE",
+    "B1_CONSTANT_MOTION"
+  ],
+  "horizons_sec": [
+    5,
+    10
+  ],
+  "horizon_policy": "Evaluate +5s and +10s separately.",
+  "primary_metric": "multiclass_log_loss",
+  "primary_difference": "B3 minus B2; negative means lower B3 log loss.",
+  "secondary_metrics": [
+    "multiclass_brier_score",
+    "accuracy",
+    "macro_f1",
+    "per_zone_recall",
+    "per_zone_support",
+    "equal_match_mean_log_loss"
+  ],
+  "uncertainty": {
+    "method": "paired nonparametric match bootstrap",
+    "unit": "match",
+    "resamples": 10000,
+    "seed": 42,
+    "confidence_interval": 0.95,
+    "quantity": "B3 minus B2 pooled log loss",
+    "resample_rule": "Sample 20 matches with replacement; retain all eligible rows from each sampled match, including repeated matches.",
+    "evaluate_horizons_separately": true
+  },
+  "scoring_passes": 1,
+  "model_refitting": false,
+  "confirmation_based_tuning": false,
+  "candidate_replacement": false,
+  "v2_confirmation_reuse": false,
+  "implementation_failure_rule": "Stop, document and repair implementation without changing the frozen manifest, models, target semantics or scoring rules."
+}
