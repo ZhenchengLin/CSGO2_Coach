@@ -1,0 +1,833 @@
+{
+  "version": "V4_GATE_1E_IDENTITY_AND_FEATURE_AUDIT_V1",
+  "status": "GATE_1E_IDENTITY_AND_FEATURE_RECONCILIATION_PASS",
+  "scope": "53 V3 historical development matches only",
+  "development_manifest_sha256": "1aa9dbc30edca67b0e3dc32955c31fe51bc0f12f33361a4a0b2a355c7d510bad",
+  "team_context_sha256": "36d84002a0aeeba16b08055347e31eac31d8377ab4f5a57ec9926a33efe3d46b",
+  "macro_mapping_sha256": "557bd091789e43e463bdd85251cd7d581a912723f38b5989ce6045e76692d9b3",
+  "matches_audited": 53,
+  "feature_dimensions": 32,
+  "totals": {
+    "snapshots": 14869,
+    "living_t": 60744,
+    "living_ct": 63166,
+    "missing_ids": 0,
+    "duplicate_excess": 0,
+    "mapped": 123909,
+    "unknown_t": 0,
+    "unknown_ct": 1,
+    "missing_snapshots": 0
+  },
+  "issues": {},
+  "issue_examples": [],
+  "per_match": [
+    {
+      "demo_filename": "2026-05-12_legacy_vs_m80_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 249,
+        "living_t": 995,
+        "living_ct": 998,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1993,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-06-03_illwill_vs_ex-zero-tenacity_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 310,
+        "living_t": 1224,
+        "living_ct": 1384,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2608,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-06-06_pain_vs_tyloo_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 283,
+        "living_t": 1185,
+        "living_ct": 1274,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2459,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-06-10_ground-zero_vs_masked-regime_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 258,
+        "living_t": 1038,
+        "living_ct": 1113,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2151,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-06-14_detonate_vs_iowa-stormboar_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 400,
+        "living_t": 1572,
+        "living_ct": 1730,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 3302,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-06-16_ground-zero_vs_rooster_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 281,
+        "living_t": 1143,
+        "living_ct": 1192,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2335,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-06-16_illwill_vs_ex-ruby_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 470,
+        "living_t": 1937,
+        "living_ct": 1936,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 3873,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-07-09_bounty-hunters_vs_imperial_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 426,
+        "living_t": 1781,
+        "living_ct": 1828,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 3609,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-07-17_ground-zero_vs_arcade_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 268,
+        "living_t": 1080,
+        "living_ct": 1152,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2232,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-07-26_los-kogutos_vs_megoshort_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 245,
+        "living_t": 918,
+        "living_ct": 965,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1883,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-08-14_b8_vs_vitality_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 422,
+        "living_t": 1864,
+        "living_ct": 1801,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 3665,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-08-16_eac_vs_lavked_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 222,
+        "living_t": 875,
+        "living_ct": 841,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1716,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-08-18_pcific_vs_just-players_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 282,
+        "living_t": 1150,
+        "living_ct": 1218,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2368,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-08-23_just-players_vs_ex-zero-tenacity_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 256,
+        "living_t": 1151,
+        "living_ct": 1112,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2263,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-08-26_ex-zero-tenacity_vs_honved_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 250,
+        "living_t": 988,
+        "living_ct": 1048,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2036,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-08-26_navi_vs_m80_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 294,
+        "living_t": 1204,
+        "living_ct": 1257,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2461,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-08-29_sinners_vs_ex-zero-tenacity_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 301,
+        "living_t": 1240,
+        "living_ct": 1299,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2539,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "havu-vs-mellren-m1-mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 220,
+        "living_t": 905,
+        "living_ct": 947,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1852,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-07_lavked_vs_leo_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 218,
+        "living_t": 920,
+        "living_ct": 918,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1838,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-08_mouz-nxt_vs_unity_mirage.dem",
+      "dev_source_role": "V0_DEVELOPMENT",
+      "counts": {
+        "snapshots": 184,
+        "living_t": 766,
+        "living_ct": 706,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1472,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-10_liquid_vs_antivalue_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 210,
+        "living_t": 861,
+        "living_ct": 900,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1761,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-10_madlikewizards_vs_arcade_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 239,
+        "living_t": 951,
+        "living_ct": 1024,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1975,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-10_megoshort_vs_misa_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 295,
+        "living_t": 1269,
+        "living_ct": 1266,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2535,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-10_mibr_vs_betboom_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 340,
+        "living_t": 1497,
+        "living_ct": 1503,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 3000,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-10_navi-junior_vs_oldboys-pl_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 232,
+        "living_t": 946,
+        "living_ct": 957,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1903,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-10_nemiga_vs_k27_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 243,
+        "living_t": 960,
+        "living_ct": 1036,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1996,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-10_ninjas-in-pyjamas_vs_infinite_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 289,
+        "living_t": 1254,
+        "living_ct": 1242,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2496,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-10_noir-verse_vs_ex-zero-tenacity_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 287,
+        "living_t": 1123,
+        "living_ct": 1239,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2362,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-10_pain_vs_back-to-back_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 274,
+        "living_t": 1078,
+        "living_ct": 1126,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2204,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-10_titanflow_vs_bojong_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 220,
+        "living_t": 846,
+        "living_ct": 893,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1739,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-11_banger-gang_vs_wbt-academy_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 285,
+        "living_t": 1100,
+        "living_ct": 1170,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2270,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-11_inner-circle_vs_b8_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 328,
+        "living_t": 1383,
+        "living_ct": 1436,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2819,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-12_iowa-stormboar_vs_sportsbetexpert_mirage.dem",
+      "dev_source_role": "V2_RESERVE",
+      "counts": {
+        "snapshots": 322,
+        "living_t": 1322,
+        "living_ct": 1359,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2680,
+        "unknown_t": 0,
+        "unknown_ct": 1,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-13_g2-ares_vs_honved_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 283,
+        "living_t": 1143,
+        "living_ct": 1166,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2309,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-13_vexar_vs_benched-gods_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 331,
+        "living_t": 1349,
+        "living_ct": 1378,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2727,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-13_without-a-roof_vs_lag_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 303,
+        "living_t": 1277,
+        "living_ct": 1317,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2594,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-14_benched-gods_vs_spirit-academy_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 251,
+        "living_t": 935,
+        "living_ct": 1019,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1954,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-14_bet-m_vs_hyperspace_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 131,
+        "living_t": 521,
+        "living_ct": 502,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1023,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-14_bushido-wildcats_vs_navi-junior_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 357,
+        "living_t": 1461,
+        "living_ct": 1556,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 3017,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-14_butterfly_vs_hyperspace_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 145,
+        "living_t": 525,
+        "living_ct": 614,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1139,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-14_ence_vs_falcons-force_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 281,
+        "living_t": 1183,
+        "living_ct": 1224,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2407,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-14_falcons-force_vs_navi-junior_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 351,
+        "living_t": 1411,
+        "living_ct": 1548,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2959,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-14_illyrians_vs_permitta_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 245,
+        "living_t": 988,
+        "living_ct": 1081,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2069,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-14_metizport_vs_nemiga_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 365,
+        "living_t": 1422,
+        "living_ct": 1609,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 3031,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-14_sportsbetexpert_vs_without-a-roof_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 147,
+        "living_t": 628,
+        "living_ct": 616,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1244,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-15_9ine_vs_aimclub_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 292,
+        "living_t": 1239,
+        "living_ct": 1236,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2475,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-15_baks_vs_spirit-academy_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 379,
+        "living_t": 1585,
+        "living_ct": 1598,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 3183,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-15_brute_vs_g2-ares_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 234,
+        "living_t": 941,
+        "living_ct": 1045,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1986,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-15_detonate_vs_overtake-sector_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 176,
+        "living_t": 712,
+        "living_ct": 705,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1417,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-15_entropy_vs_vexar_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 197,
+        "living_t": 826,
+        "living_ct": 840,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 1666,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-15_g2-ares_vs_azuolas_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 388,
+        "living_t": 1453,
+        "living_ct": 1571,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 3024,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-15_quazar_vs_permitta_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 337,
+        "living_t": 1531,
+        "living_ct": 1497,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 3028,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    },
+    {
+      "demo_filename": "2026-09-15_young27_vs_ww_mirage.dem",
+      "dev_source_role": "V3_FRESH",
+      "counts": {
+        "snapshots": 273,
+        "living_t": 1088,
+        "living_ct": 1174,
+        "missing_ids": 0,
+        "duplicate_excess": 0,
+        "mapped": 2262,
+        "unknown_t": 0,
+        "unknown_ct": 0,
+        "missing_snapshots": 0
+      }
+    }
+  ],
+  "limitations": [
+    "This is a development-data audit.",
+    "The audit checks nonempty, nonzero steamid and uniqueness within each current-time snapshot.",
+    "It does not establish cross-demo player identity.",
+    "No model training or independent confirmation was performed."
+  ],
+  "scientific_boundary": {
+    "v2_confirmation_used": false,
+    "v3_confirmation_used": false,
+    "model_training_performed": false,
+    "v3_frozen_artifacts_modified": false,
+    "v4_feature_contract_frozen": false
+  }
+}
