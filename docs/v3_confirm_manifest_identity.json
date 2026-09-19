@@ -1,0 +1,39 @@
+{
+  "version": "V3_CONFIRM_MANIFEST_IDENTITY_V1",
+  "status": "FROZEN_BEFORE_MODEL_PREDICTION",
+  "dataset": "D_V3_CONFIRM",
+  "manifest": "docs/v3_confirm_manifest.csv",
+  "manifest_sha256": "68411147301c9e37a4649ad0b4ceac61f7b87a01493f1cff3a692b16dc8de3b7",
+  "queue_sha256": "cc1fd6bcb2969aa5062b06fd5a3cb1c80e47513d53576a9bc663b06d14c3bfec",
+  "model_freeze_sha256": "65bf09ec3e3cbeaacfb5ff4bb28a504d927fbcc55898b40e1413153ef11dba85",
+  "selection_rule": "First 20 technically eligible frozen candidate ranks.",
+  "candidate_ranks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "n_matches": 20,
+  "valid_rows_by_horizon": {
+    "5": 5861,
+    "10": 5622
+  },
+  "predictions_before_freeze": false,
+  "confirmation_metrics_before_freeze": false
+}
