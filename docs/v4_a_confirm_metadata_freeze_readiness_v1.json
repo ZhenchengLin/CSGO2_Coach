@@ -1,0 +1,71 @@
+{
+  "version": "V4_A_CONFIRM_METADATA_FREEZE_READINESS_V1",
+  "status": "NOT_READY_FOR_QUEUE_FREEZE",
+  "dataset": "D_V4_A_CONFIRM",
+  "repository_head_at_development_verification": "1da00d2",
+  "source_artifacts": {
+    "batch1": {
+      "path": "docs/v4_a_confirm_metadata_staging_snapshot_v1.csv",
+      "sha256": "efb93bcc0dbdf5359225e81cb55af77db15139e2804d11ed071168b5b21ee32d",
+      "records": 11
+    },
+    "batch2": {
+      "path": "docs/v4_a_confirm_metadata_discovery_batch2_v1.csv",
+      "sha256": "83efe9c2581badfca3f61e649ab60fe2ceac3036046255ff012720249cdc4b49",
+      "records": 14
+    },
+    "verification_ledger": {
+      "path": "docs/v4_a_confirm_metadata_verification_ledger_v1.csv",
+      "sha256": "5e0e9b536776153ac2182e755ff5e762a42525b3f6e4a7ba0a4f6057200a4f98",
+      "records": 25
+    }
+  },
+  "validation": {
+    "discovery_records": 25,
+    "distinct_match_ids": 25,
+    "structural_validation": "PASS",
+    "source_page_verification": "INCOMPLETE",
+    "date_convention": "UNRESOLVED",
+    "sampling_frame": "NOT_DOCUMENTED_AS_FIXED",
+    "technical_eligibility": "NOT_PERFORMED"
+  },
+  "flagged_records": [
+    {
+      "source_match_id": "2398107",
+      "flags": [
+        "VERIFY_MATCH_PARTICIPANTS"
+      ]
+    },
+    {
+      "source_match_id": "2398267",
+      "flags": [
+        "SOURCE_PAGE_DATE_CONFLICT"
+      ]
+    },
+    {
+      "source_match_id": "2398269",
+      "flags": [
+        "VERIFY_MATCH_PARTICIPANTS"
+      ]
+    },
+    {
+      "source_match_id": "2398312",
+      "flags": [
+        "FORFEIT_TECHNICAL_ELIGIBILITY_PENDING"
+      ]
+    }
+  ],
+  "blocking_requirements": [
+    "Establish and document a consistent source match-date convention.",
+    "Independently verify source metadata for the proposed candidate corpus.",
+    "Document the candidate sampling frame and the method used to select the 25 discovered matches.",
+    "Resolve any source metadata conflicts without making performance-based or map-based selection decisions.",
+    "Complete an independent queue review before final queue creation and commit."
+  ],
+  "experimental_boundaries": {
+    "frozen_queue_created": false,
+    "confirmation_demo_downloaded": false,
+    "confirmation_model_scored": false,
+    "frozen_contract_modified": false
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "version": "V4_A_CONFIRM_METADATA_SOURCE_REVIEW_V1",
+  "status": "PROVISIONAL_SOURCE_REVIEW",
+
+  "dataset": "D_V4_A_CONFIRM",
+
+  "acquisition_protocol": "docs/v4_a_confirm_acquisition_protocol_v1_frozen.json",
+
+  "metadata_snapshot": {
+    "path": "docs/v4_a_confirm_metadata_staging_snapshot_v1.csv",
+    "sha256": "efb93bcc0dbdf5359225e81cb55af77db15139e2804d11ed071168b5b21ee32d",
+    "records": 11,
+    "frozen_candidate_queue": false
+  },
+
+  "source_review": [
+    {
+      "source_match_id": "2398267",
+      "match": "BESTIA vs ShindeN",
+
+      "staged_match_date": "2026-09-20",
+
+      "source_page_display_date": "2026-09-19",
+
+      "source_page_display_time": "23:00",
+
+      "source_url": "https://www.hltv.org/matches/2398267/bestia-vs-shinden-circuit-x-curitiba-season-3",
+
+      "finding": "The staged date differs from the date displayed on the HLTV match page.",
+
+      "status": "DATE_CONVENTION_REVIEW_REQUIRED",
+
+      "action": "Apply one consistently documented match-date convention to the entire candidate corpus before queue freeze. Do not alter the frozen temporal boundary."
+    },
+
+    {
+      "source_match_id": "2398032",
+      "match": "Bushido Wildcats vs NAVI Junior",
+
+      "source_url": "https://www.hltv.org/matches/2398032/bushido-wildcats-vs-navi-junior-european-pro-league-series-9",
+
+      "finding": "The source page displayed this match as scheduled rather than completed during the source review.",
+
+      "status": "MATCH_COMPLETION_NOT_ESTABLISHED_AT_REVIEW",
+
+      "action": "Retain the provisional metadata. Match completion and raw-demo availability must be established before technical eligibility can be confirmed."
+    },
+
+    {
+      "source_match_id": "2398312",
+      "match": "Kodex vs Unreal Nightmare",
+
+      "source_url": "https://www.hltv.org/matches/2398312/kodex-vs-unreal-nightmare-crossfire-season-6",
+
+      "finding": "The source page reports that Unreal Nightmare forfeited the match because it could not field a complete lineup.",
+
+      "status": "TECHNICAL_ELIGIBILITY_REVIEW_REQUIRED",
+
+      "action": "Preserve the provisional metadata. Apply the frozen technical eligibility rules after the candidate queue has been finalized. Do not replace this candidate based on its result."
+    }
+  ],
+
+  "sampling_frame_review": {
+    "status": "REQUIRED_BEFORE_QUEUE_FREEZE",
+
+    "finding": "The current 11 records have not been demonstrated to form the first 11 matches of a complete, consistently defined source population.",
+
+    "requirements": [
+      "Document the metadata source population and collection method.",
+      "Apply the frozen temporal boundary consistently.",
+      "Do not select matches using map outcome, demo availability, target distribution, or model performance.",
+      "Check whether earlier or equal-date candidates have been omitted from the collection.",
+      "Verify the complete candidate ordering before assigning final ranks."
+    ]
+  },
+
+  "experimental_boundaries": {
+    "existing_staging_modified": false,
+    "candidate_exclusion_performed": false,
+    "candidate_replacement_performed": false,
+    "confirmation_demo_downloaded": false,
+    "confirmation_model_scored": false,
+    "final_manifest_created": false,
+    "frozen_acquisition_queue_created": false,
+    "frozen_contract_modified": false
+  },
+
+  "next_action": "Resolve the date convention and sampling-frame completeness before finalizing the 25-candidate queue."
+}
