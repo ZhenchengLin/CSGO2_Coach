@@ -1,0 +1,148 @@
+{
+  "version": "V4_A_CONFIRM_ACQUISITION_PROTOCOL_V1",
+  "status": "FROZEN_BEFORE_V4_CONFIRMATION_ACQUISITION",
+  "frozen_utc": "2026-09-19T23:59:48.276303+00:00",
+  "research_role": {
+    "dataset": "D_V4_A_CONFIRM",
+    "purpose": "Independent confirmation of the already frozen V4-A 56D Candidate versus 24D Control.",
+    "development_use": false,
+    "feature_selection_use": false,
+    "hyperparameter_tuning_use": false,
+    "model_replacement_use": false
+  },
+  "domain": {
+    "game": "Counter-Strike 2",
+    "map": "de_mirage",
+    "required_raw_tick_rate": 64,
+    "prediction_horizons_sec": [
+      5,
+      10
+    ],
+    "target_classes": 15
+  },
+  "temporal_boundary": {
+    "model_freeze_date": "2026-09-19",
+    "earliest_allowed_match_date": "2026-09-20",
+    "rule": "match_date >= 2026-09-20",
+    "earlier_matches_allowed": false
+  },
+  "sample_plan": {
+    "required_eligible_matches": 20,
+    "initial_candidate_queue": 25,
+    "formal_power_calculation": false,
+    "selection_rule": "Select the first 20 technically eligible candidates in frozen candidate_rank order.",
+    "eligible_earlier_candidate_may_be_skipped": false,
+    "manual_replacement": false,
+    "post_scoring_replacement": false,
+    "shortfall_rule": "If the 25-candidate queue is exhausted before 20 eligible matches are obtained, stop. Freeze and commit an explicit protocol amendment before acquiring additional candidates."
+  },
+  "candidate_queue": {
+    "output": "docs/v4_a_confirm_acquisition_queue_v1.csv",
+    "must_be_frozen_before_raw_demo_download": true,
+    "preferred_metadata_source": "HLTV",
+    "required_fields": [
+      "candidate_rank",
+      "match_date",
+      "source_match_id",
+      "event",
+      "team1",
+      "team2",
+      "source",
+      "source_url"
+    ],
+    "ordering": [
+      "match_date ascending",
+      "source_match_id ascending"
+    ],
+    "source_match_id_unique_within_queue": true,
+    "selection_must_not_depend_on_model_performance": true,
+    "selection_must_not_depend_on_target_distribution": true,
+    "technical_eligibility_checked_after_queue_freeze": true
+  },
+  "eligibility": {
+    "required": [
+      "Match date satisfies the frozen temporal boundary.",
+      "The acquired demo is de_mirage.",
+      "Raw demo is available, readable and non-corrupt.",
+      "Raw tick rate is 64.",
+      "Required frozen V3 bomb telemetry is available.",
+      "Required frozen V4 current-time player telemetry is available.",
+      "Frozen player-identity and occupancy checks pass.",
+      "Frozen target pipeline yields at least one eligible +5s row.",
+      "Frozen target pipeline yields at least one eligible +10s row.",
+      "Demo SHA256 is unique within the new candidate corpus.",
+      "Demo SHA256 does not overlap any historical development, V2 confirmation or V3 confirmation demo.",
+      "Match identity does not duplicate any already used match where source_match_id is available."
+    ],
+    "allowed_exclusion_reasons": [
+      "DATE_OUT_OF_RANGE",
+      "DOWNLOAD_FAILURE",
+      "ARCHIVE_CORRUPT",
+      "DEMO_CORRUPT",
+      "WRONG_MAP",
+      "DUPLICATE_SHA",
+      "HISTORICAL_DEMO_SHA_OVERLAP",
+      "HISTORICAL_MATCH_ID_OVERLAP",
+      "PARSER_FAILURE",
+      "WRONG_TICK_RATE",
+      "REQUIRED_BOMB_TELEMETRY_UNAVAILABLE",
+      "REQUIRED_PLAYER_TELEMETRY_UNAVAILABLE",
+      "FROZEN_PLAYER_IDENTITY_CHECK_FAILURE",
+      "FROZEN_OCCUPANCY_CHECK_FAILURE",
+      "ZERO_ELIGIBLE_PLUS5_ROWS",
+      "ZERO_ELIGIBLE_PLUS10_ROWS"
+    ],
+    "forbidden_exclusion_reasons": [
+      "Candidate or Control predicts poorly.",
+      "The observed target-zone distribution is undesirable.",
+      "Rare macro-zones are present.",
+      "A particular team or tournament is undesirable.",
+      "The match has an unexpected tactical style.",
+      "The Candidate performs worse than the Control."
+    ],
+    "unknown_player_place_policy": "Preserve the frozen T/CT UNKNOWN_PLACE feature semantics. Unknown place alone is not a new discretionary match exclusion reason."
+  },
+  "storage_policy": {
+    "minimum_free_disk_gib": 12,
+    "stop_before_next_download_if_below_threshold": true,
+    "sequential_acquisition": true,
+    "do_not_delete_historical_demos_or_frozen_models": true,
+    "do_not_download_before_candidate_queue_freeze": true
+  },
+  "confirmation_execution_boundary": {
+    "model_prediction_before_manifest_freeze": false,
+    "confirmation_metric_before_manifest_freeze": false,
+    "model_refitting_from_confirmation": false,
+    "confirmation_based_feature_changes": false,
+    "confirmation_scoring_protocol_must_be_frozen_before_scoring": true,
+    "confirmation_feature_extraction_must_follow_frozen_v4_contract": true,
+    "final_manifest": "docs/v4_a_confirm_manifest_v1.csv",
+    "final_manifest_must_be_frozen_before_model_scoring": true
+  },
+  "provenance": {
+    "model_freeze_path": "docs/v4_a_confirm_model_freeze_v1.json",
+    "model_freeze_sha256": "19605a690876c9e977d22171f9a8bec3a2bb057370e16bb7d33a8c1d68ddfe39",
+    "fit_contract_sha256": "80ae4fbab33ca884cc7f9854a02f6d50be976105c7d4bed7834b68fc9d4498bc",
+    "development_closure_sha256": "f5a9cee48f48011ff30fca9b05a59f7c117d36f7b58d0ecb12ec05eca996ff85",
+    "historical_manifests": {
+      "development": {
+        "path": "docs/v3_dev_manifest.csv",
+        "sha256": "1aa9dbc30edca67b0e3dc32955c31fe51bc0f12f33361a4a0b2a355c7d510bad",
+        "rows": 53
+      },
+      "v2_confirmation": {
+        "path": "docs/v2_confirm_manifest.csv",
+        "sha256": "95b1a29b455c37c417c0220e4998debcd1a25727f8d32bbc60baafe1e9106a9b",
+        "rows": 30
+      },
+      "v3_confirmation": {
+        "path": "docs/v3_confirm_manifest.csv",
+        "sha256": "68411147301c9e37a4649ad0b4ceac61f7b87a01493f1cff3a692b16dc8de3b7",
+        "rows": 20
+      }
+    },
+    "historical_demo_sha256_count": 103
+  },
+  "next_action": "Freeze the V4-A confirmation scoring and feature-extraction rules, then build and commit a deterministic 25-candidate metadata queue before acquiring any new demos.",
+  "revision_policy": "Do not overwrite this frozen V1 protocol. Any necessary changes require an explicit, versioned and committed amendment."
+}
