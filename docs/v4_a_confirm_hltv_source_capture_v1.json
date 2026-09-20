@@ -1,0 +1,22 @@
+{
+  "version": "V4_A_CONFIRM_HLTV_SOURCE_CAPTURE_V1",
+  "status": "CAPTURED_PENDING_LISTING_AUDIT",
+  "source_url": "https://www.hltv.org/matches",
+  "final_url": "https://www.hltv.org/matches",
+  "http_status": 200,
+  "content_type": "text/html;charset=utf-8",
+  "capture_started_utc": "2026-09-20T18:51:50.497590Z",
+  "capture_completed_utc": "2026-09-20T18:51:51.020379Z",
+  "amendment_commit": "511f689",
+  "amendment_sha256": "c98cb8c3b271275aa6b688b63a36f2f0da9a64e2feec7a7b638061d0ec520d7d",
+  "snapshot_path": "docs/v4_a_confirm_hltv_source_snapshot_v1.html",
+  "snapshot_sha256": "69089a902197391ba3e26e10912da57c45ca6a76130ffb59b2a16651144a2ba6",
+  "snapshot_size_bytes": 1247254,
+  "distinct_match_ids_in_entire_html": 438,
+  "timestamp_elements_in_entire_html": 439,
+  "upcoming_listing_completeness_verified": false,
+  "match_timestamp_associations_verified": false,
+  "candidate_queue_created": false,
+  "raw_demo_downloaded": false,
+  "model_scoring_performed": false
+}

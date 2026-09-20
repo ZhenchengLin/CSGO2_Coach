@@ -332,12 +332,27 @@ def build_candidate_queue(
             f"Snapshot row {index} is not a dictionary.",
         )
 
-        for field in REQUIRED_INPUT_FIELDS:
+        # Every listing entry needs enough information
+        # to participate in deterministic selection.
+        for field in (
+            "source_match_id",
+            "scheduled_start_utc",
+            "source_url",
+        ):
             require(
                 field in row
                 and isinstance(row[field], str)
                 and bool(row[field].strip()),
                 f"Snapshot row {index}: missing {field}.",
+            )
+
+        # Keep source-missing display metadata explicit.
+        # Do not invent names or remove the match.
+        for field in ("event", "team1", "team2"):
+            require(
+                field in row
+                and isinstance(row[field], str),
+                f"Snapshot row {index}: missing field {field}.",
             )
 
         match_id = normalize_match_id(
@@ -408,6 +423,18 @@ def build_candidate_queue(
     queue = []
 
     for rank, row in enumerate(selected, start=1):
+
+        # Missing display metadata outside the selected
+        # 25 cannot change candidate selection.
+        # Missing metadata INSIDE the selected 25 must
+        # stop queue construction.
+        for field in ("event", "team1", "team2"):
+            require(
+                bool(row[field]),
+                f"Selected Match {row['match_id']}: "
+                f"missing {field} in source snapshot.",
+            )
+
         queue.append(
             {
                 "candidate_rank": rank,

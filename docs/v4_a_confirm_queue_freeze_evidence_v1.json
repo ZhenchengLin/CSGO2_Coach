@@ -1,0 +1,152 @@
+{
+  "version": "V4_A_CONFIRM_QUEUE_FREEZE_EVIDENCE_V1",
+  "status": "SOURCE_AND_SELECTION_AUDITED",
+  "source_snapshot_path": "docs/v4_a_confirm_hltv_source_snapshot_v1.html",
+  "source_snapshot_sha256": "69089a902197391ba3e26e10912da57c45ca6a76130ffb59b2a16651144a2ba6",
+  "source_capture_record_path": "docs/v4_a_confirm_hltv_source_capture_v1.json",
+  "capture_started_utc": "2026-09-20T18:51:50.497590Z",
+  "capture_completed_utc": "2026-09-20T18:51:51.020379Z",
+  "amendment_commit": "511f689",
+  "selection_builder_commit": "d55fb71",
+  "timed_source_appearances": 439,
+  "unique_timed_source_matches": 426,
+  "regular_listing_unique_match_ids": 426,
+  "complete_page_unique_match_ids": 438,
+  "non_timed_page_match_ids": [
+    2397690,
+    2397829,
+    2397830,
+    2397831,
+    2397877,
+    2397986,
+    2397988,
+    2398107,
+    2398108,
+    2398168,
+    2398169,
+    2398268
+  ],
+  "non_timed_match_classifications": {
+    "2397690": [
+      "activity_list",
+      "live_match"
+    ],
+    "2397829": [
+      "activity_list"
+    ],
+    "2397830": [
+      "activity_list"
+    ],
+    "2397831": [
+      "activity_list",
+      "live_match"
+    ],
+    "2397877": [
+      "activity_list"
+    ],
+    "2397986": [
+      "activity_list"
+    ],
+    "2397988": [
+      "activity_list",
+      "live_match"
+    ],
+    "2398107": [
+      "activity_list"
+    ],
+    "2398108": [
+      "activity_list"
+    ],
+    "2398168": [
+      "activity_list"
+    ],
+    "2398169": [
+      "activity_list",
+      "live_match"
+    ],
+    "2398268": [
+      "activity_list",
+      "live_match"
+    ]
+  },
+  "live_match_ids_outside_upcoming_listing": [
+    2397690,
+    2397831,
+    2397988,
+    2398169,
+    2398268
+  ],
+  "activity_only_match_ids": [
+    2397829,
+    2397830,
+    2397877,
+    2397986,
+    2398107,
+    2398108,
+    2398168
+  ],
+  "unmatched_untimed_nonlive_entries": 0,
+  "prospective_candidate_pool_count": 423,
+  "historical_provisional_match_ids_excluded": 25,
+  "selected_candidates": 25,
+  "selected_unresolved_participants": [
+    {
+      "source_match_id": "2397691",
+      "source_placeholder": "NODWIN Clutch Series 12 - Swiss Round 4 #1"
+    },
+    {
+      "source_match_id": "2397692",
+      "source_placeholder": "NODWIN Clutch Series 12 - Swiss Round 4 #2"
+    },
+    {
+      "source_match_id": "2397693",
+      "source_placeholder": "NODWIN Clutch Series 12 - Swiss Round 4 #3"
+    },
+    {
+      "source_match_id": "2397694",
+      "source_placeholder": "NODWIN Clutch Series 12 - Swiss Round 4 #4"
+    },
+    {
+      "source_match_id": "2397832",
+      "source_placeholder": "CCT 2026 Europe Series 9 - Swiss Round 4 #1"
+    },
+    {
+      "source_match_id": "2397833",
+      "source_placeholder": "CCT 2026 Europe Series 9 - Swiss Round 4 #2"
+    },
+    {
+      "source_match_id": "2397834",
+      "source_placeholder": "CCT 2026 Europe Series 9 - Swiss Round 4 #3"
+    },
+    {
+      "source_match_id": "2397993",
+      "source_placeholder": "Exort Fiesta Series 2 - Quarter-final #1"
+    },
+    {
+      "source_match_id": "2398038",
+      "source_placeholder": "European Pro League Series 9 - Round of 16 #1"
+    },
+    {
+      "source_match_id": "2398056",
+      "source_placeholder": "Stake Pulse Beat II - Group A Winners' Match"
+    },
+    {
+      "source_match_id": "2398057",
+      "source_placeholder": "Stake Pulse Beat II - Group A Elimination Match"
+    },
+    {
+      "source_match_id": "2398058",
+      "source_placeholder": "Stake Pulse Beat II - Group A Decider Match"
+    }
+  ],
+  "unresolved_participant_note": "For unresolved participants, team1 and team2 in the queue repeat the source match-stage placeholder. They do not identify two teams.",
+  "first_selected_match_start_utc": "2026-09-21T00:00:00Z",
+  "selection_audit_utc": "2026-09-20T19:21:30.948767Z",
+  "queue_sha256": "3eddd2dbcf038911b5e9bb41b2a5e218e710fec5a9f3f4ea3b759028f1a829bc",
+  "queue_matches_prior_preview": true,
+  "visible_timed_listing_coverage_verified": true,
+  "external_provider_global_completeness_claimed": false,
+  "technical_eligibility_evaluated": false,
+  "raw_demo_downloaded": false,
+  "model_scoring_performed": false
+}

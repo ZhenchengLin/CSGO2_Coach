@@ -261,6 +261,57 @@ class QueueBuilderTests(unittest.TestCase):
         ):
             self.build(rows)
 
+    def test_missing_metadata_outside_selected_25(self):
+        rows = fixture()
+
+        # This later match belongs to the complete source
+        # population but cannot enter the first 25.
+        later = match(
+            3999999,
+            "2026-10-01T00:00:00Z",
+        )
+
+        later["event"] = ""
+        later["team1"] = ""
+        later["team2"] = ""
+
+        rows.append(later)
+
+        queue = self.build(rows)
+
+        self.assertEqual(len(queue), 25)
+
+        self.assertNotIn(
+            "3999999",
+            {
+                row["source_match_id"]
+                for row in queue
+            },
+        )
+
+    def test_missing_metadata_inside_selected_25(self):
+        rows = fixture()
+
+        # The earliest match must be selected.
+        rows[0]["team1"] = ""
+
+        with self.assertRaisesRegex(
+            ValueError,
+            r"Selected Match 3000000: missing team1",
+        ):
+            self.build(rows)
+
+    def test_missing_event_inside_selected_25(self):
+        rows = fixture()
+
+        rows[0]["event"] = ""
+
+        with self.assertRaisesRegex(
+            ValueError,
+            r"Selected Match 3000000: missing event",
+        ):
+            self.build(rows)
+
     def test_deterministic_csv_bytes(self):
         queue = self.build(fixture())
 
