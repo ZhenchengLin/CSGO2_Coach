@@ -1,0 +1,145 @@
+{
+  "version": "V4_A_CONFIRM_ACQUISITION_AMENDMENT_V1",
+  "status": "FROZEN_BEFORE_NEW_PROSPECTIVE_METADATA_COLLECTION",
+
+  "dataset": "D_V4_A_CONFIRM",
+
+  "parent_protocol": {
+    "path": "docs/v4_a_confirm_acquisition_protocol_v1_frozen.json",
+    "sha256": "5bd7e756ac78589e8b60d23521e1d133a722e08d2cd975e7129ffe03d130c3e4",
+    "modified": false
+  },
+
+  "reason_for_amendment": {
+    "date_convention": "The parent protocol specifies a calendar-date lower bound but does not specify a governing timezone for match_date.",
+    "sampling_frame": "The parent protocol specifies deterministic ordering within the candidate queue but does not completely define the source population and discovery procedure used to construct that queue.",
+    "prior_discovery": "The initial 25-record discovery corpus was assembled across two investigations without a prospectively frozen complete source snapshot. Some match outcomes, map information and technical-availability information were observed during that work.",
+    "scientific_requirement": "Preserve the previous discovery provenance and define the new prospective selection procedure before collecting the final Confirmation Candidate Queue."
+  },
+
+  "original_temporal_boundary": {
+    "earliest_allowed_match_date": "2026-09-20",
+    "unchanged": true
+  },
+
+  "new_prospective_sampling_window": {
+    "earliest_scheduled_start_utc": "2026-09-21T00:00:00Z",
+    "earliest_candidate_match_date_utc": "2026-09-21",
+    "reason": "Use a new, explicitly declared prospective sampling window after the earlier provisional discovery process.",
+    "not_a_retroactive_interpretation_of_parent_protocol": true
+  },
+
+  "match_date_convention": {
+    "timezone": "UTC",
+    "date_definition": "The UTC calendar date of the source-recorded scheduled match start time at the frozen metadata snapshot.",
+    "timestamp_requirement": "For every proposed candidate, record an unambiguous scheduled start timestamp, including its timezone or a Unix timestamp that can be converted to UTC.",
+    "ambiguous_timestamp_policy": "Do not guess a timezone or silently substitute a date from another display context. If the scheduled start time cannot be verified unambiguously, stop queue construction and document the issue before selecting candidates.",
+    "post_freeze_schedule_change": "Preserve the frozen queue identity, order and original source timestamp. Record subsequent schedule changes separately. Apply the parent protocol's technical eligibility and temporal boundary to the actual acquired match."
+  },
+
+  "metadata_source": {
+    "provider": "HLTV",
+    "primary_listing": "https://www.hltv.org/matches",
+    "population": "All upcoming Counter-Strike match entries shown by the unfiltered HLTV matches listing in one complete, documented source snapshot.",
+    "filters": {
+      "map": "NONE",
+      "team": "NONE",
+      "event": "NONE",
+      "region": "NONE",
+      "ranking": "NONE",
+      "match_result": "NONE",
+      "demo_availability": "NONE"
+    },
+    "capture_must_begin_after_amendment_commit": true,
+    "source_snapshot_required": true,
+    "capture_timestamp_utc_required": true,
+    "all_visible_listing_entries_must_be_recorded": true,
+    "source_listing_completeness_must_be_auditable": true,
+    "source_access_failure": "If HLTV cannot be accessed or a complete listing snapshot cannot be established, stop. Do not replace the source with an unrecorded alternative."
+  },
+
+  "candidate_selection": {
+    "initial_queue_size": 25,
+    "required_eligible_matches": 20,
+    "candidate_pool": "Distinct HLTV match IDs in the complete source snapshot whose scheduled start time is at or after 2026-09-21T00:00:00Z and strictly later than the documented source-capture time.",
+    "historical_provisional_discovery_reuse": false,
+    "historical_provisional_match_id_policy": "Exclude the 25 match IDs in the already committed provisional discovery corpus from the new prospective sampling frame. This is a predeclared separation rule, not a technical-eligibility judgment.",
+    "pool_order": [
+      "scheduled_start_utc ascending",
+      "numeric source_match_id ascending"
+    ],
+    "selection_rule": "Select exactly the first 25 distinct match IDs from the complete prospective candidate pool in pool_order.",
+    "final_queue_order": [
+      "match_date ascending",
+      "numeric source_match_id ascending"
+    ],
+    "candidate_rank": "Assign ranks 1 through 25 only after applying final_queue_order to the selected 25 matches.",
+    "insufficient_pool_rule": "If fewer than 25 matches satisfy the frozen sampling rules in the complete source snapshot, stop. Do not silently extend the capture window, switch sources, or hand-pick additional matches. Any revised sampling method requires a new versioned amendment committed before further collection.",
+    "selection_using_map_or_demo_availability": false,
+    "selection_using_target_distribution": false,
+    "selection_using_model_predictions_or_metrics": false,
+    "manual_candidate_replacement": false
+  },
+
+  "metadata_fields": {
+    "final_queue_fields": [
+      "candidate_rank",
+      "match_date",
+      "source_match_id",
+      "event",
+      "team1",
+      "team2",
+      "source",
+      "source_url"
+    ],
+    "additional_prequeue_evidence": [
+      "source_capture_timestamp_utc",
+      "source_listing_snapshot_identity",
+      "scheduled_start_utc",
+      "source_match_id",
+      "source_url",
+      "source_displayed_event",
+      "source_displayed_team1",
+      "source_displayed_team2"
+    ],
+    "unknown_participant_policy": "Preserve a nonempty source-listed placeholder when a participant is not determined at snapshot time. Do not replace the match or select another candidate because its participants are unknown.",
+    "metadata_correction_policy": "Preserve the original source snapshot. Record any correction with a reason and source evidence before final queue freeze. Do not correct or replace entries based on observed maps, demo availability, target distribution or model performance."
+  },
+
+  "queue_freeze_gate": {
+    "required": [
+      "The amendment must be committed before new prospective metadata collection.",
+      "The complete HLTV source snapshot and its capture timestamp must be preserved.",
+      "Every selected match must have an auditable scheduled_start_utc and source_match_id.",
+      "The prospective candidate pool and deterministic first-25 selection must be reproducible from the frozen source snapshot.",
+      "The existing provisional 25-record discovery corpus must remain unchanged and must not enter the new prospective queue.",
+      "The final 25-row queue must follow the parent protocol's required schema and ordering.",
+      "The queue and source evidence must be committed before any new raw demo download.",
+      "Technical eligibility must be evaluated only after final queue freeze."
+    ]
+  },
+
+  "unchanged_parent_requirements": {
+    "required_eligible_matches": 20,
+    "initial_candidate_queue": 25,
+    "selection_of_eligible_matches": "First 20 technically eligible candidates in frozen candidate_rank order.",
+    "allowed_technical_exclusions": "As specified in the original frozen acquisition protocol.",
+    "shortfall_policy": "As specified in the original frozen acquisition protocol.",
+    "model_refitting_from_confirmation": false,
+    "model_selection_from_confirmation": false,
+    "model_scoring_before_final_manifest_freeze": false,
+    "feature_semantics_changed": false
+  },
+
+  "historical_discovery_provenance": {
+    "commit": "f7565e8",
+    "record": "docs/v4_a_confirm_metadata_provenance_v1.md",
+    "batch1": "docs/v4_a_confirm_metadata_staging_snapshot_v1.csv",
+    "batch2": "docs/v4_a_confirm_metadata_discovery_batch2_v1.csv",
+    "record_count": 25,
+    "reuse_as_new_final_candidate_queue": false,
+    "preserve_existing_artifacts": true
+  },
+
+  "revision_policy": "Do not overwrite this amendment after commit. A change to the prospective sampling frame, date convention or selection rule requires a new, explicitly versioned and committed amendment before the affected collection activity."
+}
