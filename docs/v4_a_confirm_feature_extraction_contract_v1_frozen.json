@@ -1,0 +1,325 @@
+{
+  "version": "V4_A_CONFIRM_FEATURE_EXTRACTION_CONTRACT_V1",
+  "status": "FROZEN_BEFORE_CONFIRMATION_FEATURE_EXTRACTION",
+  "research_scope": {
+    "dataset": "D_V4_A_CONFIRM",
+    "map": "de_mirage",
+    "earliest_match_date": "2026-09-20",
+    "prediction_horizons_sec": [
+      5,
+      10
+    ],
+    "target_classes": [
+      "T_SPAWN",
+      "MID_ENTRY",
+      "A_RAMP",
+      "PALACE",
+      "A_SITE_COMPLEX",
+      "CONNECTOR",
+      "MID",
+      "MID_WINDOW",
+      "UNDERPASS",
+      "B_SHORT",
+      "B_LOBBY",
+      "B_APPS",
+      "B_SITE_COMPLEX",
+      "MARKET",
+      "CT_SPAWN"
+    ],
+    "new_confirmation_only": true,
+    "historical_v2_v3_confirmation_reuse": false
+  },
+  "source_of_truth": {
+    "acquisition": "docs/v4_a_confirm_acquisition_protocol_v1_frozen.json",
+    "target_semantics": "docs/v3_future_target_contract.json",
+    "macro_zone_mapping": "docs/v3_macro_zone_mapping_v1_frozen.json",
+    "control_features": "docs/v3_b3_feature_protocol_v1.json",
+    "team_context": "docs/v4_team_context_feature_contract_v1_frozen.json",
+    "model_fitting": "docs/v4_a_confirm_fit_contract_v1_frozen.json",
+    "model_freeze": "docs/v4_a_confirm_model_freeze_v1.json"
+  },
+  "observation_and_target_rules": {
+    "reuse_frozen_v3_target_contract": true,
+    "raw_ticks_per_second": 64,
+    "round_anchor": "round.freeze_end",
+    "first_current_observation_seconds_after_anchor": 5,
+    "current_observation_stride_seconds": 5,
+    "current_snapshot_resolution": "First available player snapshot at or after the nominal current tick, with at most +1 raw tick lateness.",
+    "current_must_be_preplant": true,
+    "current_must_be_before_round_end": true,
+    "target_nominal_tick": "resolved_current_tick + horizon_sec * 64",
+    "target_snapshot_resolution": "First available player snapshot at or after the nominal target tick, with at most +1 raw tick lateness.",
+    "target_must_be_before_round_end": true,
+    "target_semantics": "Use the frozen V3 target-state priority, frozen 15-zone mapping, and frozen round/observation/horizon exclusions.",
+    "future_information_as_feature": false,
+    "future_information_as_target_only": true,
+    "candidate_eligibility_requires_nonzero_rows_for_both_horizons": true,
+    "no_posthoc_row_or_round_removal": true
+  },
+  "data_keys": {
+    "target_row": [
+      "demo_filename",
+      "round_num",
+      "current_nominal_tick",
+      "horizon_sec"
+    ],
+    "motion_join": [
+      "demo_filename",
+      "round_num",
+      "current_nominal_tick",
+      "current_tick"
+    ],
+    "team_context_join": [
+      "demo_filename",
+      "round_num",
+      "current_tick"
+    ],
+    "one_team_context_vector_per_unique_current_snapshot": true,
+    "same_snapshot_must_have_identical_team_context_for_both_horizons": true,
+    "joins_must_not_duplicate_or_drop_eligible_target_rows": true
+  },
+  "control_24d": {
+    "dimensions": 24,
+    "feature_order": [
+      "zone__T_SPAWN",
+      "zone__MID_ENTRY",
+      "zone__A_RAMP",
+      "zone__PALACE",
+      "zone__A_SITE_COMPLEX",
+      "zone__CONNECTOR",
+      "zone__MID",
+      "zone__MID_WINDOW",
+      "zone__UNDERPASS",
+      "zone__B_SHORT",
+      "zone__B_LOBBY",
+      "zone__B_APPS",
+      "zone__B_SITE_COMPLEX",
+      "zone__MARKET",
+      "zone__CT_SPAWN",
+      "bomb_state__CARRIED",
+      "bomb_state__DROPPED",
+      "current_bomb_X",
+      "current_bomb_Y",
+      "current_bomb_Z",
+      "velocity_X",
+      "velocity_Y",
+      "velocity_Z",
+      "speed"
+    ],
+    "zone_encoding": "Frozen 15-class full one-hot encoding.",
+    "bomb_state_encoding": "CARRIED_INVENTORY and CARRIED_PICKUP_FALLBACK map to CARRIED; DROPPED maps to DROPPED.",
+    "xyz": "Current bomb XYZ, raw coordinates.",
+    "velocity": "Reproduce the frozen V3 B3 one-second causal motion construction. Do not use positions or events after the resolved current tick.",
+    "speed": "sqrt(vx^2 + vy^2 + vz^2)",
+    "feature_dtype": "float32",
+    "speed_clipping": false,
+    "new_imputation_or_scaling": false,
+    "no_future_state": true
+  },
+  "team_context_32d": {
+    "dimensions": 32,
+    "feature_order": [
+      "v4_t__T_SPAWN",
+      "v4_t__MID_ENTRY",
+      "v4_t__A_RAMP",
+      "v4_t__PALACE",
+      "v4_t__A_SITE_COMPLEX",
+      "v4_t__CONNECTOR",
+      "v4_t__MID",
+      "v4_t__MID_WINDOW",
+      "v4_t__UNDERPASS",
+      "v4_t__B_SHORT",
+      "v4_t__B_LOBBY",
+      "v4_t__B_APPS",
+      "v4_t__B_SITE_COMPLEX",
+      "v4_t__MARKET",
+      "v4_t__CT_SPAWN",
+      "v4_ct__T_SPAWN",
+      "v4_ct__MID_ENTRY",
+      "v4_ct__A_RAMP",
+      "v4_ct__PALACE",
+      "v4_ct__A_SITE_COMPLEX",
+      "v4_ct__CONNECTOR",
+      "v4_ct__MID",
+      "v4_ct__MID_WINDOW",
+      "v4_ct__UNDERPASS",
+      "v4_ct__B_SHORT",
+      "v4_ct__B_LOBBY",
+      "v4_ct__B_APPS",
+      "v4_ct__B_SITE_COMPLEX",
+      "v4_ct__MARKET",
+      "v4_ct__CT_SPAWN",
+      "v4_t__UNKNOWN_PLACE",
+      "v4_ct__UNKNOWN_PLACE"
+    ],
+    "snapshot": "Exactly the resolved current-time player snapshot associated with the eligible target observation.",
+    "living_player": "side in {t, ct} and health > 0",
+    "identity": "For every counted living player, require a usable steamid and uniqueness within the snapshot.",
+    "team_size": "Require 1 to 5 living players on each side.",
+    "counts": "Count living T and CT players separately in each frozen macro-zone, in frozen feature order.",
+    "unknown_place": "If a living player's current place is unmapped, increment that player's team-specific UNKNOWN_PLACE count. Unknown place alone does not exclude a match.",
+    "occupancy_invariants": [
+      "All 32 counts are nonnegative integers.",
+      "sum(T 15 zones) + T UNKNOWN_PLACE == living T count.",
+      "sum(CT 15 zones) + CT UNKNOWN_PLACE == living CT count.",
+      "No player is counted more than once in one snapshot."
+    ],
+    "time_cutoff": "at_or_before_resolved_current_tick",
+    "future_player_state_allowed": false,
+    "future_bomb_state_allowed": false
+  },
+  "candidate_56d": {
+    "dimensions": 56,
+    "feature_order": [
+      "zone__T_SPAWN",
+      "zone__MID_ENTRY",
+      "zone__A_RAMP",
+      "zone__PALACE",
+      "zone__A_SITE_COMPLEX",
+      "zone__CONNECTOR",
+      "zone__MID",
+      "zone__MID_WINDOW",
+      "zone__UNDERPASS",
+      "zone__B_SHORT",
+      "zone__B_LOBBY",
+      "zone__B_APPS",
+      "zone__B_SITE_COMPLEX",
+      "zone__MARKET",
+      "zone__CT_SPAWN",
+      "bomb_state__CARRIED",
+      "bomb_state__DROPPED",
+      "current_bomb_X",
+      "current_bomb_Y",
+      "current_bomb_Z",
+      "velocity_X",
+      "velocity_Y",
+      "velocity_Z",
+      "speed",
+      "v4_t__T_SPAWN",
+      "v4_t__MID_ENTRY",
+      "v4_t__A_RAMP",
+      "v4_t__PALACE",
+      "v4_t__A_SITE_COMPLEX",
+      "v4_t__CONNECTOR",
+      "v4_t__MID",
+      "v4_t__MID_WINDOW",
+      "v4_t__UNDERPASS",
+      "v4_t__B_SHORT",
+      "v4_t__B_LOBBY",
+      "v4_t__B_APPS",
+      "v4_t__B_SITE_COMPLEX",
+      "v4_t__MARKET",
+      "v4_t__CT_SPAWN",
+      "v4_ct__T_SPAWN",
+      "v4_ct__MID_ENTRY",
+      "v4_ct__A_RAMP",
+      "v4_ct__PALACE",
+      "v4_ct__A_SITE_COMPLEX",
+      "v4_ct__CONNECTOR",
+      "v4_ct__MID",
+      "v4_ct__MID_WINDOW",
+      "v4_ct__UNDERPASS",
+      "v4_ct__B_SHORT",
+      "v4_ct__B_LOBBY",
+      "v4_ct__B_APPS",
+      "v4_ct__B_SITE_COMPLEX",
+      "v4_ct__MARKET",
+      "v4_ct__CT_SPAWN",
+      "v4_t__UNKNOWN_PLACE",
+      "v4_ct__UNKNOWN_PLACE"
+    ],
+    "construction": "Append the exact frozen 32D Team Context vector to the identical frozen 24D Control vector.",
+    "first_24_features_equal_control": true,
+    "feature_dtype": "float32",
+    "missing_feature_imputation": false
+  },
+  "technical_integrity": {
+    "required": [
+      "Unique target-row keys.",
+      "Unique resolved-current-snapshot keys within each demo.",
+      "Unique motion and Team Context join keys.",
+      "All expected target and feature fields available.",
+      "No unresolved motion among retained target rows.",
+      "No missing or nonfinite model input values.",
+      "Every eligible target class index belongs to 0..14.",
+      "Independent player identity and occupancy verification.",
+      "Exactly 24 Control and 56 Candidate input columns.",
+      "Exact feature ordering and identical target rows for both models."
+    ],
+    "failure_handling": "Apply only the frozen target-level exclusions and the frozen acquisition protocol's technical eligibility rules. Do not silently drop individual rows because they are difficult to predict or change class balance. If an unanticipated failure has no predeclared handling rule, stop and document it before model scoring.",
+    "unexpected_failure_policy": "Do not invent a new exclusion or change a frozen feature definition after viewing confirmation predictions."
+  },
+  "execution_order": [
+    "Freeze and commit the deterministic candidate metadata queue.",
+    "Acquire and technically audit candidates in frozen rank order.",
+    "Build candidate target rows using frozen V3 target semantics.",
+    "Build and independently audit current-time motion and Team Context.",
+    "Apply the frozen acquisition eligibility rules.",
+    "Select and freeze the first 20 technically eligible matches.",
+    "Verify the selected corpus and its exact feature/target identities.",
+    "Only after the final manifest and scoring protocol are frozen, run frozen-model predictions and confirmation scoring."
+  ],
+  "output_policy": {
+    "new_v4_paths_only": true,
+    "overwrite_historical_v2_v3_data": false,
+    "overwrite_development_artifacts": false,
+    "overwrite_frozen_models": false,
+    "target_output": "data/interim/v4_a_confirm_targets_v1.parquet",
+    "motion_output": "data/interim/v4_a_confirm_motion_v1.parquet",
+    "team_context_output": "data/interim/v4_a_confirm_team_context_v1.parquet",
+    "identity_record": "docs/v4_a_confirm_feature_identity_v1.json",
+    "all_outputs_require_sha256_and_row_count": true,
+    "no_model_prediction_during_extraction": true,
+    "no_confirmation_metric_during_extraction": true
+  },
+  "provenance": {
+    "acquisition_protocol": {
+      "path": "docs/v4_a_confirm_acquisition_protocol_v1_frozen.json",
+      "sha256": "5bd7e756ac78589e8b60d23521e1d133a722e08d2cd975e7129ffe03d130c3e4"
+    },
+    "model_freeze": {
+      "path": "docs/v4_a_confirm_model_freeze_v1.json",
+      "sha256": "19605a690876c9e977d22171f9a8bec3a2bb057370e16bb7d33a8c1d68ddfe39"
+    },
+    "fit_contract": {
+      "path": "docs/v4_a_confirm_fit_contract_v1_frozen.json",
+      "sha256": "80ae4fbab33ca884cc7f9854a02f6d50be976105c7d4bed7834b68fc9d4498bc"
+    },
+    "v3_feature_protocol": {
+      "path": "docs/v3_b3_feature_protocol_v1.json",
+      "sha256": "79b0ce3a8a9b12b31febdc969ab3030bd41c244fc8d07a924931888e07edb167"
+    },
+    "v4_feature_contract": {
+      "path": "docs/v4_team_context_feature_contract_v1_frozen.json",
+      "sha256": "2e659a46a282336aafeb27ff4b147a4e1e8f2e02c1635b1b1e284a67e354e3a4"
+    },
+    "target_contract": {
+      "path": "docs/v3_future_target_contract.json",
+      "sha256": "ae51a6149086b95c71ce8a7a58c88d3993bce845fdad00f438ff1791c0e6943e"
+    },
+    "macro_mapping": {
+      "path": "docs/v3_macro_zone_mapping_v1_frozen.json",
+      "sha256": "557bd091789e43e463bdd85251cd7d581a912723f38b5989ce6045e76692d9b3"
+    },
+    "v3_target_builder": {
+      "path": "scripts/build_v3_confirm_candidate_targets.py",
+      "sha256": "739d29c4249b1c042368044524195effb991a422e303a091b68e4d04e1b208bb"
+    },
+    "v4_team_builder": {
+      "path": "scripts/build_v4_dev_team_context_v1.py",
+      "sha256": "ddb247bad34c9e63f8cc4c90eaa6f5ddc58aef23fc480b5ca45f140f598296a5"
+    },
+    "v4_identity_auditor": {
+      "path": "scripts/audit_v4_gate1e_identity_and_features.py",
+      "sha256": "0421cc0406f3e416efa6975522f1dc2484df948d906e2694c8202541f5116423"
+    }
+  },
+  "implementation_boundary": {
+    "v4_specific_extractor_written": false,
+    "confirmation_demos_downloaded_by_this_script": false,
+    "confirmation_features_extracted_by_this_script": false,
+    "confirmation_predictions_computed_by_this_script": false,
+    "confirmation_scoring_performed_by_this_script": false
+  },
+  "revision_policy": "Do not overwrite this frozen V1 contract. Any changed extraction or integrity rule requires an explicit versioned amendment before confirmation scoring."
+}
