@@ -31,7 +31,7 @@ import sys
 
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 from probe_v4_a_confirm_demo_source_v1 import (
     ROOT,
@@ -93,6 +93,103 @@ def archive_extension(header):
         return ".7z"
 
     return None
+
+
+MAX_SAFE_REDIRECTS = 5
+
+
+def validate_download_hop_url(url):
+    """
+    Check an HTTP destination BEFORE sending a request.
+
+    External CDN destinations require a separate source
+    review; they are not silently approved here.
+    """
+    require(
+        isinstance(url, str)
+        and "\\\\" not in url,
+        "SOURCE_REDIRECT_REVIEW_REQUIRED: invalid URL.",
+    )
+
+    parsed = urlparse(url)
+
+    require(
+        parsed.scheme == "https"
+        and parsed.netloc.lower() in {
+            "hltv.org",
+            "www.hltv.org",
+        }
+        and parsed.username is None
+        and parsed.password is None
+        and not parsed.fragment,
+        "SOURCE_REDIRECT_REVIEW_REQUIRED: "
+        "unapproved download destination.",
+    )
+
+    return url
+
+
+def open_checked_demo_stream(session, download_url):
+    """
+    Follow only approved same-site HTTPS redirects.
+
+    Returns (response, final_url). The caller owns the
+    returned response and must close it.
+
+    A redirect to an external host is NOT requested.
+    """
+    current_url = validate_download_hop_url(
+        download_url
+    )
+
+    visited = set()
+
+    for _ in range(MAX_SAFE_REDIRECTS + 1):
+
+        require(
+            current_url not in visited,
+            "SOURCE_REDIRECT_REVIEW_REQUIRED: "
+            "redirect loop detected.",
+        )
+
+        visited.add(current_url)
+
+        response = session.get(
+            current_url,
+            stream=True,
+            allow_redirects=False,
+            timeout=300,
+        )
+
+        if 300 <= response.status_code < 400:
+
+            location = response.headers.get("Location")
+            response.close()
+
+            require(
+                isinstance(location, str)
+                and bool(location.strip()),
+                "SOURCE_REDIRECT_REVIEW_REQUIRED: "
+                "redirect has no Location.",
+            )
+
+            next_url = urljoin(
+                current_url,
+                location,
+            )
+
+            current_url = validate_download_hop_url(
+                next_url
+            )
+
+            continue
+
+        return response, current_url
+
+    raise RuntimeError(
+        "SOURCE_REDIRECT_REVIEW_REQUIRED: "
+        "too many redirects."
+    )
 
 
 def safe_download_budget():
@@ -180,7 +277,7 @@ def inspect_match_page(row):
         response = session.get(
             row["source_url"],
             timeout=60,
-            allow_redirects=True,
+            allow_redirects=False,
         )
 
         require(
@@ -336,11 +433,9 @@ def download_one_archive(
 
     try:
 
-        response = session.get(
+        response, final_url = open_checked_demo_stream(
+            session,
             download_url,
-            stream=True,
-            allow_redirects=True,
-            timeout=300,
         )
 
         try:
@@ -349,14 +444,6 @@ def download_one_archive(
                 response.status_code == 200,
                 "SOURCE_REVIEW_REQUIRED: Demo download "
                 "did not return HTTP 200.",
-            )
-
-            final_url = str(response.url)
-
-            require(
-                urlparse(final_url).scheme == "https",
-                "SOURCE_REVIEW_REQUIRED: Demo download "
-                "redirected to a non-HTTPS URL.",
             )
 
             raw_length = response.headers.get(
