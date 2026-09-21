@@ -293,5 +293,50 @@ class SafeZipExtractionTests(unittest.TestCase):
             )
 
 
+    def test_explicit_zip_directory_does_not_inflate_file_count(self):
+
+        with tempfile.TemporaryDirectory() as temp:
+
+            root = Path(temp)
+
+            archive = self.make_zip(
+                root,
+                [
+                    ("maps/", b""),
+                    ("maps/map.dem", b"synthetic demo"),
+                ],
+            )
+
+            output = root / EXTRACT_DIR_NAME
+
+            record = extract_zip(
+                archive,
+                output,
+                free_space_fn=safe_free_space,
+                candidate_rank=1,
+                source_match_id="2397691",
+            )
+
+            self.assertEqual(
+                record["extracted_file_count"],
+                1,
+            )
+
+            self.assertEqual(
+                record["extracted_total_bytes"],
+                len(b"synthetic demo"),
+            )
+
+            self.assertEqual(
+                (output / "maps" / "map.dem").read_bytes(),
+                b"synthetic demo",
+            )
+
+            self.assertEqual(
+                len(record["members"]),
+                1,
+            )
+
+
 if __name__ == "__main__":
     unittest.main()
