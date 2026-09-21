@@ -195,6 +195,100 @@ def find_demo_links(html, match_url):
     return sorted(result)
 
 
+
+MAX_MATCH_PAGE_REDIRECTS = 5
+
+
+def validate_match_page_hop_url(url, match_id):
+    """
+    Validate a match-page destination before contacting it.
+
+    A changed URL slug is acceptable, but the original
+    Match ID must remain unchanged.
+    """
+
+    require(
+        isinstance(url, str)
+        and "\\\\" not in url,
+        "SOURCE_REVIEW_REQUIRED: invalid match-page URL.",
+    )
+
+    parsed = urlparse(url)
+
+    require(
+        parsed.scheme == "https"
+        and parsed.netloc.lower()
+        in {"hltv.org", "www.hltv.org"}
+        and parsed.username is None
+        and parsed.password is None
+        and not parsed.fragment
+        and parsed.path.startswith(
+            f"/matches/{match_id}/"
+        ),
+        "SOURCE_REVIEW_REQUIRED: unapproved match-page "
+        "destination or different Match ID.",
+    )
+
+    return url
+
+
+def open_checked_match_page(session, match_url, match_id):
+    """
+    Follow only same-Match-ID, same-site HTTPS redirects.
+
+    Returns (response, final_url). The caller must
+    close the returned response.
+    """
+
+    current_url = validate_match_page_hop_url(
+        match_url, match_id
+    )
+
+    visited = set()
+
+    for _ in range(MAX_MATCH_PAGE_REDIRECTS + 1):
+
+        require(
+            current_url not in visited,
+            "SOURCE_REVIEW_REQUIRED: match-page "
+            "redirect loop.",
+        )
+
+        visited.add(current_url)
+
+        response = session.get(
+            current_url,
+            timeout=60,
+            allow_redirects=False,
+        )
+
+        if 300 <= response.status_code < 400:
+
+            location = response.headers.get("Location")
+            response.close()
+
+            require(
+                isinstance(location, str)
+                and bool(location.strip()),
+                "SOURCE_REVIEW_REQUIRED: match-page "
+                "redirect has no Location.",
+            )
+
+            next_url = urljoin(current_url, location)
+
+            current_url = validate_match_page_hop_url(
+                next_url, match_id
+            )
+
+            continue
+
+        return response, current_url
+
+    raise RuntimeError(
+        "SOURCE_REVIEW_REQUIRED: too many match-page redirects."
+    )
+
+
 def inspect_source(row, original_start):
 
     rank = int(row["candidate_rank"])
@@ -235,35 +329,26 @@ def inspect_source(row, original_start):
         impersonate="chrome"
     )
 
-    response = session.get(
-        match_url,
-        timeout=60,
-        allow_redirects=True,
-    )
+    try:
+        response, final_url = open_checked_match_page(
+            session, match_url, match_id
+        )
 
-    require(
-        response.status_code == 200,
-        "HLTV match-page request did not return HTTP 200. "
-        "Do not classify this as a technical exclusion.",
-    )
+        try:
+            require(
+                response.status_code == 200,
+                "HLTV match-page request did not return "
+                "HTTP 200. Do not classify this as "
+                "a technical exclusion.",
+            )
 
-    final_url = response.url
+            html = response.content
 
-    require(
-        urlparse(final_url).hostname
-        in {"hltv.org", "www.hltv.org"},
-        "Unexpected match-page redirect host.",
-    )
+        finally:
+            response.close()
 
-    require(
-        re.match(
-            rf"^/matches/{re.escape(match_id)}/",
-            urlparse(final_url).path,
-        ) is not None,
-        "Match page redirected to another Match ID.",
-    )
-
-    html = response.content
+    finally:
+        session.close()
 
     page_text = html.decode(
         "utf-8",

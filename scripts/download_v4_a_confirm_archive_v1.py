@@ -38,6 +38,7 @@ from probe_v4_a_confirm_demo_source_v1 import (
     MANIFEST,
     find_demo_links,
     iso_utc,
+    open_checked_match_page,
     read_frozen_queue,
 )
 
@@ -274,10 +275,10 @@ def inspect_match_page(row):
 
     try:
 
-        response = session.get(
+        response, final_url = open_checked_match_page(
+            session,
             row["source_url"],
-            timeout=60,
-            allow_redirects=False,
+            match_id,
         )
 
         require(
@@ -285,8 +286,6 @@ def inspect_match_page(row):
             "SOURCE_REVIEW_REQUIRED: match page "
             "did not return HTTP 200.",
         )
-
-        final_url = str(response.url)
 
         parsed = urlparse(final_url)
 
