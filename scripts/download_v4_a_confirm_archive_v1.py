@@ -130,31 +130,71 @@ def validate_download_hop_url(url):
     return url
 
 
+def validate_hltv_demo_cdn_url(url):
+    """
+    Approve only the exact, observed HLTV Demo CDN hostname.
+
+    This does not authorize a caller to start a download
+    directly from the CDN. The URL must originate from a
+    redirect issued by an approved HLTV Demo endpoint.
+    """
+    require(
+        isinstance(url, str) and "\\\\" not in url,
+        "SOURCE_REDIRECT_REVIEW_REQUIRED: invalid CDN URL.",
+    )
+
+    parsed = urlparse(url)
+
+    require(
+        parsed.scheme == "https"
+        and parsed.netloc.lower() == "r2-demos.hltv.org"
+        and parsed.username is None
+        and parsed.password is None
+        and parsed.query == ""
+        and parsed.fragment == ""
+        and parsed.path.startswith("/")
+        and parsed.path != "/"
+        and not parsed.path.startswith("//"),
+        "SOURCE_REDIRECT_REVIEW_REQUIRED: "
+        "unapproved CDN destination.",
+    )
+
+    return url
+
+
 def open_checked_demo_stream(session, download_url):
     """
-    Follow only approved same-site HTTPS redirects.
+    Follow approved HLTV redirects, then at most one
+    final request to the exact HLTV Demo CDN hostname.
 
-    Returns (response, final_url). The caller owns the
-    returned response and must close it.
-
-    A redirect to an external host is NOT requested.
+    Never request any destination of a redirect returned
+    by the CDN itself.
     """
-    current_url = validate_download_hop_url(
-        download_url
+    current_url = validate_download_hop_url(download_url)
+
+    origin = urlparse(current_url)
+
+    require(
+        origin.path.startswith("/download/demo/")
+        and origin.path[len("/download/demo/"):].strip("/").isdigit()
+        and origin.query == ""
+        and origin.fragment == "",
+        "SOURCE_REDIRECT_REVIEW_REQUIRED: "
+        "download must start from an HLTV Demo endpoint.",
     )
 
     visited = set()
+    requested_cdn = False
 
     for _ in range(MAX_SAFE_REDIRECTS + 1):
-
         require(
             current_url not in visited,
-            "SOURCE_REDIRECT_REVIEW_REQUIRED: "
-            "redirect loop detected.",
+            "SOURCE_REDIRECT_REVIEW_REQUIRED: redirect loop.",
         )
-
         visited.add(current_url)
 
+        # Each destination was validated before reaching
+        # this request. Never enable automatic redirects.
         response = session.get(
             current_url,
             stream=True,
@@ -163,33 +203,36 @@ def open_checked_demo_stream(session, download_url):
         )
 
         if 300 <= response.status_code < 400:
-
             location = response.headers.get("Location")
             response.close()
 
             require(
-                isinstance(location, str)
-                and bool(location.strip()),
+                isinstance(location, str) and bool(location.strip()),
                 "SOURCE_REDIRECT_REVIEW_REQUIRED: "
                 "redirect has no Location.",
             )
 
-            next_url = urljoin(
-                current_url,
-                location,
+            require(
+                not requested_cdn,
+                "SOURCE_REDIRECT_REVIEW_REQUIRED: "
+                "CDN attempted another redirect.",
             )
 
-            current_url = validate_download_hop_url(
-                next_url
-            )
+            next_url = urljoin(current_url, location)
+            next_host = urlparse(next_url).hostname
+
+            if next_host == "r2-demos.hltv.org":
+                current_url = validate_hltv_demo_cdn_url(next_url)
+                requested_cdn = True
+            else:
+                current_url = validate_download_hop_url(next_url)
 
             continue
 
         return response, current_url
 
     raise RuntimeError(
-        "SOURCE_REDIRECT_REVIEW_REQUIRED: "
-        "too many redirects."
+        "SOURCE_REDIRECT_REVIEW_REQUIRED: too many redirects."
     )
 
 
