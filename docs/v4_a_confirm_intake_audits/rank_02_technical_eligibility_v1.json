@@ -1,0 +1,52 @@
+{
+  "version": "V4_A_CONFIRM_RANK2_TECHNICAL_ELIGIBILITY_V1",
+  "record_type": "FORMAL_TECHNICAL_ELIGIBILITY_DECISION",
+  "candidate_rank": 2,
+  "source_match_id": "2397692",
+  "decision": "EXCLUDED",
+  "exclusion_reason": "WRONG_MAP",
+  "decision_basis": "The saved completed-match HLTV page lists Dust2, Cache and Nuke, with no Mirage map. The complete verified acquired RAR inventory contains exactly three correspondingly named Demo members and no Mirage-labeled member. The frozen acquisition protocol requires de_mirage.",
+  "review_source_commit": "a2f28f86c97723b9a6d633898d9a75ecd17d89c8",
+  "evidence": {
+    "map_source_path": "docs/v4_a_confirm_intake_audits/rank_02_map_source_v1.json",
+    "map_source_sha256": "c88fedcca1765cdd0f0561425559e520ea85642108a6d84856c77101dbe98046",
+    "match_page_path": "docs/v4_a_confirm_intake_audits/rank_02_match_page_source_v1.html",
+    "match_page_sha256": "c7d8dc286a2cdc8f5481fef5bae6035e0280bd5d9cbed1379599b7c8214c79d9",
+    "archive_event_path": "docs/v4_a_confirm_intake_events_v1/rank_02_2397692_archive_acquired.json",
+    "archive_event_sha256": "64d4e832cb3dc2d138b03f1f3b5a199c310fd46ad0922fc6a25bc992c611786b",
+    "acquisition_record_path": "data/raw/v4_a_confirm_download_staging/rank_02_2397692/acquisition_record.json",
+    "acquisition_record_sha256": "03f1ee71b00bbfdd9a818e2eebc62f53bb930811288f4e57675d90d2ebce2ba1",
+    "archive_path": "data/raw/v4_a_confirm_download_staging/rank_02_2397692/archive.rar",
+    "archive_sha256": "f1ab73d3dbaa485bc4cd52a50679e6f27692d92b739cf8b912b111ec1db66f89",
+    "acquisition_protocol_sha256": "5bd7e756ac78589e8b60d23521e1d133a722e08d2cd975e7129ffe03d130c3e4"
+  },
+  "verified_observations": {
+    "source_match_date_utc": "2026-09-21",
+    "hltv_completed_match_maps": [
+      "Dust2",
+      "Cache",
+      "Nuke"
+    ],
+    "archive_member_names": [
+      "quazar-vs-black-phoenix-m1-dust2.dem",
+      "quazar-vs-black-phoenix-m2-cache.dem",
+      "quazar-vs-black-phoenix-m3-nuke.dem"
+    ],
+    "mirage_listed_in_match_source": false,
+    "mirage_labeled_archive_member_count": 0
+  },
+  "scope_limitations": {
+    "demo_map_headers_independently_verified": false,
+    "demo_extraction_performed": false,
+    "whole_archive_crc_verified": false,
+    "actual_gameplay_start_time_independently_measured": false,
+    "other_technical_eligibility_requirements_evaluated": false,
+    "legacy_development_match_id_coverage": "INCOMPLETE",
+    "evidence_scope": "WRONG_MAP is based on the completed-match source map list and the complete acquired RAR member inventory, not on independently parsed Demo Map Headers."
+  },
+  "frozen_candidate_order_unchanged": true,
+  "prior_archive_event_unchanged": true,
+  "final_confirmation_manifest_created": false,
+  "model_scoring_performed": false,
+  "decision_recorded_utc": "2026-09-22T19:24:53.314666Z"
+}
