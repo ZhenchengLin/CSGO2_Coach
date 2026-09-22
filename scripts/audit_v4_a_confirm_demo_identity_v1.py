@@ -41,6 +41,11 @@ from inspect_v4_a_confirm_archive_v1 import (
 )
 
 
+from load_v4_a_confirm_verified_demos_v1 import (
+    load_verified_demos,
+)
+
+
 HISTORICAL_GROUPS = (
     "development",
     "v2_confirmation",
@@ -287,23 +292,7 @@ def audit_rank(rank):
         print("Technical eligibility: NOT EVALUATED")
         return
 
-    extraction_dir = (
-        STAGING_ROOT
-        / rank_dir_name(row)
-        / EXTRACT_DIR_NAME
-    )
-
-    if not extraction_dir.exists():
-        print("STATUS: WAITING_FOR_VERIFIED_EXTRACTION")
-        print("Technical eligibility: NOT EVALUATED")
-        return
-
-    verified = verify_extracted_files(
-        extraction_dir,
-        event,
-        expected_rank=rank,
-        expected_match_id=row["source_match_id"],
-    )
+    verified = load_verified_demos(row, event)
 
     historical = load_historical_hashes()
 

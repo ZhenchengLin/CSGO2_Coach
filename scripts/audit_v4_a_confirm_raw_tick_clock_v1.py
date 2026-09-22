@@ -41,8 +41,8 @@ from extract_v4_a_confirm_zip_v1 import (
     EXTRACT_DIR_NAME,
 )
 
-from audit_v4_a_confirm_demo_identity_v1 import (
-    verify_extracted_files,
+from load_v4_a_confirm_verified_demos_v1 import (
+    load_verified_demos,
 )
 
 EXPECTED_RAW_TICKS_PER_SECOND = 64.0
@@ -193,26 +193,7 @@ def audit_rank(rank, *, measure):
 
         return
 
-    extraction_dir = (
-        STAGING_ROOT
-        / rank_dir_name(row)
-        / EXTRACT_DIR_NAME
-    )
-
-    if not extraction_dir.exists():
-
-        print("STATUS: WAITING_FOR_VERIFIED_EXTRACTION")
-        print("Raw tick clock measured: NO")
-        print("Technical eligibility: NOT EVALUATED")
-
-        return
-
-    verified = verify_extracted_files(
-        extraction_dir,
-        event,
-        expected_rank=rank,
-        expected_match_id=row["source_match_id"],
-    )
+    verified = load_verified_demos(row, event)
 
     demos = [
         item
