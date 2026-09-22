@@ -1,0 +1,70 @@
+{
+  "version": "V4_A_CONFIRM_RANK2_MAP_SOURCE_V1",
+  "record_type": "MAP_SOURCE_EVIDENCE_NOT_ELIGIBILITY_DECISION",
+  "candidate_rank": 2,
+  "source_match_id": "2397692",
+  "frozen_match_date": "2026-09-21",
+  "original_scheduled_start_utc": "2026-09-21T11:00:00Z",
+  "acquisition": {
+    "record_path": "data/raw/v4_a_confirm_download_staging/rank_02_2397692/acquisition_record.json",
+    "record_sha256": "03f1ee71b00bbfdd9a818e2eebc62f53bb930811288f4e57675d90d2ebce2ba1",
+    "archive_event_path": "docs/v4_a_confirm_intake_events_v1/rank_02_2397692_archive_acquired.json",
+    "archive_event_sha256": "64d4e832cb3dc2d138b03f1f3b5a199c310fd46ad0922fc6a25bc992c611786b",
+    "archive_path": "data/raw/v4_a_confirm_download_staging/rank_02_2397692/archive.rar",
+    "archive_size_bytes": 641432614,
+    "archive_sha256": "f1ab73d3dbaa485bc4cd52a50679e6f27692d92b739cf8b912b111ec1db66f89"
+  },
+  "rar_inventory": {
+    "member_count": 3,
+    "members": [
+      {
+        "path": "quazar-vs-black-phoenix-m1-dust2.dem",
+        "declared_uncompressed_bytes": 265916831,
+        "actual_demo_header_map_verified": false
+      },
+      {
+        "path": "quazar-vs-black-phoenix-m2-cache.dem",
+        "declared_uncompressed_bytes": 310742357,
+        "actual_demo_header_map_verified": false
+      },
+      {
+        "path": "quazar-vs-black-phoenix-m3-nuke.dem",
+        "declared_uncompressed_bytes": 387597416,
+        "actual_demo_header_map_verified": false
+      }
+    ],
+    "mirage_labeled_member_count": 0,
+    "all_archive_members_extracted": false,
+    "demo_headers_independently_verified": false,
+    "whole_archive_crc_verified": false
+  },
+  "match_source": {
+    "provider": "HLTV",
+    "original_url": "https://www.hltv.org/matches/2397692/nodwin-clutch-series-12-swiss-round-4-2-nodwin-clutch-series-12",
+    "final_url": "https://www.hltv.org/matches/2397692/quazar-vs-black-phoenix-nodwin-clutch-series-12",
+    "http_status": 200,
+    "captured_at_utc": "2026-09-22T18:59:30.592132Z",
+    "snapshot_path": "docs/v4_a_confirm_intake_audits/rank_02_match_page_source_v1.html",
+    "snapshot_sha256": "c7d8dc286a2cdc8f5481fef5bae6035e0280bd5d9cbed1379599b7c8214c79d9",
+    "snapshot_size_bytes": 541531,
+    "page_title": "QUAZAR vs. Black Phoenix at NODWIN Clutch Series 12 | HLTV.org",
+    "completed_match_marker_present": true,
+    "displayed_match_date": "21st of September 2026",
+    "date_element_data_unix_ms": 1789988400000,
+    "source_page_utc_date": "2026-09-21",
+    "completed_match_maps": [
+      "Dust2",
+      "Cache",
+      "Nuke"
+    ]
+  },
+  "review": {
+    "archive_inventory_and_hltv_maps_agree": true,
+    "mirage_listed_by_hltv": false,
+    "mirage_labeled_member_in_archive": false,
+    "evidence_scope": "Complete RAR member-name and declared-size listing agrees with the completed HLTV match-page map list. No extracted Demo Map Header has been independently verified. This record is not a formal WRONG_MAP decision."
+  },
+  "technical_eligibility_decision": "NOT_RECORDED",
+  "final_confirmation_manifest": "NOT_CREATED",
+  "model_scoring": "NOT_PERFORMED"
+}
