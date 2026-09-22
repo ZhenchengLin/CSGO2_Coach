@@ -1,0 +1,43 @@
+{
+  "version": "V4_A_CONFIRM_RANK1_TECHNICAL_ELIGIBILITY_V1",
+  "record_type": "FORMAL_TECHNICAL_ELIGIBILITY_DECISION",
+  "candidate_rank": 1,
+  "source_match_id": "2397691",
+  "decision": "ELIGIBLE",
+  "decision_basis": "Frozen V4-A acquisition eligibility requirements, using independently verified data-integrity and completed-match date evidence.",
+  "review_source_commit": "717becd5d5e287f27709d88ad5162d4ac96c9a2b",
+  "evidence": {
+    "data_integrity_path": "docs/v4_a_confirm_intake_audits/rank_01_data_integrity_v1.json",
+    "data_integrity_sha256": "703e605f4285147e513561e82dab3f159582d027a8343688e13330455708312c",
+    "match_date_path": "docs/v4_a_confirm_intake_audits/rank_01_match_date_source_v1.json",
+    "match_date_sha256": "1e8b1256db1afb1df50629bf9f65b69ca31ae4e7bfd03777f78e9a895d829081",
+    "match_page_path": "docs/v4_a_confirm_intake_audits/rank_01_match_page_source_v1.html",
+    "match_page_sha256": "a0b8a0694cc4c4a1f5de7668e2b53bc934095d7b1ace2c816140fa909f191803",
+    "acquisition_protocol_sha256": "5bd7e756ac78589e8b60d23521e1d133a722e08d2cd975e7129ffe03d130c3e4"
+  },
+  "verified_observations": {
+    "match_date_utc": "2026-09-21",
+    "map": "de_mirage",
+    "measured_raw_ticks_per_second": 64.0,
+    "demo_sha256": "848a9e9d8b0593e3684a19f681d4f9c3902a9490ae530fe20667cdb7cc5843b1",
+    "retained_plus5_rows": 313,
+    "retained_plus10_rows": 305,
+    "independently_audited_snapshots": 313,
+    "feature_join_retained_rows": 618,
+    "historical_demo_sha256_overlap": false,
+    "available_historical_match_id_overlap": false,
+    "unique_among_currently_acquired_v4_demos": true
+  },
+  "scope_limitations": {
+    "legacy_development_match_id_coverage": "INCOMPLETE",
+    "missing_historical_ids_assumed_nonoverlapping": false,
+    "recorded_development_date_separation": true,
+    "exact_gameplay_start_time_independently_measured": false,
+    "future_v4_demo_uniqueness_checks_required": true,
+    "whole_archive_crc_verified": false
+  },
+  "frozen_candidate_order_unchanged": true,
+  "prior_archive_event_unchanged": true,
+  "final_confirmation_manifest_created": false,
+  "model_scoring_performed": false
+}
