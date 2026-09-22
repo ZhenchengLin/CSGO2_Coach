@@ -1,0 +1,39 @@
+{
+  "version": "V4_A_CONFIRM_RANK1_MATCH_DATE_SOURCE_V1",
+  "record_type": "SOURCE_DATE_EVIDENCE_NOT_ELIGIBILITY_DECISION",
+  "candidate_rank": 1,
+  "source_match_id": "2397691",
+  "frozen_match_date": "2026-09-21",
+  "original_scheduled_start_utc": "2026-09-21T08:00:00Z",
+  "source": {
+    "provider": "HLTV",
+    "original_url": "https://www.hltv.org/matches/2397691/nodwin-clutch-series-12-swiss-round-4-1-nodwin-clutch-series-12",
+    "final_url": "https://www.hltv.org/matches/2397691/brute-vs-sparta-nodwin-clutch-series-12",
+    "http_status": 200,
+    "captured_at_utc": "2026-09-22T08:05:52.454539Z",
+    "snapshot_path": "docs/v4_a_confirm_intake_audits/rank_01_match_page_source_v1.html",
+    "snapshot_sha256": "a0b8a0694cc4c4a1f5de7668e2b53bc934095d7b1ace2c816140fa909f191803",
+    "snapshot_size_bytes": 469851,
+    "page_title": "BRUTE vs. SPARTA at NODWIN Clutch Series 12 | HLTV.org",
+    "date_element_count": 1,
+    "visible_match_date": "21st of September 2026",
+    "date_element_data_unix_ms": 1789977600000,
+    "date_element_utc": "2026-09-21T08:00:00Z",
+    "completed_match_marker_present": true
+  },
+  "date_audit": {
+    "source_page_utc_date": "2026-09-21",
+    "matches_frozen_queue_date": true,
+    "satisfies_frozen_temporal_boundary": true,
+    "evidence_scope": "Completed HLTV match-page calendar date. The date timestamp equals the original scheduled start timestamp; it does not independently establish the actual gameplay start time.",
+    "actual_gameplay_start_time_independently_measured": false
+  },
+  "prior_data_integrity_evidence": {
+    "path": "docs/v4_a_confirm_intake_audits/rank_01_data_integrity_v1.json",
+    "sha256": "703e605f4285147e513561e82dab3f159582d027a8343688e13330455708312c"
+  },
+  "legacy_development_match_id_coverage": "INCOMPLETE",
+  "technical_eligibility_decision": "NOT_RECORDED",
+  "final_confirmation_manifest": "NOT_CREATED",
+  "model_scoring": "NOT_PERFORMED"
+}
