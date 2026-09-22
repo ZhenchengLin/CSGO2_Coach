@@ -645,6 +645,58 @@ def audit_rank1():
     print("STATUS: RANK1_DATA_INTEGRITY_AUDIT_PASSED")
     print("8B-7H-2: READ-ONLY TECHNICAL INTAKE AUDIT COMPLETE")
 
+    # Returned only after every preceding audit assertion passes.
+    # No target labels, model predictions or model metrics are included.
+    return {
+        "version": "V4_A_RANK1_DATA_INTEGRITY_OBSERVATION_V1",
+        "record_type": "DATA_INTEGRITY_NOT_ELIGIBILITY_DECISION",
+        "status": "RANK1_DATA_INTEGRITY_AUDIT_PASSED",
+        "candidate_rank": RANK,
+        "source_match_id": MATCH_ID,
+        "frozen_scheduled_match_date": row["frozen_match_date"],
+        "archive_sha256": event["archive_sha256"],
+        "extraction_record_sha256": sha256_file(RECORD_PATH),
+        "demo_filename": item["path"],
+        "demo_sha256": item["sha256"],
+        "parsed_map": inputs.demo.header.get("map_name"),
+        "raw_clock": clock,
+        "target_rows": targets.height,
+        "plus5_rows": counts[5],
+        "plus10_rows": counts[10],
+        "causal_motion_rows": motion.height,
+        "team_context_rows": context.height,
+        "independently_audited_snapshots": audited,
+        "joined_rows": joined.height,
+        "unknown_place_t_observations": unknown_t,
+        "unknown_place_ct_observations": unknown_ct,
+        "target_level_exclusion_entries": sum(
+            result["exclusions"].values()
+        ),
+        "round_level_exclusion_entries": sum(
+            result["round_exclusions"].values()
+        ),
+        "matrices": {
+            str(horizon): {
+                "rows": matrices[horizon]["rows"].height,
+                "control_shape": list(
+                    matrices[horizon]["control"].shape
+                ),
+                "candidate_shape": list(
+                    matrices[horizon]["candidate"].shape
+                ),
+                "dtype": "float32",
+                "all_values_finite": True,
+                "candidate_first24_equal_control": True,
+            }
+            for horizon in (5, 10)
+        },
+        "legacy_development_match_id_coverage": "INCOMPLETE",
+        "actual_match_date_independently_verified": False,
+        "technical_eligibility_evaluated": False,
+        "model_scoring_performed": False,
+        "final_manifest_created": False,
+    }
+
 
 def main():
 
