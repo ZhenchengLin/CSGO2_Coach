@@ -1,0 +1,104 @@
+{
+  "version": "V4_A_RANK1_TECHNICAL_EVIDENCE_V1",
+  "record_type": "DATA_INTEGRITY_EVIDENCE_ONLY",
+  "audit_source_commit": "cbe9825bdb5f7e20110ff297e933597546991ae9",
+  "file_sha256": {
+    "docs/v4_a_confirm_acquisition_protocol_v1_frozen.json": "5bd7e756ac78589e8b60d23521e1d133a722e08d2cd975e7129ffe03d130c3e4",
+    "docs/v4_a_confirm_acquisition_amendment_v1.json": "c98cb8c3b271275aa6b688b63a36f2f0da9a64e2feec7a7b638061d0ec520d7d",
+    "docs/v4_a_confirm_feature_extraction_contract_v1_frozen.json": "0d2cb2d6a5d4062ce1f2d185a45621dc01b404b452c3dcd2dd4ab9b1f14bbc8d",
+    "docs/v4_a_confirm_scoring_protocol_v1_frozen.json": "4fcdc1e7c7e7a07a93eadedf83534eb4a6241f68ab20b539b7c3f494c91e396d",
+    "docs/v4_a_confirm_acquisition_queue_v1.csv": "3eddd2dbcf038911b5e9bb41b2a5e218e710fec5a9f3f4ea3b759028f1a829bc",
+    "docs/v4_a_confirm_intake_initial_state_v1.json": "cec5a54897ecb37fd446835d77f574ad6d27c1792923e9e5a32d63e75d33e1ab",
+    "docs/v4_a_confirm_intake_events_v1/rank_01_2397691_archive_acquired.json": "7d4045d94535e47b8ac1695f4e923e20c98daf539931369b5d35ca19941c13fc",
+    "docs/v4_a_confirm_rank1_technical_intake_plan_v1.json": "b6dad7500c78d98add90141afd8a0ba40bd787131dbb3fb967c5db33eb0f8309",
+    "docs/v3_dev_manifest.csv": "1aa9dbc30edca67b0e3dc32955c31fe51bc0f12f33361a4a0b2a355c7d510bad",
+    "docs/v2_confirm_manifest.csv": "95b1a29b455c37c417c0220e4998debcd1a25727f8d32bbc60baafe1e9106a9b",
+    "docs/v3_confirm_manifest.csv": "68411147301c9e37a4649ad0b4ceac61f7b87a01493f1cff3a692b16dc8de3b7",
+    "scripts/audit_v4_a_confirm_rank1_technical_intake_v1.py": "a631d60dd590d89b20885816ac85c2869f458b9e6c3bb76c8539436967d10b07",
+    "scripts/write_v4_a_confirm_rank1_technical_evidence_v1.py": "452e472fa007233c33d48e3223958ebc123b3b9cf9bde420c97aaa846410d23a",
+    "scripts/audit_v4_a_confirm_raw_tick_clock_v1.py": "adfa0c6edc22b3d3ff52ae879761b6b77457a3997c6a6fac6555b6dfb27ae1a7",
+    "scripts/audit_v4_a_confirm_demo_identity_v1.py": "0604cdca2d5ff4c19a8453699c13afc46e451a91f8052f80dd910a5e49625e03",
+    "scripts/read_v4_a_confirm_rar_extraction_record_v1.py": "71eee6fe1c07467e692905a254e9674cf6b27bdb530fc21a40a301b456c64635",
+    "scripts/load_v4_a_confirm_verified_demos_v1.py": "10c51bb1fed0e890b342f7466551f6891f9fb6221326aed74887fb55dca6e23c",
+    "scripts/manage_v4_a_confirm_intake_state_v1.py": "05ab1630dc70db40b1bb4489e0cd3da8dd4c75f097f6317f2567f97605e9c3d8",
+    "src/cs2_tactical_intelligence/v4_a_confirm_demo_inputs_v1.py": "6edbd2e09f678a7ec3222ad48dbf23e8f7c4efdc51580ff3a5816520fd5334b1",
+    "src/cs2_tactical_intelligence/v4_a_confirm_target_rows_v1.py": "82440a3f662135f5bf959b78deb343989680e60584c5f50b08a437d179b967f4",
+    "src/cs2_tactical_intelligence/v4_a_confirm_target_semantics_v1.py": "dbd6a498163949494f0b65fc3aa280194f6e78d86ce08d40c733f07e4a8315c9",
+    "src/cs2_tactical_intelligence/v4_a_confirm_motion_v1.py": "c54468232db64226c9e0724a160081b717b2ed42d9a47c024d82ac9d36ce3fd3",
+    "src/cs2_tactical_intelligence/v4_a_confirm_team_context_v1.py": "7de18c1ddf5173dd5ce593b8dca88f86b5d38839b657f923d2db355d0201bdd8",
+    "src/cs2_tactical_intelligence/v4_a_confirm_feature_matrix_v1.py": "f49b5cb5959607690573c8ac8cef7e46277b6a82f00c8bb1284308e41b3e26b2"
+  },
+  "observation": {
+    "version": "V4_A_RANK1_DATA_INTEGRITY_OBSERVATION_V1",
+    "record_type": "DATA_INTEGRITY_NOT_ELIGIBILITY_DECISION",
+    "status": "RANK1_DATA_INTEGRITY_AUDIT_PASSED",
+    "candidate_rank": 1,
+    "source_match_id": "2397691",
+    "frozen_scheduled_match_date": "2026-09-21",
+    "archive_sha256": "e2b47081d53f1aad01976998bfafe3fd796814eb96353f8d0cd3a9848a037d76",
+    "extraction_record_sha256": "1c048712a2720c1556f81bddbed9523e91cf2bc37d7eb5d20157b7fd1ff80a4d",
+    "demo_filename": "brute-vs-sparta-m2-mirage.dem",
+    "demo_sha256": "848a9e9d8b0593e3684a19f681d4f9c3902a9490ae530fe20667cdb7cc5843b1",
+    "parsed_map": "de_mirage",
+    "raw_clock": {
+      "measured_raw_ticks_per_second": 64.0,
+      "valid_clock_intervals": 170047,
+      "expected_raw_ticks_per_second": 64.0,
+      "absolute_difference": 0.0,
+      "within_v3_precedent_tolerance": true,
+      "parser_configured_tickrate": 64.0,
+      "measurement_method": "median_adjacent_positive_tick_over_game_time"
+    },
+    "target_rows": 618,
+    "plus5_rows": 313,
+    "plus10_rows": 305,
+    "causal_motion_rows": 313,
+    "team_context_rows": 313,
+    "independently_audited_snapshots": 313,
+    "joined_rows": 618,
+    "unknown_place_t_observations": 0,
+    "unknown_place_ct_observations": 0,
+    "target_level_exclusion_entries": 24,
+    "round_level_exclusion_entries": 0,
+    "matrices": {
+      "5": {
+        "rows": 313,
+        "control_shape": [
+          313,
+          24
+        ],
+        "candidate_shape": [
+          313,
+          56
+        ],
+        "dtype": "float32",
+        "all_values_finite": true,
+        "candidate_first24_equal_control": true
+      },
+      "10": {
+        "rows": 305,
+        "control_shape": [
+          305,
+          24
+        ],
+        "candidate_shape": [
+          305,
+          56
+        ],
+        "dtype": "float32",
+        "all_values_finite": true,
+        "candidate_first24_equal_control": true
+      }
+    },
+    "legacy_development_match_id_coverage": "INCOMPLETE",
+    "actual_match_date_independently_verified": false,
+    "technical_eligibility_evaluated": false,
+    "model_scoring_performed": false,
+    "final_manifest_created": false
+  },
+  "technical_eligibility_decision": "NOT_RECORDED",
+  "actual_match_date_verification": "PENDING",
+  "legacy_development_match_id_coverage": "INCOMPLETE",
+  "final_confirmation_manifest": "NOT_CREATED",
+  "model_scoring": "NOT_PERFORMED"
+}
