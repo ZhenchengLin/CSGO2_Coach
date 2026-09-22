@@ -1,0 +1,68 @@
+{
+  "version": "V4_A_CONFIRM_RANK1_TECHNICAL_INTAKE_PLAN_V1",
+  "record_type": "AUDIT_PLAN_NOT_ELIGIBILITY_DECISION",
+  "candidate_rank": 1,
+  "source_match_id": "2397691",
+  "verified_demo": {
+    "filename": "brute-vs-sparta-m2-mirage.dem",
+    "sha256": "848a9e9d8b0593e3684a19f681d4f9c3902a9490ae530fe20667cdb7cc5843b1",
+    "internal_map": "de_mirage",
+    "extraction_record_sha256": "1c048712a2720c1556f81bddbed9523e91cf2bc37d7eb5d20157b7fd1ff80a4d",
+    "whole_archive_crc_verified": false
+  },
+  "previous_interactive_audit_observations": {
+    "evidence_status": "OBSERVED_IN_TERMINAL_OUTPUT; REGENERATE_WITH_TRACKED_AUDIT_CODE_BEFORE_FORMAL_DECISION",
+    "measured_raw_ticks_per_second": 64.0,
+    "valid_raw_clock_intervals": 170047,
+    "round_count": 20,
+    "player_snapshot_rows": 1639800,
+    "bomb_event_rows": 142,
+    "retained_target_rows": 618,
+    "retained_plus5_rows": 313,
+    "retained_plus10_rows": 305,
+    "unique_current_snapshots": 313,
+    "identity_occupancy_snapshots_passed": 313,
+    "causal_motion_rows_resolved": 313,
+    "team_context_rows": 313,
+    "target_rows_after_feature_join": 618,
+    "control_dimensions": 24,
+    "candidate_dimensions": 56,
+    "target_level_exclusion_entries": 24,
+    "round_level_exclusion_entries": 0
+  },
+  "historical_identity_coverage": {
+    "historical_demo_sha256_overlap": [],
+    "v3_confirmation_match_id_overlap": false,
+    "v2_confirmation_match_id_overlap": false,
+    "v3_fresh_development_queue_match_id_overlap": false,
+    "v2_acquisition_queue_match_id_overlap": false,
+    "legacy_development_match_id_coverage": "INCOMPLETE",
+    "development_latest_recorded_match_date": "2026-09-15",
+    "candidate_frozen_match_date": "2026-09-21",
+    "limitation": "Recorded date separation does not establish complete per-match ID coverage. Preserve this limitation in the formal technical evidence and eligibility review."
+  },
+  "required_formal_audit": [
+    "Verify frozen candidate rank, source identity and acquisition event.",
+    "Independently verify the existing RAR Extraction Record.",
+    "Verify the complete Demo SHA256 and historical SHA256 non-overlap.",
+    "Verify available historical Match IDs and document incomplete coverage.",
+    "Verify the actual match-date requirement using permitted source evidence.",
+    "Measure the raw tick clock from actual tick/game_time observations.",
+    "Parse the Demo with the existing V4-A input parser.",
+    "Build target rows using the frozen target implementation.",
+    "Independently check player identity and occupancy on retained snapshots.",
+    "Build causal motion, Team Context and exact 24D/56D matrices.",
+    "Verify target keys, join cardinality, feature order and finite values.",
+    "Create a versioned technical evidence record with input and code SHA256.",
+    "Review all frozen eligibility conditions before a formal decision."
+  ],
+  "scientific_boundaries": {
+    "frozen_protocols_may_be_modified": false,
+    "target_rows_may_be_removed_posthoc": false,
+    "confirmation_model_prediction_performed": false,
+    "confirmation_metric_calculated": false,
+    "final_manifest_created": false,
+    "technical_eligibility_evaluated": false,
+    "formal_technical_status": "NOT_YET_RECORDED"
+  }
+}
