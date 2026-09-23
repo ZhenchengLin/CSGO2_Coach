@@ -1,0 +1,39 @@
+{
+  "version": "V4_A_CONFIRM_RANK8_SELECTED_DEMO_EXTRACTION_V1",
+  "record_type": "SELECTED_MEMBER_EXTRACTION_EVIDENCE",
+  "candidate_rank": 8,
+  "source_match_id": "2397990",
+  "archive_event_path": "docs/v4_a_confirm_intake_events_v1/rank_08_2397990_archive_acquired.json",
+  "archive_event_sha256": "da10e2fffbdda09d896400ca42d71f152adf5e8877792880386ca95aafc92e48",
+  "source_snapshot_path": "docs/v4_a_confirm_intake_audits/rank_08_match_page_source_v1.html",
+  "source_snapshot_sha256": "d9bf64ced7a35cec9a621f46180780a263c84683d281ca500101ff7b94d9bbd9",
+  "source_archive_path": "data/raw/v4_a_confirm_download_staging/rank_08_2397990/archive.rar",
+  "source_archive_size_bytes": 479892570,
+  "source_archive_sha256": "822eae4a040db1f3705bae411996c8e57cafd97efb26d1bf2533f3b26dc4ce93",
+  "archive_members": [
+    {
+      "path": "upgrade-vs-illyrians-m1-mirage.dem",
+      "declared_uncompressed_bytes": 268307845
+    },
+    {
+      "path": "upgrade-vs-illyrians-m2-anubis.dem",
+      "declared_uncompressed_bytes": 488574703
+    }
+  ],
+  "selected_member": "upgrade-vs-illyrians-m1-mirage.dem",
+  "selected_member_declared_bytes": 268307845,
+  "extracted_demo_path": "data/raw/v4_a_confirm_download_staging/rank_08_2397990/upgrade-vs-illyrians-m1-mirage.dem",
+  "extracted_demo_size_bytes": 268307845,
+  "extracted_demo_sha256": "b9559f1a4ebef72304e120154a4c6c51b4173975b4aaf981c8cf3a1b87982ebd",
+  "selected_member_replay_sha256": "b9559f1a4ebef72304e120154a4c6c51b4173975b4aaf981c8cf3a1b87982ebd",
+  "selected_member_replay_exit_zero": true,
+  "selected_member_stream_matches_extracted_demo": true,
+  "actual_demo_header_map": "de_mirage",
+  "demo_header_map_verified": true,
+  "whole_archive_crc_verified": false,
+  "unselected_members_extracted": false,
+  "raw_tick_clock_independently_measured": false,
+  "frozen_feature_and_target_pipeline_evaluated": false,
+  "technical_eligibility_evaluated": false,
+  "model_scoring_performed": false
+}
