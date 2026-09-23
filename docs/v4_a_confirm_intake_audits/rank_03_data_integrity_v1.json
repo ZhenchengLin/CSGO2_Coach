@@ -1,0 +1,104 @@
+{
+  "version": "V4_A_CONFIRM_RANK3_TECHNICAL_EVIDENCE_V1",
+  "record_type": "DATA_INTEGRITY_EVIDENCE_ONLY",
+  "candidate_rank": 3,
+  "source_match_id": "2397693",
+  "audit_source_commit": "da200dc86a9272a014fda9234d894a975af21f4b",
+  "file_sha256": {
+    "docs/v4_a_confirm_acquisition_protocol_v1_frozen.json": "5bd7e756ac78589e8b60d23521e1d133a722e08d2cd975e7129ffe03d130c3e4",
+    "docs/v4_a_confirm_feature_extraction_contract_v1_frozen.json": "0d2cb2d6a5d4062ce1f2d185a45621dc01b404b452c3dcd2dd4ab9b1f14bbc8d",
+    "docs/v4_a_confirm_scoring_protocol_v1_frozen.json": "4fcdc1e7c7e7a07a93eadedf83534eb4a6241f68ab20b539b7c3f494c91e396d",
+    "docs/v4_a_confirm_acquisition_queue_v1.csv": "3eddd2dbcf038911b5e9bb41b2a5e218e710fec5a9f3f4ea3b759028f1a829bc",
+    "docs/v4_a_confirm_intake_initial_state_v1.json": "cec5a54897ecb37fd446835d77f574ad6d27c1792923e9e5a32d63e75d33e1ab",
+    "docs/v4_a_confirm_intake_audits/rank_01_technical_eligibility_v1.json": "cbaa368ddd251667d74070a64a4219b1515ee0b81fd3722bbc9ce9c58d035a9e",
+    "docs/v4_a_confirm_intake_audits/rank_02_technical_eligibility_v1.json": "874496b96943e1cdac691494c9821fe5d4389ba4e173df0f048c30254aca0ead",
+    "docs/v4_a_confirm_intake_events_v1/rank_03_2397693_archive_acquired.json": "03eaa561906b36d0da503914cea6c8a576a67fc96642ba6504e4e5640bd6e249",
+    "docs/v4_a_confirm_intake_audits/rank_03_selected_demo_extraction_v1.json": "109995dfc5624c4b250607e802378d36079c8be20a6348fb1993b81626a25c57",
+    "docs/v4_a_confirm_intake_audits/rank_03_match_page_source_v1.html": "5e481dc8f7687ccceff9773e52c1222cc1558fa5a420da3eb6c7282bcb0ef5d4",
+    "docs/v3_dev_manifest.csv": "1aa9dbc30edca67b0e3dc32955c31fe51bc0f12f33361a4a0b2a355c7d510bad",
+    "docs/v2_confirm_manifest.csv": "95b1a29b455c37c417c0220e4998debcd1a25727f8d32bbc60baafe1e9106a9b",
+    "docs/v3_confirm_manifest.csv": "68411147301c9e37a4649ad0b4ceac61f7b87a01493f1cff3a692b16dc8de3b7",
+    "docs/v2_acquisition_queue.csv": "422978ad326a09364980255fd909934d981d940f2951890768ba0fb66781e608",
+    "docs/v3_fresh_acquisition_queue_v2.csv": "9d69c8108651d94ab31f093abf89f0751cb1ece56cb863aab604c2be26cdd1ad",
+    "docs/v3_confirm_acquisition_queue_v1.csv": "cc1fd6bcb2969aa5062b06fd5a3cb1c80e47513d53576a9bc663b06d14c3bfec",
+    "scripts/audit_v4_a_confirm_rank3_v1.py": "ffeb3d322eebfbfecb08e7c9275bcadebeba0d369ab25fca697abdff973e7d89",
+    "scripts/audit_v4_a_confirm_rank1_technical_intake_v1.py": "a631d60dd590d89b20885816ac85c2869f458b9e6c3bb76c8539436967d10b07",
+    "scripts/audit_v4_a_confirm_raw_tick_clock_v1.py": "adfa0c6edc22b3d3ff52ae879761b6b77457a3997c6a6fac6555b6dfb27ae1a7",
+    "scripts/audit_v4_a_confirm_demo_identity_v1.py": "0604cdca2d5ff4c19a8453699c13afc46e451a91f8052f80dd910a5e49625e03",
+    "scripts/manage_v4_a_confirm_intake_state_v1.py": "05ab1630dc70db40b1bb4489e0cd3da8dd4c75f097f6317f2567f97605e9c3d8",
+    "src/cs2_tactical_intelligence/v4_a_confirm_demo_inputs_v1.py": "6edbd2e09f678a7ec3222ad48dbf23e8f7c4efdc51580ff3a5816520fd5334b1",
+    "src/cs2_tactical_intelligence/v4_a_confirm_extract_features_v1.py": "856a499c3dd232ef27931efa6558631459e4223eb9677b5416d0062a8de32cbb",
+    "src/cs2_tactical_intelligence/v4_a_confirm_target_rows_v1.py": "82440a3f662135f5bf959b78deb343989680e60584c5f50b08a437d179b967f4",
+    "src/cs2_tactical_intelligence/v4_a_confirm_target_semantics_v1.py": "dbd6a498163949494f0b65fc3aa280194f6e78d86ce08d40c733f07e4a8315c9",
+    "src/cs2_tactical_intelligence/v4_a_confirm_motion_v1.py": "c54468232db64226c9e0724a160081b717b2ed42d9a47c024d82ac9d36ce3fd3",
+    "src/cs2_tactical_intelligence/v4_a_confirm_team_context_v1.py": "7de18c1ddf5173dd5ce593b8dca88f86b5d38839b657f923d2db355d0201bdd8",
+    "src/cs2_tactical_intelligence/v4_a_confirm_feature_matrix_v1.py": "f49b5cb5959607690573c8ac8cef7e46277b6a82f00c8bb1284308e41b3e26b2"
+  },
+  "archive_sha256": "48d3a9be8776940dadaa19b450eb887e5ed6fdf3467d1e57196011a0eda73a74",
+  "demo_sha256": "b6e4f8e7170fd3be55f067661e33e8c28bc4ae59792242cf4580ac22abdb16f8",
+  "date_evidence": {
+    "completed_match_date_utc": "2026-09-21",
+    "source_snapshot_sha256": "5e481dc8f7687ccceff9773e52c1222cc1558fa5a420da3eb6c7282bcb0ef5d4",
+    "exact_gameplay_start_independently_measured": false
+  },
+  "observation": {
+    "raw_clock": {
+      "measured_raw_ticks_per_second": 64.0,
+      "valid_clock_intervals": 158287,
+      "expected_raw_ticks_per_second": 64.0,
+      "absolute_difference": 0.0,
+      "within_v3_precedent_tolerance": true,
+      "parser_configured_tickrate": 64.0,
+      "measurement_method": "median_adjacent_positive_tick_over_game_time"
+    },
+    "parsed_map": "de_mirage",
+    "target_rows": 448,
+    "plus5_rows": 229,
+    "plus10_rows": 219,
+    "motion_rows": 229,
+    "team_context_rows": 229,
+    "independently_audited_snapshots": 229,
+    "joined_rows": 448,
+    "unknown_place_t_observations": 0,
+    "unknown_place_ct_observations": 0,
+    "target_level_exclusion_entries": 28,
+    "round_level_exclusion_entries": 0,
+    "historical_demo_sha256_overlap": false,
+    "earlier_v4_demo_sha256_overlap": false,
+    "available_historical_match_id_overlap": false,
+    "matrices": {
+      "5": {
+        "rows": 229,
+        "control_shape": [
+          229,
+          24
+        ],
+        "candidate_shape": [
+          229,
+          56
+        ],
+        "dtype": "float32",
+        "all_values_finite": true,
+        "candidate_first24_equal_control": true
+      },
+      "10": {
+        "rows": 219,
+        "control_shape": [
+          219,
+          24
+        ],
+        "candidate_shape": [
+          219,
+          56
+        ],
+        "dtype": "float32",
+        "all_values_finite": true,
+        "candidate_first24_equal_control": true
+      }
+    }
+  },
+  "legacy_development_match_id_coverage": "INCOMPLETE",
+  "technical_eligibility_decision": "NOT_RECORDED",
+  "final_manifest_created": false,
+  "model_scoring_performed": false
+}
