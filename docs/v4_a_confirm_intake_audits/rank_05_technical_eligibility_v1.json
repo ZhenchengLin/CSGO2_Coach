@@ -1,0 +1,39 @@
+{
+  "version": "V4_A_CONFIRM_RANK5_TECHNICAL_ELIGIBILITY_V1",
+  "record_type": "FORMAL_TECHNICAL_ELIGIBILITY_DECISION",
+  "candidate_rank": 5,
+  "source_match_id": "2397833",
+  "decision": "EXCLUDED",
+  "exclusion_reason": "WRONG_MAP",
+  "decision_basis": "The preserved completed-match HLTV source records Dust2, Inferno and Cache as the played maps and Nexus removing Mirage during the veto. The frozen acquisition protocol requires de_mirage. This is a match-source-based map exclusion; no Archive or Demo Header was inspected.",
+  "evidence": {
+    "match_page_path": "docs/v4_a_confirm_intake_audits/rank_05_match_page_source_v1.html",
+    "match_page_sha256": "0b02662f4c43bf70ffcf6a55fd2a465aeb61b01c9e8d5abf789d728c2fcd3a61",
+    "match_page_url": "https://www.hltv.org/matches/2397833/nexus-vs-bushido-wildcats-cct-2026-europe-series-9",
+    "acquisition_protocol_sha256": "5bd7e756ac78589e8b60d23521e1d133a722e08d2cd975e7129ffe03d130c3e4"
+  },
+  "verified_observations": {
+    "source_match_date_utc": "2026-09-21",
+    "hltv_played_maps": [
+      "Dust2",
+      "Inferno",
+      "Cache"
+    ],
+    "hltv_mirage_vetoed": true,
+    "mirage_played": false
+  },
+  "scope_limitations": {
+    "evidence_scope": "COMPLETED_MATCH_SOURCE_ONLY",
+    "archive_acquired": false,
+    "archive_inventory_verified": false,
+    "demo_extraction_performed": false,
+    "demo_map_headers_independently_verified": false,
+    "raw_tick_clock_measured": false,
+    "other_technical_eligibility_requirements_evaluated": false,
+    "legacy_development_match_id_coverage": "INCOMPLETE",
+    "missing_historical_ids_assumed_nonoverlapping": false
+  },
+  "frozen_candidate_order_unchanged": true,
+  "final_confirmation_manifest_created": false,
+  "model_scoring_performed": false
+}
