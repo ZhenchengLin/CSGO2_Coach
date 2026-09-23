@@ -1,0 +1,43 @@
+{
+  "version": "V4_A_CONFIRM_SELECTED_DEMO_EXTRACTION_V1",
+  "record_type": "SELECTED_MEMBER_EXTRACTION_EVIDENCE",
+  "candidate_rank": 14,
+  "source_match_id": "2398027",
+  "archive_event_path": "docs/v4_a_confirm_intake_events_v1/rank_14_2398027_archive_acquired.json",
+  "archive_event_sha256": "c17513d97d2cca606be08c042242dede0b3793b8a053b3551e910e956a925842",
+  "source_snapshot_path": "docs/v4_a_confirm_intake_audits/rank_14_match_page_source_v1.html",
+  "source_snapshot_sha256": "2938222baf93a1bce541675567cd5e9e80123c039c4f87b7003c898e9f6f7891",
+  "source_archive_path": "data/raw/v4_a_confirm_download_staging/rank_14_2398027/archive.rar",
+  "source_archive_size_bytes": 610216972,
+  "source_archive_sha256": "2cfa99b1ca4d02644f5072301a6a0684237da9a5f07775baaf800f8bdccf5824",
+  "archive_members": [
+    {
+      "path": "misa-vs-honved-m1-mirage.dem",
+      "declared_uncompressed_bytes": 316535672
+    },
+    {
+      "path": "misa-vs-honved-m2-anubis.dem",
+      "declared_uncompressed_bytes": 341773107
+    },
+    {
+      "path": "misa-vs-honved-m3-dust2.dem",
+      "declared_uncompressed_bytes": 275895077
+    }
+  ],
+  "selected_member": "misa-vs-honved-m1-mirage.dem",
+  "selected_member_declared_bytes": 316535672,
+  "extracted_demo_path": "data/raw/v4_a_confirm_download_staging/rank_14_2398027/misa-vs-honved-m1-mirage.dem",
+  "extracted_demo_size_bytes": 316535672,
+  "extracted_demo_sha256": "6e7eef81546527d2c1104030a3376d0978af0b6492ddb00267040f28bc74a5b2",
+  "selected_member_replay_sha256": "6e7eef81546527d2c1104030a3376d0978af0b6492ddb00267040f28bc74a5b2",
+  "selected_member_replay_exit_zero": true,
+  "selected_member_stream_matches_extracted_demo": true,
+  "actual_demo_header_map": "de_mirage",
+  "demo_header_map_verified": true,
+  "whole_archive_crc_verified": false,
+  "unselected_members_extracted": false,
+  "raw_tick_clock_independently_measured": false,
+  "frozen_feature_and_target_pipeline_evaluated": false,
+  "technical_eligibility_evaluated": false,
+  "model_scoring_performed": false
+}
