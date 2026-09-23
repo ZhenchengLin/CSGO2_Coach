@@ -202,7 +202,7 @@ def verify_inputs():
     event = read_event(initial[7])  # full archive hash and acquisition record verification
     require(event and event['archive_sha256'] == ARCHIVE_SHA and event['status'] == 'ARCHIVE_ACQUIRED', 'Rank 8 Archive Event mismatch')
     evidence = json.loads(EXTRACTION.read_text())
-    require(evidence['candidate_rank'] == 6 and evidence['source_match_id'] == MATCH_ID and evidence['extracted_demo_sha256'] == DEMO_SHA, 'Selected-member evidence mismatch')
+    require(evidence['candidate_rank'] == RANK and evidence['source_match_id'] == MATCH_ID and evidence['extracted_demo_sha256'] == DEMO_SHA, 'Selected-member evidence mismatch')
     require(evidence['source_archive_sha256'] == ARCHIVE_SHA and evidence['actual_demo_header_map'] == 'de_mirage' and evidence['demo_header_map_verified'] is True, 'Selected-member map identity mismatch')
     require(evidence['raw_tick_clock_independently_measured'] is False and evidence['technical_eligibility_evaluated'] is False and evidence['model_scoring_performed'] is False, 'Selected-member evidence crossed boundary')
     require(evidence['archive_event_sha256'] == digest(ROOT / evidence['archive_event_path']), 'Extraction/Archive Event link mismatch')

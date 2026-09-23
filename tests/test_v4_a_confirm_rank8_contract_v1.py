@@ -88,5 +88,11 @@ class Rank8InvariantTests(unittest.TestCase):
             validate_observation(value)
 
 
+    def test_selected_member_evidence_rank_uses_current_rank(self):
+        source = SCRIPT.read_text(encoding="utf-8")
+        self.assertIn("evidence['candidate_rank'] == RANK", source)
+        self.assertNotIn("evidence['candidate_rank'] == 6", source)
+
+
 if __name__ == '__main__':
     unittest.main()
