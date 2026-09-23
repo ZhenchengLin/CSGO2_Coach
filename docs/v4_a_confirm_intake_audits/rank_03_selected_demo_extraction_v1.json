@@ -1,0 +1,43 @@
+{
+  "version": "V4_A_CONFIRM_RANK3_SELECTED_DEMO_EXTRACTION_V1",
+  "record_type": "SELECTED_MEMBER_EXTRACTION_EVIDENCE",
+  "candidate_rank": 3,
+  "source_match_id": "2397693",
+  "archive_event_path": "docs/v4_a_confirm_intake_events_v1/rank_03_2397693_archive_acquired.json",
+  "archive_event_sha256": "03eaa561906b36d0da503914cea6c8a576a67fc96642ba6504e4e5640bd6e249",
+  "source_snapshot_path": "docs/v4_a_confirm_intake_audits/rank_03_match_page_source_v1.html",
+  "source_snapshot_sha256": "5e481dc8f7687ccceff9773e52c1222cc1558fa5a420da3eb6c7282bcb0ef5d4",
+  "source_archive_path": "data/raw/v4_a_confirm_download_staging/rank_03_2397693/archive.rar",
+  "source_archive_size_bytes": 657034824,
+  "source_archive_sha256": "48d3a9be8776940dadaa19b450eb887e5ed6fdf3467d1e57196011a0eda73a74",
+  "archive_members": [
+    {
+      "path": "leo-vs-g2-ares-m3-ancient.dem",
+      "declared_uncompressed_bytes": 334117908
+    },
+    {
+      "path": "leo-vs-g2-ares-m2-cache.dem",
+      "declared_uncompressed_bytes": 350183129
+    },
+    {
+      "path": "leo-vs-g2-ares-m1-mirage.dem",
+      "declared_uncompressed_bytes": 297602564
+    }
+  ],
+  "selected_member": "leo-vs-g2-ares-m1-mirage.dem",
+  "selected_member_declared_bytes": 297602564,
+  "extracted_demo_path": "data/raw/v4_a_confirm_download_staging/rank_03_2397693/leo-vs-g2-ares-m1-mirage.dem",
+  "extracted_demo_size_bytes": 297602564,
+  "extracted_demo_sha256": "b6e4f8e7170fd3be55f067661e33e8c28bc4ae59792242cf4580ac22abdb16f8",
+  "selected_member_replay_sha256": "b6e4f8e7170fd3be55f067661e33e8c28bc4ae59792242cf4580ac22abdb16f8",
+  "selected_member_replay_exit_zero": true,
+  "selected_member_stream_matches_extracted_demo": true,
+  "actual_demo_header_map": "de_mirage",
+  "demo_header_map_verified": true,
+  "whole_archive_crc_verified": false,
+  "unselected_members_extracted": false,
+  "raw_tick_clock_independently_measured": false,
+  "frozen_feature_and_target_pipeline_evaluated": false,
+  "technical_eligibility_evaluated": false,
+  "model_scoring_performed": false
+}
