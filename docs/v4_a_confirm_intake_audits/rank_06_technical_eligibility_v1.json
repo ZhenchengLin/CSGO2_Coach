@@ -1,0 +1,45 @@
+{
+  "version": "V4_A_CONFIRM_RANK6_TECHNICAL_ELIGIBILITY_V1",
+  "record_type": "FORMAL_TECHNICAL_ELIGIBILITY_DECISION",
+  "candidate_rank": 6,
+  "source_match_id": "2397834",
+  "decision": "ELIGIBLE",
+  "decision_basis": "Frozen V4-A acquisition eligibility requirements; committed Rank 6 technical data-integrity evidence, selected-Mirage extraction provenance and completed-match date source. No model predictions or confirmation metrics were used.",
+  "review_source_commit": "eb0c6afdb6a5f6be928796d622bdb9c635a6a71e",
+  "evidence": {
+    "data_integrity_path": "docs/v4_a_confirm_intake_audits/rank_06_data_integrity_v1.json",
+    "data_integrity_sha256": "ebc15abbeb1275c22091ac129400cab8ad200fb61291b9d8f46e54f33cc97b88",
+    "selected_demo_extraction_path": "docs/v4_a_confirm_intake_audits/rank_06_selected_demo_extraction_v1.json",
+    "selected_demo_extraction_sha256": "7e6089ba2b397c7b933565dc30439afc8e8b4ad12511ed4a3d33703fe96ee149",
+    "match_page_path": "docs/v4_a_confirm_intake_audits/rank_06_match_page_source_v1.html",
+    "match_page_sha256": "a8dc41878f4b9c3cea7911f077eb9ee2d98b9b25b99cbc2a8e1ae09349863bea",
+    "archive_event_path": "docs/v4_a_confirm_intake_events_v1/rank_06_2397834_archive_acquired.json",
+    "archive_event_sha256": "ef4da590fbf21980d61e60b063659bfef83edf92827f82447449e380118d5388",
+    "acquisition_protocol_sha256": "5bd7e756ac78589e8b60d23521e1d133a722e08d2cd975e7129ffe03d130c3e4"
+  },
+  "verified_observations": {
+    "match_date_utc": "2026-09-21",
+    "map": "de_mirage",
+    "measured_raw_ticks_per_second": 64.0,
+    "demo_sha256": "7dcfab14a82dd97e9b0ebbedd346c305320aecbef1fee127553a2c4187c38f2a",
+    "retained_plus5_rows": 248,
+    "retained_plus10_rows": 237,
+    "independently_audited_snapshots": 248,
+    "feature_join_retained_rows": 485,
+    "historical_demo_sha256_overlap": false,
+    "available_historical_match_id_overlap": false,
+    "unique_among_currently_verified_v4_mirage_demos": true
+  },
+  "scope_limitations": {
+    "legacy_development_match_id_coverage": "INCOMPLETE",
+    "missing_historical_ids_assumed_nonoverlapping": false,
+    "exact_gameplay_start_time_independently_measured": false,
+    "future_v4_demo_uniqueness_checks_required": true,
+    "whole_archive_crc_verified": false
+  },
+  "frozen_candidate_order_unchanged": true,
+  "prior_archive_event_unchanged": true,
+  "final_confirmation_manifest_created": false,
+  "model_scoring_performed": false,
+  "decision_recorded_utc": "2026-09-23T01:54:53.964235Z"
+}
