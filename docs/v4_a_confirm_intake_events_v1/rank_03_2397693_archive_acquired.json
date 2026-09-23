@@ -1,0 +1,13 @@
+{
+  "version": "V4_A_CONFIRM_ARCHIVE_ACQUIRED_EVENT_V1",
+  "status": "ARCHIVE_ACQUIRED",
+  "candidate_rank": 3,
+  "source_match_id": "2397693",
+  "acquisition_record_sha256": "a34eede759052f95e7b709b129ec7cd9bc6c4772041b087a391bb9b63d87cab5",
+  "archive_sha256": "48d3a9be8776940dadaa19b450eb887e5ed6fdf3467d1e57196011a0eda73a74",
+  "archive_size_bytes": 657034824,
+  "archive_path": "data/raw/v4_a_confirm_download_staging/rank_03_2397693/archive.rar",
+  "recorded_utc": "2026-09-23T00:26:47.945805Z",
+  "technical_eligibility_evaluated": false,
+  "model_scoring_performed": false
+}
