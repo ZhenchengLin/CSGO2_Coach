@@ -1,0 +1,45 @@
+{
+  "version": "V4_A_CONFIRM_RANK12_TECHNICAL_ELIGIBILITY_V1",
+  "record_type": "FORMAL_TECHNICAL_ELIGIBILITY_DECISION",
+  "candidate_rank": 12,
+  "source_match_id": "2398011",
+  "decision": "EXCLUDED",
+  "exclusion_reason": "WRONG_MAP",
+  "decision_basis": "The preserved completed-match HLTV source records Dust2 and Nuke as the played maps, with Ancient left over as the unused decider. Sashi removed Mirage during veto. The frozen acquisition protocol requires de_mirage. This is a match-source-based map exclusion; no Archive or Demo Header was inspected.",
+  "review_source_commit": "fa4a76696b941d78dfc9f4165327493df5650a67",
+  "evidence": {
+    "match_page_path": "docs/v4_a_confirm_intake_audits/rank_12_match_page_source_v1.html",
+    "match_page_sha256": "802a6f465bf779f94b7c811424469cc9e0a98c6832735eb2f3a94faa8665bebd",
+    "match_page_url": "https://www.hltv.org/matches/2398011/sashi-vs-fokus-stake-pulse-beat-ii",
+    "acquisition_protocol_sha256": "5bd7e756ac78589e8b60d23521e1d133a722e08d2cd975e7129ffe03d130c3e4"
+  },
+  "verified_observations": {
+    "source_match_date_utc": "2026-09-21",
+    "hltv_match_map_slots": [
+      "Dust2",
+      "Nuke",
+      "Ancient"
+    ],
+    "hltv_played_maps": [
+      "Dust2",
+      "Nuke"
+    ],
+    "hltv_unused_decider": "Ancient",
+    "hltv_mirage_vetoed": true,
+    "mirage_played": false
+  },
+  "scope_limitations": {
+    "evidence_scope": "COMPLETED_MATCH_SOURCE_ONLY",
+    "archive_acquired": false,
+    "archive_inventory_verified": false,
+    "demo_extraction_performed": false,
+    "demo_map_headers_independently_verified": false,
+    "raw_tick_clock_measured": false,
+    "other_technical_eligibility_requirements_evaluated": false,
+    "legacy_development_match_id_coverage": "INCOMPLETE",
+    "missing_historical_ids_assumed_nonoverlapping": false
+  },
+  "frozen_candidate_order_unchanged": true,
+  "final_confirmation_manifest_created": false,
+  "model_scoring_performed": false
+}
