@@ -1,0 +1,43 @@
+{
+  "version": "V4_A_CONFIRM_SELECTED_DEMO_EXTRACTION_V1",
+  "record_type": "SELECTED_MEMBER_EXTRACTION_EVIDENCE",
+  "candidate_rank": 17,
+  "source_match_id": "2398058",
+  "archive_event_path": "docs/v4_a_confirm_intake_events_v1/rank_17_2398058_archive_acquired.json",
+  "archive_event_sha256": "025853115cf330f984b76ba785ba616adebac27759cf307ae57a3f49bed15afe",
+  "source_snapshot_path": "docs/v4_a_confirm_intake_audits/rank_17_match_page_source_v1.html",
+  "source_snapshot_sha256": "10af3ba220667aae1cb83bb7b39d71b8bbfb0a483d95187fe1083b52c0e9e101",
+  "source_archive_path": "data/raw/v4_a_confirm_download_staging/rank_17_2398058/archive.rar",
+  "source_archive_size_bytes": 702073522,
+  "source_archive_sha256": "81a25a2e6c58d55e42ffdf0acc03dc69bf170d084fe9778eac0e1dbce6bb0d4c",
+  "archive_members": [
+    {
+      "path": "sangal-vs-fokus-m1-dust2.dem",
+      "declared_uncompressed_bytes": 293566052
+    },
+    {
+      "path": "sangal-vs-fokus-m2-nuke.dem",
+      "declared_uncompressed_bytes": 389344590
+    },
+    {
+      "path": "sangal-vs-fokus-m3-mirage.dem",
+      "declared_uncompressed_bytes": 401245757
+    }
+  ],
+  "selected_member": "sangal-vs-fokus-m3-mirage.dem",
+  "selected_member_declared_bytes": 401245757,
+  "extracted_demo_path": "data/raw/v4_a_confirm_download_staging/rank_17_2398058/sangal-vs-fokus-m3-mirage.dem",
+  "extracted_demo_size_bytes": 401245757,
+  "extracted_demo_sha256": "33d6b6f350baaff1f4aae4ad130639d5df83920bb590473ce6ec44f22686e6fd",
+  "selected_member_replay_sha256": "33d6b6f350baaff1f4aae4ad130639d5df83920bb590473ce6ec44f22686e6fd",
+  "selected_member_replay_exit_zero": true,
+  "selected_member_stream_matches_extracted_demo": true,
+  "actual_demo_header_map": "de_mirage",
+  "demo_header_map_verified": true,
+  "whole_archive_crc_verified": false,
+  "unselected_members_extracted": false,
+  "raw_tick_clock_independently_measured": false,
+  "frozen_feature_and_target_pipeline_evaluated": false,
+  "technical_eligibility_evaluated": false,
+  "model_scoring_performed": false
+}
