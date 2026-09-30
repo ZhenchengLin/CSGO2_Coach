@@ -1,0 +1,39 @@
+{
+  "version": "V4_A_CONFIRM_SELECTED_DEMO_EXTRACTION_V1",
+  "record_type": "SELECTED_MEMBER_EXTRACTION_EVIDENCE",
+  "candidate_rank": 18,
+  "source_match_id": "2398303",
+  "archive_event_path": "docs/v4_a_confirm_intake_events_v1/rank_18_2398303_archive_acquired.json",
+  "archive_event_sha256": "ffba130514ba49de8586d77bbbd5f79654969be9565db56b47e399588502d6bf",
+  "source_snapshot_path": "docs/v4_a_confirm_intake_audits/rank_18_match_page_source_v1.html",
+  "source_snapshot_sha256": "75d9a9aeefb53d1c3685ad4fff30e708f4c57752d762c4db06444a512cc4abb7",
+  "source_archive_path": "data/raw/v4_a_confirm_download_staging/rank_18_2398303/archive.rar",
+  "source_archive_size_bytes": 364907581,
+  "source_archive_sha256": "b5ada998b8b0dd623f6e52afb4bfc4345c08bc8f90fc1b23f04975b483bc28e9",
+  "archive_members": [
+    {
+      "path": "marsborne-vs-iowa-stormboar-m2-anubis.dem",
+      "declared_uncompressed_bytes": 268197295
+    },
+    {
+      "path": "marsborne-vs-iowa-stormboar-m1-mirage.dem",
+      "declared_uncompressed_bytes": 274853999
+    }
+  ],
+  "selected_member": "marsborne-vs-iowa-stormboar-m1-mirage.dem",
+  "selected_member_declared_bytes": 274853999,
+  "extracted_demo_path": "data/raw/v4_a_confirm_download_staging/rank_18_2398303/marsborne-vs-iowa-stormboar-m1-mirage.dem",
+  "extracted_demo_size_bytes": 274853999,
+  "extracted_demo_sha256": "bbf4a0db38b10077e8cd0797a9648d00f344e04da1a9732c007b6e9cfd22ea01",
+  "selected_member_replay_sha256": "bbf4a0db38b10077e8cd0797a9648d00f344e04da1a9732c007b6e9cfd22ea01",
+  "selected_member_replay_exit_zero": true,
+  "selected_member_stream_matches_extracted_demo": true,
+  "actual_demo_header_map": "de_mirage",
+  "demo_header_map_verified": true,
+  "whole_archive_crc_verified": false,
+  "unselected_members_extracted": false,
+  "raw_tick_clock_independently_measured": false,
+  "frozen_feature_and_target_pipeline_evaluated": false,
+  "technical_eligibility_evaluated": false,
+  "model_scoring_performed": false
+}
