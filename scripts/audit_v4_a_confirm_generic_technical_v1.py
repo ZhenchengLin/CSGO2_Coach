@@ -131,6 +131,82 @@ def keys(frame, columns):
     return result
 
 
+def validate_match_date_evidence(
+    *,
+    display_text,
+    raw_unix_ms,
+    frozen_queue_match_date,
+    earliest_allowed_match_date,
+):
+    """Validate the frozen calendar date without conflating time zones.
+
+    The frozen Queue's ``match_date`` was derived prospectively from the
+    original scheduled-start UTC date.  A later HLTV match page may render
+    that same match under HLTV's displayed calendar date while its
+    ``data-unix`` instant falls on the prior UTC date near midnight.
+
+    Therefore:
+      * the visible completed-match calendar date must agree with the
+        already frozen Queue date;
+      * the raw source timestamp is retained separately as UTC evidence;
+      * the timestamp's UTC calendar date is not silently substituted for
+        the frozen Queue ``match_date``.
+    """
+
+    require(
+        isinstance(display_text, str)
+        and isinstance(raw_unix_ms, str)
+        and raw_unix_ms.isdecimal(),
+        "Completed-match date evidence is invalid.",
+    )
+
+    match = re.fullmatch(
+        r"(\d{1,2})(?:st|nd|rd|th) of ([A-Za-z]+) (\d{4})",
+        display_text.strip(),
+    )
+
+    require(
+        match is not None,
+        "Completed-match displayed calendar date is unavailable.",
+    )
+
+    try:
+        source_display_date = datetime.strptime(
+            " ".join(match.groups()),
+            "%d %B %Y",
+        ).date().isoformat()
+
+    except ValueError as exc:
+        raise AuditStop(
+            "Completed-match displayed calendar date is invalid."
+        ) from exc
+
+    require(
+        source_display_date == frozen_queue_match_date,
+        "Completed-match source display date differs from frozen Queue.",
+    )
+
+    require(
+        frozen_queue_match_date >= earliest_allowed_match_date,
+        "Match date violates frozen temporal boundary.",
+    )
+
+    source_timestamp = datetime.fromtimestamp(
+        int(raw_unix_ms) / 1000,
+        timezone.utc,
+    )
+
+    return {
+        "frozen_queue_match_date": frozen_queue_match_date,
+        "source_display_match_date": source_display_date,
+        "source_timestamp_utc": (
+            source_timestamp.isoformat().replace("+00:00", "Z")
+        ),
+        "source_timestamp_utc_date": (
+            source_timestamp.date().isoformat()
+        ),
+    }
+
 def validate_observation(obs):
     """Pure scientific invariants; suitable for offline unit testing."""
 
@@ -728,24 +804,18 @@ def verify_inputs(rank):
         "Completed-match date unavailable.",
     )
 
-    source_date = datetime.fromtimestamp(
-        int(dates[0]["data-unix"]) / 1000,
-        timezone.utc,
-    ).date().isoformat()
-
-    require(
-        source_date == row["match_date"],
-        "Completed-match date differs from frozen Queue.",
-    )
-
     boundary = protocol["temporal_boundary"][
         "earliest_allowed_match_date"
     ]
 
-    require(
-        source_date >= boundary,
-        "Match date violates frozen temporal boundary.",
+    date_evidence = validate_match_date_evidence(
+        display_text=dates[0].get_text(" ", strip=True),
+        raw_unix_ms=str(dates[0]["data-unix"]),
+        frozen_queue_match_date=row["match_date"],
+        earliest_allowed_match_date=boundary,
     )
+
+    source_date = date_evidence["frozen_queue_match_date"]
 
     require(
         shutil.disk_usage(ROOT).free >= 12 * 1024**3,
@@ -759,6 +829,15 @@ def verify_inputs(rank):
         "event": event,
         "source": source,
         "source_date": source_date,
+        "source_display_date": date_evidence[
+            "source_display_match_date"
+        ],
+        "source_timestamp_utc": date_evidence[
+            "source_timestamp_utc"
+        ],
+        "source_timestamp_utc_date": date_evidence[
+            "source_timestamp_utc_date"
+        ],
         "extraction": extraction,
         "evidence": evidence,
         "demo": demo,
@@ -810,7 +889,15 @@ def run_audit(rank):
     print("=== V4-A GENERIC TECHNICAL AUDIT ===")
     print("Candidate Rank:", rank)
     print("Match ID:", match_id)
-    print("Completed-match date:", context["source_date"])
+    print("Frozen Queue match date:", context["source_date"])
+    print(
+        "HLTV source display date:",
+        context["source_display_date"],
+    )
+    print(
+        "HLTV source timestamp UTC:",
+        context["source_timestamp_utc"],
+    )
     print("Actual Demo map: de_mirage")
     print("Demo SHA256:", demo_sha)
     print()
@@ -1137,7 +1224,16 @@ def run_audit(rank):
         "archive_sha256": context["archive_sha"],
         "demo_sha256": demo_sha,
         "date_evidence": {
-            "completed_match_date_utc": context["source_date"],
+            "frozen_queue_match_date": context["source_date"],
+            "source_display_match_date": context[
+                "source_display_date"
+            ],
+            "source_timestamp_utc": context[
+                "source_timestamp_utc"
+            ],
+            "source_timestamp_utc_date": context[
+                "source_timestamp_utc_date"
+            ],
             "source_snapshot_sha256": sha256_file(
                 context["source"]
             ),

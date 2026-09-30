@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from audit_v4_a_confirm_generic_technical_v1 import (
     AuditStop,
+    validate_match_date_evidence,
     validate_observation,
     write_once,
 )
@@ -217,3 +218,43 @@ def test_write_rejects_symlink_parent(tmp_path):
     assert not (
         real / "evidence.json"
     ).exists()
+
+
+def test_match_date_keeps_source_display_and_utc_timestamp_separate():
+    value = validate_match_date_evidence(
+        display_text="21st of September 2026",
+        raw_unix_ms="1789945200000",
+        frozen_queue_match_date="2026-09-21",
+        earliest_allowed_match_date="2026-09-20",
+    )
+
+    assert value == {
+        "frozen_queue_match_date": "2026-09-21",
+        "source_display_match_date": "2026-09-21",
+        "source_timestamp_utc": "2026-09-20T23:00:00Z",
+        "source_timestamp_utc_date": "2026-09-20",
+    }
+
+def test_match_date_rejects_display_date_queue_mismatch():
+    with pytest.raises(
+        AuditStop,
+        match="source display date differs",
+    ):
+        validate_match_date_evidence(
+            display_text="20th of September 2026",
+            raw_unix_ms="1789945200000",
+            frozen_queue_match_date="2026-09-21",
+            earliest_allowed_match_date="2026-09-20",
+        )
+
+def test_match_date_uses_frozen_queue_date_for_temporal_boundary():
+    with pytest.raises(
+        AuditStop,
+        match="temporal boundary",
+    ):
+        validate_match_date_evidence(
+            display_text="19th of September 2026",
+            raw_unix_ms="1789858800000",
+            frozen_queue_match_date="2026-09-19",
+            earliest_allowed_match_date="2026-09-20",
+        )
