@@ -1,0 +1,39 @@
+{
+  "version": "V4_A_CONFIRM_SELECTED_DEMO_EXTRACTION_V1",
+  "record_type": "SELECTED_MEMBER_EXTRACTION_EVIDENCE",
+  "candidate_rank": 19,
+  "source_match_id": "2398309",
+  "archive_event_path": "docs/v4_a_confirm_intake_events_v1/rank_19_2398309_archive_acquired.json",
+  "archive_event_sha256": "ec3554b4e2c1b6a9044da2a719449e71183d7caf03883529724a82ab636e8a4c",
+  "source_snapshot_path": "docs/v4_a_confirm_intake_audits/rank_19_match_page_source_v1.html",
+  "source_snapshot_sha256": "d5f9b86c265b90cf7e8b27f776e1a3fb332388adfe8fa28162e061230aeb0e27",
+  "source_archive_path": "data/raw/v4_a_confirm_download_staging/rank_19_2398309/archive.rar",
+  "source_archive_size_bytes": 520605197,
+  "source_archive_sha256": "8a72b5b58251eac1791343e484ef11935eece470f80fadde4b3978449a6a2d23",
+  "archive_members": [
+    {
+      "path": "nutorious-vs-arctic-ace-m1-cache.dem",
+      "declared_uncompressed_bytes": 459327486
+    },
+    {
+      "path": "nutorious-vs-arctic-ace-m2-mirage.dem",
+      "declared_uncompressed_bytes": 351368149
+    }
+  ],
+  "selected_member": "nutorious-vs-arctic-ace-m2-mirage.dem",
+  "selected_member_declared_bytes": 351368149,
+  "extracted_demo_path": "data/raw/v4_a_confirm_download_staging/rank_19_2398309/nutorious-vs-arctic-ace-m2-mirage.dem",
+  "extracted_demo_size_bytes": 351368149,
+  "extracted_demo_sha256": "ee3676b181a43edefbff5154aa067e6ff2fd960cd670276410a5b403ef7b4a4d",
+  "selected_member_replay_sha256": "ee3676b181a43edefbff5154aa067e6ff2fd960cd670276410a5b403ef7b4a4d",
+  "selected_member_replay_exit_zero": true,
+  "selected_member_stream_matches_extracted_demo": true,
+  "actual_demo_header_map": "de_mirage",
+  "demo_header_map_verified": true,
+  "whole_archive_crc_verified": false,
+  "unselected_members_extracted": false,
+  "raw_tick_clock_independently_measured": false,
+  "frozen_feature_and_target_pipeline_evaluated": false,
+  "technical_eligibility_evaluated": false,
+  "model_scoring_performed": false
+}
